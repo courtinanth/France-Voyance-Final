@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Development scripts
+*.ps1
+*.py
+*.sh
+*.bat
+
+# Logs and Debug
+debug_*.js
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
+
+# Build output
+dist/
+build/
+.cache/
+
+# Agent/AI generated folders
+.gemini/
+.system_generated/
+_archive/

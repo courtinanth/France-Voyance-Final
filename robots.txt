@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /legal/
+Disallow: /admin/
+Disallow: /css/
+Disallow: /js/
+Disallow: /_archive/
+
+Sitemap: https://france-voyance-avenir.fr/sitemap.xml

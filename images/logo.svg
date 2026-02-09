@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon: Mystical Eye/Moon Combo -->
+  <g transform="translate(20, 10)">
+    <!-- Crescent Moon -->
+    <path d="M40,10 A30,30 0 1,0 40,70 A25,25 0 1,1 40,10" fill="url(#goldGrad)" />
+    <!-- Eye Shape inside/next to moon -->
+    <path d="M40,30 Q65,15 90,30 Q65,60 40,30 Z" fill="none" stroke="#4A1A6B" stroke-width="2" />
+    <circle cx="65" cy="35" r="5" fill="#4A1A6B" />
+    <!-- Stars -->
+    <path d="M80,10 L82,15 L87,17 L82,19 L80,24 L78,19 L73,17 L78,15 Z" fill="url(#goldGrad)" />
+    <path d="M10,60 L12,65 L17,67 L12,69 L10,74 L8,69 L3,67 L8,65 Z" fill="url(#goldGrad)" opacity="0.8" />
+  </g>
+
+  <!-- Text -->
+  <text x="110" y="45" font-family="'Playfair Display', serif" font-weight="700" font-size="32" fill="url(#goldGrad)">FRANCE</text>
+  <text x="110" y="75" font-family="'Playfair Display', serif" font-weight="700" font-size="24" fill="#FFFFFF" letter-spacing="1">VOYANCE AVENIR</text>
+</svg>

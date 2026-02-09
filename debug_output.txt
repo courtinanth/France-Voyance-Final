@@ -1,0 +1,2 @@
+Snippet at 27752:
+b'slideUp {\r\n    from {\r\n        transform: translateY(20px);\r\n        opacity: 0;\r\n    }\r\n\r\n    to {\r\n        transform: translateY(0);\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n/* Keyframes for simple idle '
