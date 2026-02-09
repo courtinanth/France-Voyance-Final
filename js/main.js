@@ -28,7 +28,6 @@ function initServiceWorker() {
 // Mobile Menu Toggle
 // =============================================
 function initMobileMenu() {
-    console.log('📱 initMobileMenu called');
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mainNav = document.querySelector('.main-nav');
     const body = document.body;
@@ -37,11 +36,9 @@ function initMobileMenu() {
 
     // Toggle menu on hamburger click
     mobileToggle.addEventListener('click', (e) => {
-        console.log('🍔 Hamburger clicked!');
         e.stopPropagation();
         mainNav.classList.toggle('active');
         body.classList.toggle('menu-open');
-        console.log('🍔 Menu classes toggled. Active:', mainNav.classList.contains('active'));
 
         // Toggle hamburger icon
         const icon = mobileToggle.querySelector('i');
