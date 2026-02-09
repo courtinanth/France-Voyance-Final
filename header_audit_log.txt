@@ -1,0 +1,3 @@
+❌ Found issues in 2 files:
+- offline.html: Missing main.js, Missing .mobile-toggle, Missing .main-nav
+- googled3845672a2c3301a.html: Missing main.js, Missing style.css, Missing .mobile-toggle, Missing .main-nav

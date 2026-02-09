@@ -3495,6 +3495,12 @@ body.menu-open {
     .nav-item {
         width: 100%;
         text-align: center;
+        height: auto !important;
+        /* Allow expansion */
+        display: flex;
+        flex-direction: column;
+        /* Stack link and dropdown */
+        align-items: center;
     }
 
     .nav-link {
@@ -3513,15 +3519,23 @@ body.menu-open {
         box-shadow: none;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: all 0.3s ease;
         width: 100%;
         min-width: auto;
+        padding: 0;
+        /* Ensure no padding when closed */
+        display: block;
+        /* Ensure it's not hidden by display:none */
     }
 
     .nav-item.dropdown-open .dropdown-menu {
-        max-height: 500px;
-        /* Adjust based on content */
-        padding: 10px 0;
+        max-height: 2000px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 10px 0 !important;
+        margin-top: 10px !important;
+        display: block !important;
+        transition: max-height 0.5s ease;
     }
 
     .nav-logo {

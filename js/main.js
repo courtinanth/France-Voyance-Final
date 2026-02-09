@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     initServiceWorker();
-    initLogger();
+    if (typeof initLogger === 'function') {
+        initLogger();
+    }
     initMobileMenu();
     initCookieConsent();
 });
@@ -26,6 +28,7 @@ function initServiceWorker() {
 // Mobile Menu Toggle
 // =============================================
 function initMobileMenu() {
+    console.log('📱 initMobileMenu called');
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mainNav = document.querySelector('.main-nav');
     const body = document.body;
@@ -34,9 +37,11 @@ function initMobileMenu() {
 
     // Toggle menu on hamburger click
     mobileToggle.addEventListener('click', (e) => {
+        console.log('🍔 Hamburger clicked!');
         e.stopPropagation();
         mainNav.classList.toggle('active');
         body.classList.toggle('menu-open');
+        console.log('🍔 Menu classes toggled. Active:', mainNav.classList.contains('active'));
 
         // Toggle hamburger icon
         const icon = mobileToggle.querySelector('i');
@@ -46,12 +51,44 @@ function initMobileMenu() {
         }
     });
 
-    // Close menu when clicking a link
-    mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
+    // Mobile Menu Item Handling
+    const navLinks = mainNav.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            // Only apply mobile logic at the correct breakpoint
+            if (window.innerWidth > 992) return;
+
+            // Find the parent item
+            const parentItem = this.closest('.nav-item');
+            if (!parentItem) return;
+
+            // Check if this item has a dropdown menu
+            const submenu = parentItem.querySelector('.dropdown-menu');
+
+            if (submenu) {
+                // IT HAS A DROPDOWN - TOGGLE IT
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Toggle the class on the parent
+                parentItem.classList.toggle('dropdown-open');
+
+                // Optional: Close other open dropdowns (accordion behavior)
+                const allNavItems = mainNav.querySelectorAll('.nav-item');
+                allNavItems.forEach(item => {
+                    if (item !== parentItem && item.classList.contains('dropdown-open')) {
+                        item.classList.remove('dropdown-open');
+                    }
+                });
+            } else {
+                // NO DROPDOWN - IT IS A LINK - NAVIGATE AND CLOSE MENU
+                // Allow default click action (navigation) to proceed
+
+                // Close the mobile menu
                 mainNav.classList.remove('active');
                 body.classList.remove('menu-open');
+
                 const icon = mobileToggle.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-times');
@@ -71,22 +108,6 @@ function initMobileMenu() {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
-        }
-    });
-
-    // Handle dropdown toggles on mobile
-    const dropdownItems = mainNav.querySelectorAll('.nav-item');
-    dropdownItems.forEach(item => {
-        const link = item.querySelector('.nav-link');
-        const dropdown = item.querySelector('.dropdown-menu');
-
-        if (link && dropdown) {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    item.classList.toggle('dropdown-open');
-                }
-            });
         }
     });
 }
