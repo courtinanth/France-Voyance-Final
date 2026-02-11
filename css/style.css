@@ -1,4 +1,4 @@
-﻿/* 
+�/* 
 * Site de Voyance & Arts Divinatoires
 * CSS Variables & Global Styles
 */
@@ -8,7 +8,7 @@
     --color-primary: #4A1A6B;
     /* Violet profond */
     --color-secondary: #D4AF37;
-    /* Or/DorÃ© */
+    /* Or/Doré */
     --color-accent: #1A1A4A;
     /* Bleu nuit */
     --color-text-main: #FFFFFF;
@@ -1478,7 +1478,7 @@ img {
 }
 
 .internal-link::before {
-    content: 'â†’';
+    content: '� ';
     margin-right: 10px;
     color: var(--color-secondary);
     transition: transform 0.3s ease;
@@ -2971,7 +2971,7 @@ img {
 }
 
 .tf-detail-col li::before {
-    content: 'â€¢';
+    content: '⬢';
     position: absolute;
     left: 0;
     color: rgba(255, 255, 255, 0.3);
