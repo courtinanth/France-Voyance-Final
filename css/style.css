@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 * Site de Voyance & Arts Divinatoires
 * CSS Variables & Global Styles
 */
@@ -8,7 +8,7 @@
     --color-primary: #4A1A6B;
     /* Violet profond */
     --color-secondary: #D4AF37;
-    /* Or/Doré */
+    /* Or/DorÃ© */
     --color-accent: #1A1A4A;
     /* Bleu nuit */
     --color-text-main: #FFFFFF;
@@ -827,7 +827,7 @@ img {
 .hero {
     padding: 150px 0;
     text-align: center;
-    background: url('../images/hero-bg.png') no-repeat center center/cover;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -1478,7 +1478,7 @@ img {
 }
 
 .internal-link::before {
-    content: '→';
+    content: 'â†’';
     margin-right: 10px;
     color: var(--color-secondary);
     transition: transform 0.3s ease;
@@ -2971,7 +2971,7 @@ img {
 }
 
 .tf-detail-col li::before {
-    content: '•';
+    content: 'â€¢';
     position: absolute;
     left: 0;
     color: rgba(255, 255, 255, 0.3);
