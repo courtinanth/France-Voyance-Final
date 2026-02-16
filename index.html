@@ -20,15 +20,22 @@
  <meta property="og:image" content="https://france-voyance-avenir.fr/images/crystal-ball.png">
 
  <link rel="icon" href="/images/favicon.png" type="image/png">
- <!-- Google Fonts -->
+ <!-- Critical CSS inline for faster first paint -->
+ <style>
+  :root{--color-primary:#4A1A6B;--color-secondary:#D4AF37;--color-accent:#1A1A4A;--color-text-main:#FFF;--color-text-muted:#E0E0E0;--color-text-dark:#333;--bg-gradient:linear-gradient(135deg,#1A1A4A 0%,#4A1A6B 100%);--font-heading:'Playfair Display',serif;--font-body:'Lato',sans-serif;--container-width:1200px;--header-height:80px}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:var(--bg-gradient);background-attachment:fixed;color:var(--color-text-main);line-height:1.6;min-height:100vh;overflow-x:hidden!important}html{overflow-x:hidden!important}.site-header{position:sticky;top:0;z-index:1000;background:rgba(10,5,20,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,.3);height:70px;display:flex;align-items:center;box-shadow:0 4px 30px rgba(0,0,0,.5)}.header-container{display:flex;justify-content:space-between;align-items:center;width:100%}.container{max-width:var(--container-width);margin:0 auto;padding:0 20px}.logo{display:flex;align-items:center;gap:10px;margin-right:40px;position:relative;z-index:100;flex-shrink:0}.logo img{height:55px;width:auto;filter:drop-shadow(0 0 2px rgba(212,175,55,.4));background:transparent!important;display:block;min-width:100px}
+ </style>
+ <!-- Google Fonts (non-blocking) -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+ <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+ <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+ <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
  <!-- Font Awesome -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin>
  <link rel="preload" as="image" href="/images/hero-bg.jpg">
-	<!-- Custom CSS -->
- <link rel="stylesheet" href="/css/style.css?v=2027">
+ <!-- Custom CSS -->
+ <link rel="stylesheet" href="/css/style.css?v=2028">
  <script src="/js/config.js" defer></script>
 
     <script type="application/ld+json">
@@ -168,7 +175,7 @@
  <div class="reveal reveal-delay-3" style="margin-top: 50px; position: relative; display: inline-block;">
  <div class="portal-glow"></div>
  <img src="/images/crystal-ball-sm.png" alt="Boule de cristal mystique" class="animate-float"
- width="300" height="300"
+ width="300" height="300" loading="lazy"
  style="max-width: 300px; margin: 0 auto; display: block; border-radius: 50%;">
  </div>
  </div>
@@ -607,7 +614,7 @@
  </div>
  </footer>
  <script src="/js/animations.js" defer></script>
- <script src="/js/main.js?v=2027" defer></script>
+ <script src="/js/main.js?v=2028" defer></script>
  <script src="/js/logger.js" defer></script>
 </body>
 
