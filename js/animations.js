@@ -377,11 +377,15 @@
         if (!progressBar) return;
 
         let ticking = false;
+        let cachedDocHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            cachedDocHeight = document.documentElement.scrollHeight - window.innerHeight;
+        }, { passive: true });
 
         function updateProgress() {
             const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            const progress = cachedDocHeight > 0 ? (scrollTop / cachedDocHeight) * 100 : 0;
             progressBar.style.width = progress + '%';
         }
 
