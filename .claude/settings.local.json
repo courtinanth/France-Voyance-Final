@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(del \"C:\\\\Users\\\\court\\\\Desktop\\\\Siteapps\\\\France-Voyance-Final\\\\fix-defer.js\")",
+      "mcp__Desktop_Commander__list_directory",
+      "Bash(del fix-revert-async.js fix-encoding.js fix-css-encoding.js find-bad-chars.js check-favicon.js)"
+    ]
+  }
+}

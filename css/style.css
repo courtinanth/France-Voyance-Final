@@ -1,4 +1,4 @@
-�/* 
+/* 
 * Site de Voyance & Arts Divinatoires
 * CSS Variables & Global Styles
 */
@@ -1478,7 +1478,7 @@ img {
 }
 
 .internal-link::before {
-    content: '� ';
+    content: '→ ';
     margin-right: 10px;
     color: var(--color-secondary);
     transition: transform 0.3s ease;

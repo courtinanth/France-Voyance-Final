@@ -310,8 +310,8 @@
             });
         });
 
-        // Generate FAQ JSON-LD automatically
-        generateFaqJsonLd();
+        // FAQ JSON-LD is already included statically in each page's <head>
+        // generateFaqJsonLd();
     }
 
     function generateFaqJsonLd() {

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!DOCTYPE html>
-<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -80,97 +78,240 @@
  }
  </script>
 
-  <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accueil",
-          "item": "https://france-voyance-avenir.fr/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Arts Divinatoires",
-          "item": "https://france-voyance-avenir.fr/arts-divinatoires/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Runes",
-          "item": "https://france-voyance-avenir.fr/arts-divinatoires/runes/"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "name": "France Voyance Avenir",
-      "url": "https://france-voyance-avenir.fr/",
-      "logo": "https://france-voyance-avenir.fr/images/logo.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+33100000000",
-        "contactType": "customer service"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "name": "Runes",
-      "url": "https://france-voyance-avenir.fr/arts-divinatoires/runes/"
-    }
-  ]
-}
-    </script>
-  style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-  <h4>Découvrez aussi :</h4>
-  <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-    <a href="/arts-divinatoires/pendule/" class="btn btn-outline" style="font-size: 0.8rem;">Voyance Pendule</a>
-    <a href="/arts-divinatoires/cartomancie/" class="btn btn-outline" style="font-size: 0.8rem;">Cartomancie</a>
-  </div>
+</head>
+
+<body>
+  <div class="reading-progress-container">
+    <div class="reading-progress-bar"></div>
   </div>
 
-  </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <img src="/images/logo.svg" alt="France Voyance Avenir">
+      </a>
 
-  <!-- Sidebar -->
-  <div style="flex: 1; min-width: 250px;">
-    <div class="card"
-      style="position: sticky; top: 100px; background: rgba(20, 20, 40, 0.95); border: 1px solid #D4AF37; padding: 25px 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h3 style="color: #D4AF37; margin-bottom: 10px;">Un doute ?</h3>
-      <p style="font-size: 0.9rem; margin-bottom: 25px; color: #fff;">Nos experts en runes sont là.
-      </p>
-
-      <div
-        style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; text-align: left;">
-        <div style="position: relative; width: 60px; height: 60px;">
-          <img src="/images/profiles/profile_isabelle.png" alt="Isabelle"
-            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #D4AF37;">
-          <div class="online-badge"
-            style="position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; background: #2ecc71; border-radius: 50%; border: 2px solid #1a1a2e;">
-          </div>
-        </div>
-        <div>
-          <div style="font-weight: bold; color: #fff;">Isabelle</div>
-          <div style="font-size: 0.8rem; color: #ccc;">Cartomancienne - 98% avis</div>
-        </div>
+      <div class="mobile-toggle">
+        <i class="fa-solid fa-bars"></i>
       </div>
 
-      <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
-        class="btn btn-gold icon-pulse" data-affiliate="voyance-telephone"
-        style="width: 100%; display: block; padding: 12px; border-radius: 25px;">APPELER
-        ISABELLE</a>
-      <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
-        class="btn btn-outline" data-affiliate="voyance-chat"
-        style="width: 100%; display: block; padding: 12px; border-radius: 25px; margin-top: 10px;">CHATTER</a>
-    </div>
-  </div>
+      <nav class="main-nav">
+        <!-- Logo inside nav for desktop menu -->
+        <a href="/" class="nav-logo">
+          <img src="/images/logo.svg" alt="France Voyance Avenir">
+        </a>
+        <ul>
+          <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+          <li class="nav-item">
+            <a href="/voyance-gratuite/" class="nav-link">Voyance Gratuite <i
+                class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/voyance-gratuite/tarot-gratuit/">Tarot Gratuit</a></li>
+              <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
+              <li><a href="/voyance-gratuite/numerologie-gratuite/">Numérologie Gratuite</a></li>
+              <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
+              <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+            </ul>
+          </li>
 
-  </div>
-  </div>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
+              <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
+              <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
+              <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
+              <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Consultations <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/consultations/amour-retour-affectif/">Amour &amp; Retour Affectif</a></li>
+              <li><a href="/consultations/flamme-jumelle/">Flamme Jumelle</a></li>
+              <li><a href="/consultations/medium-defunts/">Medium &amp; Défunts</a></li>
+              <li><a href="/consultations/travail-carriere/">Travail &amp; Carrière</a></li>
+              <li><a href="/consultations/argent-finances/">Argent &amp; Finances</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Consulter <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
+              <li><a href="/consulter/voyance-sms/">Voyance SMS</a></li>
+              <li><a href="/consulter/voyance-chat/">Voyance Chat</a></li>
+              <li><a href="/consulter/voyance-audiotel/">Voyance Audiotel</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="/avis/" class="nav-link">Avis &amp; Comparatifs</a></li>
+        </ul>
+
+        <div class="header-cta text-center mt-3 mt-lg-0 ml-lg-4">
+          <a href="/consulter/voyance-telephone/" class="btn btn-gold">Consultation
+            Immédiate</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section-padding">
+    <div class="container">
+      <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+
+        <!-- Main Content -->
+        <div style="flex: 2; min-width: 300px;">
+          <h1 class="fade-in-up">Tirage de Runes : Signification et Consultation Runique</h1>
+
+          <div class="intro-block fade-in-up">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+              Les Runes sont bien plus que de simples lettres gravées dans la pierre. Héritage sacré des peuples
+              germaniques et scandinaves, le Futhark est un alphabet divinatoire vieux de plus de 2000 ans.
+              Chaque symbole runique porte en lui une énergie, un message et une guidance pour celui qui sait
+              les interpréter.
+            </p>
+          </div>
+
+          <div class="fade-in-up" style="margin: 40px 0;">
+            <h2>Qu'est-ce que le Futhark ?</h2>
+            <i class="fa-solid fa-shield-halved icon-rotate"
+              style="font-size: 3rem; color: #D4AF37; float: left; margin-right: 20px; margin-bottom: 10px;"></i>
+            <p>Le Futhark est l'alphabet runique utilisé par les Vikings et les anciens peuples nordiques. Son
+              nom vient des six premières lettres : F, U, Th, A, R, K. Il existe en deux versions principales :</p>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 10px;"><strong>L'Ancien Futhark (Elder Futhark) :</strong> 24 runes,
+                le plus utilisé en divination. Chaque rune représente une force de la nature ou un concept
+                spirituel.</li>
+              <li style="margin-bottom: 10px;"><strong>Le Jeune Futhark (Younger Futhark) :</strong> 16 runes,
+                version simplifiée utilisée durant l'ère viking pour l'écriture courante.</li>
+              <li style="margin-bottom: 10px;"><strong>La Rune Blanche (Wyrd) :</strong> Ajoutée par les
+                praticiens modernes, elle symbolise le destin, l'inconnu et le potentiel infini.</li>
+            </ul>
+          </div>
+
+          <div class="fade-in-up" style="margin: 40px 0;">
+            <h2>Comment se déroule un tirage de Runes ?</h2>
+            <p>Le consultant concentre son énergie sur sa question, puis tire une ou plusieurs runes d'un sac
+              en tissu. Les runes sont traditionnellement gravées sur des galets, des morceaux de bois ou des
+              os. L'interprétation dépend du symbole tiré, de son orientation (endroit ou renversé) et de sa
+              position dans le tirage.</p>
+            <p>Les tirages les plus courants sont le tirage à 1 rune (réponse rapide), le tirage à 3 runes
+              (passé-présent-avenir) et le tirage en croix d'Odin (5 runes pour une analyse approfondie).</p>
+          </div>
+
+          <div class="fade-in-up" style="margin: 40px 0;">
+            <h2>Pourquoi consulter un spécialiste des Runes ?</h2>
+            <p>Les Runes offrent une guidance directe et sans détour. Contrairement au Tarot qui travaille
+              avec des images symboliques, les Runes parlent à travers des énergies primordiales : force,
+              protection, voyage, amour, transformation. Un expert en runes sait capter les vibrations
+              subtiles de chaque symbole pour vous délivrer un message clair et actionnable.</p>
+          </div>
+
+          <!-- Counters -->
+          <div class="fade-in-up"
+            style="display: flex; justify-content: space-around; background: rgba(10,5,20,0.8); padding: 30px; border-radius: 10px; border: 1px solid var(--color-secondary); margin: 40px 0; flex-wrap: wrap; gap: 20px;">
+            <div style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: bold; color: var(--color-secondary);">24</div>
+              <div style="font-size: 0.9rem;">Runes du Futhark</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: bold; color: var(--color-secondary);">2000+</div>
+              <div style="font-size: 0.9rem;">Ans d'histoire</div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="faq-section fade-in-up">
+            <h3 style="margin-bottom: 20px; color: var(--color-secondary);">Questions Fréquentes</h3>
+            <div class="faq-item">
+              <button class="faq-question">Que sont les Runes ?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Les Runes sont les lettres de l'ancien alphabet germanique et scandinave (le Futhark).
+                  Chaque symbole possède une valeur phonétique et une signification magique et divinatoire.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Comment fonctionne un tirage de Runes ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Les runes sont traditionnellement gravées sur des pierres ou du bois. Le consultant les
+                  tire à l'aveugle d'un sac. L'interprétation dépend du symbole tiré et de son orientation
+                  (endroit ou renversé).</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Faut-il avoir ses propres runes ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Non, lors d'une consultation avec un voyant expert, c'est lui qui utilise son propre jeu
+                  de runes. Cependant, posséder ses runes peut être enrichissant pour une pratique personnelle.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Les runes peuvent-elles répondre par oui ou non ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Oui, un tirage à une seule rune permet d'obtenir une réponse directe. La rune tirée à
+                  l'endroit indique généralement un oui, et renversée un non ou un obstacle à surmonter.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internal Links -->
+          <div class="fade-in-up"
+            style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <h4>Découvrez aussi :</h4>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <a href="/arts-divinatoires/pendule/" class="btn btn-outline" style="font-size: 0.8rem;">Voyance Pendule</a>
+              <a href="/arts-divinatoires/cartomancie/" class="btn btn-outline" style="font-size: 0.8rem;">Cartomancie</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div style="flex: 1; min-width: 250px;">
+          <div class="card"
+            style="position: sticky; top: 100px; background: rgba(20, 20, 40, 0.95); border: 1px solid #D4AF37; padding: 25px 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <h3 style="color: #D4AF37; margin-bottom: 10px;">Un doute ?</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 25px; color: #fff;">Nos experts en runes sont là.</p>
+
+            <div
+              style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; text-align: left;">
+              <div style="position: relative; width: 60px; height: 60px;">
+                <img src="/images/profiles/profile_isabelle.png" alt="Isabelle"
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #D4AF37;">
+                <div class="online-badge"
+                  style="position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; background: #2ecc71; border-radius: 50%; border: 2px solid #1a1a2e;">
+                </div>
+              </div>
+              <div>
+                <div style="font-weight: bold; color: #fff;">Isabelle</div>
+                <div style="font-size: 0.8rem; color: #ccc;">Cartomancienne - 98% avis</div>
+              </div>
+            </div>
+
+            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+              class="btn btn-gold icon-pulse" data-affiliate="voyance-telephone"
+              style="width: 100%; display: block; padding: 12px; border-radius: 25px;">APPELER
+              ISABELLE</a>
+            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+              class="btn btn-outline" data-affiliate="voyance-chat"
+              style="width: 100%; display: block; padding: 12px; border-radius: 25px; margin-top: 10px;">CHATTER</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </main>
 
   <!-- Sticky CTA -->
@@ -244,10 +385,10 @@
       </div>
     </div>
   </footer>
-  <script src="/js/animations.js" defer></script>
 
-  <script src="/js/main.js?v=2027"></script>
-  <script src="/js/logger.js"></script>
-  </body>
+  <script src="/js/animations.js" defer></script>
+  <script src="/js/main.js?v=2027" defer></script>
+  <script src="/js/logger.js" defer></script>
+</body>
 
 </html>

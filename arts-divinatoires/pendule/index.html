@@ -61,7 +61,7 @@
  "name": "Comment fonctionne la voyance par le pendule ?",
  "acceptedAnswer": {
  "@type": "Answer",
-  "text": "Le pendule capte les ondes énergétiques émises par le consultant. Le radiesthésiste pose une question fermée et interprète les oscillations (rotation ou balancement) pour obtenir une réponse."
+ "text": "Le pendule capte les ondes énergétiques émises par le consultant. Le radiesthésiste pose une question fermée et interprète les oscillations (rotation ou balancement) pour obtenir une réponse."
  }
  },
  {
@@ -82,7 +82,7 @@
  },
  {
  "@type": "Question",
-  "name": "Comment se déroule une consultation au pendule par téléphone ?",
+ "name": "Comment se déroule une consultation au pendule par téléphone ?",
  "acceptedAnswer": {
  "@type": "Answer",
  "text": "Le voyant se connecte à votre énergie à distance. Vous posez vos questions préparées, et il vous transmet les réponses du pendule en direct."
@@ -94,118 +94,246 @@
  }
  </script>
 
-  <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accueil",
-          "item": "https://france-voyance-avenir.fr/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Arts Divinatoires",
-          "item": "https://france-voyance-avenir.fr/arts-divinatoires/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Pendule",
-          "item": "https://france-voyance-avenir.fr/arts-divinatoires/pendule/"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "name": "France Voyance Avenir",
-      "url": "https://france-voyance-avenir.fr/",
-      "logo": "https://france-voyance-avenir.fr/images/logo.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+33100000000",
-        "contactType": "customer service"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "name": "Pendule",
-      "url": "https://france-voyance-avenir.fr/arts-divinatoires/pendule/"
-    }
-  ]
-}
-    </script>
-  <div class="faq-answer">
-    <p>Oui, chaque matériau a ses propriétés. Le cristal de roche est neutre et polyvalent,
-      l'améthyste favorise l'intuition, le cuivre est conducteur d'énergie. Nos experts
-      choisissent leur pendule selon leur spécialité.</p>
-  </div>
+</head>
+
+<body>
+  <div class="reading-progress-container">
+    <div class="reading-progress-bar"></div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question">Puis-je demander une réponse pour quelqu'un d'autre ?<span
-        class="faq-toggle">+</span></button>
-    <div class="faq-answer">
-      <p>Oui, le pendule peut répondre sur une tierce personne, à condition que la question
-        soit posée avec bienveillance et respect de son libre arbitre.</p>
-    </div>
-  </div>
-  </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <img src="/images/logo.svg" alt="France Voyance Avenir">
+      </a>
 
-  <!-- Internal Links -->
-  <div class="fade-in-up" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-    <h4>Découvrez aussi :</h4>
-    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-      <a href="/arts-divinatoires/oracle-belline/" class="btn btn-outline" style="font-size: 0.8rem;">Oracle Belline</a>
-      <a href="/arts-divinatoires/cartomancie/" class="btn btn-outline" style="font-size: 0.8rem;">Cartomancie</a>
-      <a href="/consulter/voyance-telephone/" class="btn btn-outline" style="font-size: 0.8rem;">Voyance Téléphone</a>
-    </div>
-  </div>
-
-  </div>
-
-  <!-- Sidebar -->
-  <div style="flex: 1; min-width: 250px;">
-    <div class="card"
-      style="position: sticky; top: 100px; background: rgba(20, 20, 40, 0.95); border: 1px solid #D4AF37; padding: 25px 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <h3 style="color: #D4AF37; margin-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 1.5rem;">
-        Un doute subsiste ?</h3>
-      <p style="font-size: 0.9rem; margin-bottom: 25px; color: #fff; line-height: 1.4;">Nos experts
-        sont connectés en ce moment pour vous guider.</p>
-
-      <div
-        style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; text-align: left;">
-        <div style="position: relative; width: 60px; height: 60px;">
-          <img src="/images/profiles/profile_thomas.png" alt="Thomas"
-            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #D4AF37;">
-          <div class="online-badge"
-            style="position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; background: #2ecc71; border-radius: 50%; border: 2px solid #1a1a2e;">
-          </div>
-        </div>
-        <div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: bold; color: #fff;">
-            Thomas</div>
-          <div style="font-size: 0.8rem; color: #ccc;">Radiesthésiste - 98% avis positifs</div>
-        </div>
+      <div class="mobile-toggle">
+        <i class="fa-solid fa-bars"></i>
       </div>
 
-      <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
-        class="btn btn-gold icon-pulse" data-affiliate="voyance-telephone"
-        style="width: 100%; text-align: center; margin-bottom: 15px; display: block; padding: 12px; font-weight: bold; text-transform: uppercase; border-radius: 25px;">APPELER
-        THOMAS</a>
-      <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
-        class="btn btn-outline" data-affiliate="voyance-chat"
-        style="width: 100%; text-align: center; display: block; padding: 12px; border: 1px solid #D4AF37; color: #D4AF37; text-transform: uppercase; border-radius: 25px; font-size: 0.9rem;">CHATTER</a>
-    </div>
-  </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-logo">
+          <img src="/images/logo.svg" alt="France Voyance Avenir">
+        </a>
+        <ul>
+          <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+          <li class="nav-item">
+            <a href="/voyance-gratuite/" class="nav-link">Voyance Gratuite <i
+                class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/voyance-gratuite/tarot-gratuit/">Tarot Gratuit</a></li>
+              <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
+              <li><a href="/voyance-gratuite/numerologie-gratuite/">Numérologie Gratuite</a></li>
+              <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
+              <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+            </ul>
+          </li>
 
-  </div>
-  </div>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
+              <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
+              <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
+              <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
+              <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Consultations <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/consultations/amour-retour-affectif/">Amour &amp; Retour Affectif</a></li>
+              <li><a href="/consultations/flamme-jumelle/">Flamme Jumelle</a></li>
+              <li><a href="/consultations/medium-defunts/">Medium &amp; Défunts</a></li>
+              <li><a href="/consultations/travail-carriere/">Travail &amp; Carrière</a></li>
+              <li><a href="/consultations/argent-finances/">Argent &amp; Finances</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Consulter <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
+              <li><a href="/consulter/voyance-sms/">Voyance SMS</a></li>
+              <li><a href="/consulter/voyance-chat/">Voyance Chat</a></li>
+              <li><a href="/consulter/voyance-audiotel/">Voyance Audiotel</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="/avis/" class="nav-link">Avis &amp; Comparatifs</a></li>
+        </ul>
+
+        <div class="header-cta text-center mt-3 mt-lg-0 ml-lg-4">
+          <a href="/consulter/voyance-telephone/" class="btn btn-gold">Consultation
+            Immédiate</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section-padding">
+    <div class="container">
+      <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+
+        <!-- Main Content -->
+        <div style="flex: 2; min-width: 300px;">
+          <h1 class="fade-in-up">Voyance par le Pendule : Consultation avec un Radiesthésiste</h1>
+
+          <div class="intro-block fade-in-up">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+              Le pendule est l'un des outils divinatoires les plus anciens et les plus directs. Utilisé depuis
+              des millénaires pour trouver de l'eau, des minéraux ou des personnes disparues, le pendule est
+              aujourd'hui un instrument puissant de voyance. Entre les mains d'un radiesthésiste expérimenté,
+              il offre des réponses claires, immédiates et sans ambiguïté.
+            </p>
+          </div>
+
+          <div class="fade-in-up" style="margin: 40px 0;">
+            <h2>Comment fonctionne la voyance par le pendule ?</h2>
+            <i class="fa-solid fa-circle-dot icon-rotate"
+              style="font-size: 3rem; color: #D4AF37; float: left; margin-right: 20px; margin-bottom: 10px;"></i>
+            <p>Le pendule capte les ondes énergétiques émises par le consultant. Suspendu à un fil ou une
+              chaîne, il réagit aux vibrations subtiles de l'énergie universelle. Le radiesthésiste pose une
+              question fermée (oui/non) et interprète les oscillations :</p>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 10px;"><strong>Rotation dans le sens horaire :</strong> Réponse positive,
+                énergie favorable, validation de l'intuition du consultant.</li>
+              <li style="margin-bottom: 10px;"><strong>Rotation dans le sens anti-horaire :</strong> Réponse
+                négative, blocage énergétique ou avertissement.</li>
+              <li style="margin-bottom: 10px;"><strong>Balancement latéral :</strong> Réponse neutre, question
+                mal formulée ou moment inadapté pour obtenir une réponse.</li>
+              <li style="margin-bottom: 10px;"><strong>Immobilité :</strong> Le pendule ne capte pas d'énergie
+                suffisante, il faut reformuler ou attendre.</li>
+            </ul>
+          </div>
+
+          <div class="fade-in-up" style="margin: 40px 0;">
+            <h2>Quels types de questions poser au pendule ?</h2>
+            <p>Le pendule excelle pour les questions fermées nécessitant une réponse oui/non. Il est
+              particulièrement efficace pour confirmer une intuition, choisir entre deux options, localiser
+              un objet perdu ou vérifier une compatibilité énergétique.</p>
+            <p>Les thèmes les plus consultés : relations sentimentales, décisions professionnelles, santé
+              énergétique, choix de vie importants et recherche de personnes ou d'objets.</p>
+          </div>
+
+          <div class="fade-in-up" style="margin: 40px 0;">
+            <h2>Les différents types de pendules</h2>
+            <p>Chaque matériau possède ses propriétés énergétiques. Le cristal de roche est neutre et
+              polyvalent, parfait pour les débutants. L'améthyste favorise l'intuition et la clairvoyance.
+              Le cuivre est un excellent conducteur d'énergie. Les pendules en bois sont doux et naturels,
+              idéaux pour les questions émotionnelles.</p>
+          </div>
+
+          <!-- Counters -->
+          <div class="fade-in-up"
+            style="display: flex; justify-content: space-around; background: rgba(10,5,20,0.8); padding: 30px; border-radius: 10px; border: 1px solid var(--color-secondary); margin: 40px 0; flex-wrap: wrap; gap: 20px;">
+            <div style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: bold; color: var(--color-secondary);">98%</div>
+              <div style="font-size: 0.9rem;">Avis positifs</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: bold; color: var(--color-secondary);">24/7</div>
+              <div style="font-size: 0.9rem;">Disponibilité</div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="faq-section fade-in-up">
+            <h3 style="margin-bottom: 20px; color: var(--color-secondary);">Questions Fréquentes</h3>
+            <div class="faq-item">
+              <button class="faq-question">Comment fonctionne la voyance par le pendule ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Le pendule capte les ondes énergétiques émises par le consultant. Le radiesthésiste pose
+                  une question fermée et interprète les oscillations (rotation ou balancement) pour obtenir
+                  une réponse.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Quels types de questions peut-on poser au pendule ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>On peut poser des questions fermées (réponse oui/non), demander la localisation d'objets
+                  ou de personnes, ou vérifier des compatibilités énergétiques ou relationnelles.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Le matériau du pendule a-t-il une importance ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Oui, chaque matériau a ses propriétés. Le cristal de roche est neutre et polyvalent,
+                  l'améthyste favorise l'intuition, le cuivre est conducteur d'énergie. Nos experts
+                  choisissent leur pendule selon leur spécialité.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Puis-je demander une réponse pour quelqu'un d'autre ?<span
+                  class="faq-toggle">+</span></button>
+              <div class="faq-answer">
+                <p>Oui, le pendule peut répondre sur une tierce personne, à condition que la question
+                  soit posée avec bienveillance et respect de son libre arbitre.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internal Links -->
+          <div class="fade-in-up"
+            style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <h4>Découvrez aussi :</h4>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <a href="/arts-divinatoires/oracle-belline/" class="btn btn-outline" style="font-size: 0.8rem;">Oracle Belline</a>
+              <a href="/arts-divinatoires/cartomancie/" class="btn btn-outline" style="font-size: 0.8rem;">Cartomancie</a>
+              <a href="/consulter/voyance-telephone/" class="btn btn-outline" style="font-size: 0.8rem;">Voyance Téléphone</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div style="flex: 1; min-width: 250px;">
+          <div class="card"
+            style="position: sticky; top: 100px; background: rgba(20, 20, 40, 0.95); border: 1px solid #D4AF37; padding: 25px 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <h3 style="color: #D4AF37; margin-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 1.5rem;">
+              Un doute subsiste ?</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 25px; color: #fff; line-height: 1.4;">Nos experts
+              sont connectés en ce moment pour vous guider.</p>
+
+            <div
+              style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; text-align: left;">
+              <div style="position: relative; width: 60px; height: 60px;">
+                <img src="/images/profiles/profile_thomas.png" alt="Thomas"
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #D4AF37;">
+                <div class="online-badge"
+                  style="position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; background: #2ecc71; border-radius: 50%; border: 2px solid #1a1a2e;">
+                </div>
+              </div>
+              <div>
+                <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: bold; color: #fff;">
+                  Thomas</div>
+                <div style="font-size: 0.8rem; color: #ccc;">Radiesthésiste - 98% avis positifs</div>
+              </div>
+            </div>
+
+            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+              class="btn btn-gold icon-pulse" data-affiliate="voyance-telephone"
+              style="width: 100%; text-align: center; margin-bottom: 15px; display: block; padding: 12px; font-weight: bold; text-transform: uppercase; border-radius: 25px;">APPELER
+              THOMAS</a>
+            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+              class="btn btn-outline" data-affiliate="voyance-chat"
+              style="width: 100%; text-align: center; display: block; padding: 12px; border: 1px solid #D4AF37; color: #D4AF37; text-transform: uppercase; border-radius: 25px; font-size: 0.9rem;">CHATTER</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </main>
 
   <!-- Sticky CTA -->
@@ -281,8 +409,8 @@
   </footer>
 
   <script src="/js/animations.js" defer></script>
-  <script src="/js/main.js?v=2027"></script>
-  <script src="/js/logger.js"></script>
-  </body>
+  <script src="/js/main.js?v=2027" defer></script>
+  <script src="/js/logger.js" defer></script>
+</body>
 
 </html>
