@@ -1,0 +1,224 @@
+{
+    "platforms": [
+        {
+            "name": "Wengo",
+            "slug": "wengo",
+            "url": "https://www.wengo.fr/voyance-astrologie-1270",
+            "isAffiliate": true,
+            "rating": 4.5,
+            "ratingCount": 12500,
+            "yearFounded": 2007,
+            "headquarters": "Paris, France",
+            "channels": ["Téléphone", "Chat", "Email"],
+            "specialties": ["Voyance", "Astrologie", "Tarot", "Numérologie", "Médiumnité"],
+            "priceRange": "2,00 - 5,00 €/min",
+            "priceMin": 2.00,
+            "freeOffer": "Jusqu'à 10 minutes offertes à l'inscription",
+            "nbPractitioners": "500+",
+            "availability": "24h/24, 7j/7",
+            "trustpilotScore": "4.2/5",
+            "paymentMethods": ["Carte bancaire", "PayPal"],
+            "pros": [
+                "Large choix de voyants avec profils détaillés et avis vérifiés",
+                "Minutes offertes généreuses pour tester le service",
+                "Système de notation transparent avec vrais retours clients",
+                "Disponibilité 24h/24 avec un panel de voyants toujours en ligne",
+                "Interface ergonomique et processus de mise en relation rapide"
+            ],
+            "cons": [
+                "Tarifs qui peuvent grimper avec les voyants les plus demandés",
+                "Qualité variable selon le praticien choisi",
+                "Pas d'option audiotel pour les consultations sans CB"
+            ],
+            "verdict": "Wengo est la plateforme la plus complète du marché français. Son système d'avis vérifiés et ses minutes offertes en font un choix sûr pour débuter comme pour consulter régulièrement.",
+            "bestFor": "Ceux qui veulent choisir leur voyant parmi un large panel avec des avis fiables"
+        },
+        {
+            "name": "Spiriteo",
+            "slug": "spiriteo",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 4.0,
+            "ratingCount": 3200,
+            "yearFounded": 2015,
+            "headquarters": "France",
+            "channels": ["Téléphone", "Chat"],
+            "specialties": ["Voyance", "Tarot", "Médiumnité", "Astrologie"],
+            "priceRange": "2,90 - 4,90 €/min",
+            "priceMin": 2.90,
+            "freeOffer": "5 premières minutes offertes",
+            "nbPractitioners": "150+",
+            "availability": "7h-3h du matin",
+            "trustpilotScore": "3.8/5",
+            "paymentMethods": ["Carte bancaire"],
+            "pros": [
+                "Voyants sélectionnés avec un processus de recrutement exigeant",
+                "Interface moderne et navigation intuitive",
+                "Service client réactif et à l'écoute"
+            ],
+            "cons": [
+                "Panel de voyants plus restreint que les leaders du marché",
+                "Pas disponible 24h/24",
+                "Minutes offertes limitées à 5 minutes",
+                "Pas de consultation par email"
+            ],
+            "verdict": "Spiriteo mise sur la qualité plutôt que la quantité. Une bonne option pour ceux qui préfèrent un panel restreint mais vérifié.",
+            "bestFor": "Ceux qui préfèrent un panel sélectif de voyants vérifiés"
+        },
+        {
+            "name": "Jimini",
+            "slug": "jimini",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.8,
+            "ratingCount": 2800,
+            "yearFounded": 2018,
+            "headquarters": "France",
+            "channels": ["Téléphone", "Chat", "SMS"],
+            "specialties": ["Voyance", "Tarot", "Numérologie", "Astrologie"],
+            "priceRange": "1,90 - 3,90 €/min",
+            "priceMin": 1.90,
+            "freeOffer": "3 premières minutes offertes",
+            "nbPractitioners": "80+",
+            "availability": "8h-minuit",
+            "trustpilotScore": "3.5/5",
+            "paymentMethods": ["Carte bancaire", "Audiotel"],
+            "pros": [
+                "Tarifs parmi les plus bas du marché",
+                "Consultation par SMS disponible",
+                "Option audiotel sans carte bancaire"
+            ],
+            "cons": [
+                "Panel de voyants limité",
+                "Horaires de disponibilité restreints",
+                "Moins d'avis clients que les plateformes établies",
+                "Interface un peu datée"
+            ],
+            "verdict": "Jimini se positionne sur les petits budgets. L'option audiotel est un vrai plus, mais le panel reste limité.",
+            "bestFor": "Les petits budgets et ceux qui cherchent l'audiotel"
+        },
+        {
+            "name": "Kang",
+            "slug": "kang",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.5,
+            "ratingCount": 1500,
+            "yearFounded": 2012,
+            "headquarters": "France",
+            "channels": ["Téléphone", "Email"],
+            "specialties": ["Voyance", "Médiumnité", "Guidance spirituelle"],
+            "priceRange": "2,50 - 5,50 €/min",
+            "priceMin": 2.50,
+            "freeOffer": "3 premières minutes offertes",
+            "nbPractitioners": "60+",
+            "availability": "9h-23h",
+            "trustpilotScore": "3.3/5",
+            "paymentMethods": ["Carte bancaire"],
+            "pros": [
+                "Voyants spécialisés en médiumnité",
+                "Consultation par email pour les questions non urgentes",
+                "Approche personnalisée de chaque consultation"
+            ],
+            "cons": [
+                "Panel restreint de voyants",
+                "Tarifs dans la fourchette haute",
+                "Pas de chat en ligne",
+                "Horaires de disponibilité limités",
+                "Moins de transparence sur les avis"
+            ],
+            "verdict": "Kang cible un public spécifique intéressé par la médiumnité. Le panel est petit mais spécialisé.",
+            "bestFor": "Ceux qui cherchent spécifiquement un médium"
+        },
+        {
+            "name": "Avigora",
+            "slug": "avigora",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.7,
+            "ratingCount": 2100,
+            "yearFounded": 2010,
+            "headquarters": "France",
+            "channels": ["Téléphone", "Chat"],
+            "specialties": ["Voyance", "Tarot", "Astrologie", "Numérologie"],
+            "priceRange": "2,00 - 4,50 €/min",
+            "priceMin": 2.00,
+            "freeOffer": "5 premières minutes offertes",
+            "nbPractitioners": "120+",
+            "availability": "24h/24, 7j/7",
+            "trustpilotScore": "3.6/5",
+            "paymentMethods": ["Carte bancaire", "Audiotel"],
+            "pros": [
+                "Disponibilité 24h/24",
+                "Option audiotel disponible",
+                "Tarifs d'entrée compétitifs",
+                "Ancienneté et expérience sur le marché"
+            ],
+            "cons": [
+                "Interface vieillissante",
+                "Système d'avis moins développé",
+                "Qualité inégale des praticiens",
+                "Navigation perfectible sur mobile"
+            ],
+            "verdict": "Avigora est un acteur historique qui mise sur la disponibilité et l'audiotel. L'interface mériterait un coup de neuf.",
+            "bestFor": "Ceux qui consultent la nuit ou qui veulent l'option audiotel"
+        }
+    ],
+    "comparisons": [
+        {
+            "slug": "wengo-vs-spiriteo",
+            "platformA": "wengo",
+            "platformB": "spiriteo",
+            "title": "Wengo ou Spiriteo",
+            "subtitle": "quelle plateforme de voyance en ligne choisir ?",
+            "verdictBudget": "Wengo (tarif d'entrée plus bas et plus de minutes offertes)",
+            "verdictQuality": "Égalité (les deux misent sur des voyants vérifiés)",
+            "verdictChoice": "Wengo (panel 3x plus large)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs 5)"
+        },
+        {
+            "slug": "wengo-vs-jimini",
+            "platformA": "wengo",
+            "platformB": "jimini",
+            "title": "Wengo ou Jimini",
+            "subtitle": "comparatif des deux plateformes de voyance",
+            "verdictBudget": "Jimini (tarifs légèrement plus bas)",
+            "verdictQuality": "Wengo (plus de voyants, plus d'avis vérifiés)",
+            "verdictChoice": "Wengo (500+ voyants vs 80+)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs 3)"
+        },
+        {
+            "slug": "wengo-vs-avigora",
+            "platformA": "wengo",
+            "platformB": "avigora",
+            "title": "Wengo ou Avigora",
+            "subtitle": "quel site de voyance privilégier en 2026 ?",
+            "verdictBudget": "Égalité (tarifs d'entrée similaires)",
+            "verdictQuality": "Wengo (système d'avis plus transparent)",
+            "verdictChoice": "Wengo (panel plus large et diversifié)",
+            "verdictBeginner": "Wengo (meilleure offre découverte)"
+        },
+        {
+            "slug": "spiriteo-vs-jimini",
+            "platformA": "spiriteo",
+            "platformB": "jimini",
+            "title": "Spiriteo ou Jimini",
+            "subtitle": "comparatif voyance en ligne 2026",
+            "verdictBudget": "Jimini (tarifs plus accessibles)",
+            "verdictQuality": "Spiriteo (sélection plus rigoureuse)",
+            "verdictChoice": "Spiriteo (panel un peu plus large)",
+            "verdictBeginner": "Spiriteo (5 min offertes vs 3)"
+        },
+        {
+            "slug": "spiriteo-vs-avigora",
+            "platformA": "spiriteo",
+            "platformB": "avigora",
+            "title": "Spiriteo ou Avigora",
+            "subtitle": "quelle voyance en ligne choisir ?",
+            "verdictBudget": "Avigora (tarif d'entrée légèrement plus bas)",
+            "verdictQuality": "Spiriteo (recrutement plus exigeant)",
+            "verdictChoice": "Avigora (disponibilité 24h/24)",
+            "verdictBeginner": "Égalité (5 minutes offertes chacun)"
+        }
+    ]
+}

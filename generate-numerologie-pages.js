@@ -1,0 +1,1218 @@
+/**
+ * Numerologie - 12 Chemins de Vie Page Generator
+ * Generates:
+ *   - 12 individual chemin de vie pages at /numerologie/chemin-de-vie-{N}/index.html
+ *   - 1 pillar page at /numerologie/index.html
+ *
+ * Run: node generate-numerologie-pages.js
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// ─── LOAD DATA ───────────────────────────────────────────────────────────────
+
+const dataPath = path.join(__dirname, 'data', 'numerologie-chemins.json');
+const { chemins } = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const outputDir = path.join(__dirname, 'numerologie');
+
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+
+const SITE_URL = 'https://france-voyance-avenir.fr';
+
+// ─── Navigation order for prev/next ──────────────────────────────────────────
+
+const NAV_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+// ─── INLINE CSS ─────────────────────────────────────────────────────────────
+
+const NUMERO_INLINE_CSS = `
+<style>
+    .chemin-hero {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+        .chemin-hero { flex-direction: column; align-items: center; }
+    }
+    .chemin-number-display {
+        flex-shrink: 0;
+        width: 180px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #4A1A6B 0%, #1A1A4A 100%);
+        border: 4px solid #D4AF37;
+        box-shadow: 0 8px 30px rgba(74, 26, 107, 0.4);
+    }
+    .chemin-number-display span {
+        font-family: 'Playfair Display', serif;
+        font-size: 4em;
+        font-weight: 700;
+        color: #D4AF37;
+    }
+    .chemin-intro {
+        flex: 1;
+    }
+    .chemin-intro h1 {
+        font-family: 'Playfair Display', serif;
+        color: #4A1A6B;
+        font-size: 2em;
+        margin-bottom: 8px;
+    }
+    .chemin-subtitle {
+        font-family: 'Playfair Display', serif;
+        color: #D4AF37;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        font-style: italic;
+    }
+    .chemin-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .chemin-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #f8f6fc;
+        border: 1px solid #e0d4f0;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        color: #4A1A6B;
+    }
+    .chemin-badge i { color: #D4AF37; }
+    .master-badge {
+        background: linear-gradient(135deg, #D4AF37, #f5e6a3);
+        color: #4A1A6B;
+        font-weight: 700;
+        border: 1px solid #D4AF37;
+    }
+    .forces-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 25px 0;
+    }
+    @media (max-width: 768px) {
+        .forces-grid { grid-template-columns: 1fr; }
+    }
+    .forces-box {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .forces-positives {
+        background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+        border: 1px solid #a5d6a7;
+    }
+    .forces-negatives {
+        background: linear-gradient(135deg, #fce4ec, #fff3e0);
+        border: 1px solid #ef9a9a;
+    }
+    .forces-box h3 {
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 12px;
+        font-size: 1.1em;
+    }
+    .forces-positives h3 { color: #2e7d32; }
+    .forces-negatives h3 { color: #c62828; }
+    .forces-box .force-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        margin: 3px;
+    }
+    .forces-positives .force-tag {
+        background: #fff;
+        color: #2e7d32;
+        border: 1px solid #a5d6a7;
+    }
+    .forces-negatives .force-tag {
+        background: #fff;
+        color: #c62828;
+        border: 1px solid #ef9a9a;
+    }
+    .meaning-section {
+        margin: 35px 0;
+        padding: 30px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        border: 1px solid #eee;
+    }
+    .meaning-section h2 {
+        font-family: 'Playfair Display', serif;
+        color: #4A1A6B;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #D4AF37;
+    }
+    .meaning-section h2 i {
+        color: #D4AF37;
+        margin-right: 10px;
+    }
+    .meaning-content p {
+        margin-bottom: 15px;
+        line-height: 1.8;
+        color: #333;
+    }
+    .compat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    @media (max-width: 768px) {
+        .compat-grid { grid-template-columns: 1fr; }
+    }
+    .compat-card {
+        padding: 18px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .compat-best {
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        border: 1px solid #a5d6a7;
+    }
+    .compat-good {
+        background: linear-gradient(135deg, #fff8e1, #ffecb3);
+        border: 1px solid #ffe082;
+    }
+    .compat-challenge {
+        background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+        border: 1px solid #ef9a9a;
+    }
+    .compat-card h4 {
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+    }
+    .compat-best h4 { color: #2e7d32; }
+    .compat-good h4 { color: #f57f17; }
+    .compat-challenge h4 { color: #c62828; }
+    .compat-numbers {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .compat-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+        font-weight: 700;
+        font-size: 1em;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .compat-best .compat-num { color: #2e7d32; border: 2px solid #a5d6a7; }
+    .compat-good .compat-num { color: #f57f17; border: 2px solid #ffe082; }
+    .compat-challenge .compat-num { color: #c62828; border: 2px solid #ef9a9a; }
+    .compat-num:hover {
+        transform: scale(1.15);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .celebs-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    .celeb-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #f8f6fc;
+        border: 1px solid #e0d4f0;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        color: #4A1A6B;
+    }
+    .celeb-tag i { color: #D4AF37; }
+    .conseil-box {
+        background: linear-gradient(135deg, #4A1A6B 0%, #1A1A4A 100%);
+        color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        margin: 35px 0;
+        text-align: center;
+        border: 2px solid #D4AF37;
+    }
+    .conseil-box h3 {
+        color: #D4AF37;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    .conseil-box p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        font-style: italic;
+    }
+    .chemin-nav {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0 20px;
+        gap: 15px;
+    }
+    .chemin-nav a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        background: #f8f6fc;
+        border-radius: 10px;
+        color: #4A1A6B;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid #e0d4f0;
+        transition: all 0.3s ease;
+    }
+    .chemin-nav a:hover {
+        background: #4A1A6B;
+        color: #fff;
+    }
+    .chemin-nav a i { color: #D4AF37; }
+    .pillar-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+    .pillar-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        border: 1px solid #eee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+        padding: 25px 15px;
+    }
+    .pillar-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(74, 26, 107, 0.2);
+    }
+    .pillar-number {
+        width: 80px;
+        height: 80px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #4A1A6B 0%, #1A1A4A 100%);
+        border: 3px solid #D4AF37;
+        margin-bottom: 15px;
+    }
+    .pillar-number span {
+        font-family: 'Playfair Display', serif;
+        font-size: 2em;
+        font-weight: 700;
+        color: #D4AF37;
+    }
+    .pillar-card-info h3 {
+        font-family: 'Playfair Display', serif;
+        color: #4A1A6B;
+        font-size: 1em;
+        margin-bottom: 4px;
+    }
+    .pillar-card-info span {
+        font-size: 0.85em;
+        color: #888;
+        font-style: italic;
+    }
+    .pillar-master .pillar-number {
+        background: linear-gradient(135deg, #D4AF37 0%, #8B6914 100%);
+        border-color: #4A1A6B;
+    }
+    .pillar-master .pillar-number span { color: #fff; }
+    .hub-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 25px 0;
+    }
+    @media (max-width: 768px) {
+        .hub-links { grid-template-columns: 1fr; }
+    }
+    .hub-link {
+        display: block;
+        padding: 18px 20px;
+        background: #f8f6fc;
+        border-radius: 10px;
+        color: #4A1A6B;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid #e0d4f0;
+        transition: all 0.3s ease;
+    }
+    .hub-link:hover {
+        background: #4A1A6B;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+    .hub-link i { color: #D4AF37; margin-right: 10px; }
+    .calcul-section {
+        background: #f8f6fc;
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+        border: 1px solid #e0d4f0;
+    }
+    .calcul-section h3 {
+        font-family: 'Playfair Display', serif;
+        color: #4A1A6B;
+        margin-bottom: 15px;
+    }
+    .calcul-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .calcul-step {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #e0d4f0;
+    }
+    .calcul-step .step-num {
+        width: 36px;
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #4A1A6B;
+        color: #D4AF37;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .calcul-step p {
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.5;
+    }
+</style>`;
+
+// ─── SHARED HTML PARTS ──────────────────────────────────────────────────────
+
+function getHead(title, metaDesc, canonical, schemaLD) {
+    return `<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title}</title>
+    <meta name="description" content="${metaDesc}">
+    <link rel="canonical" href="${SITE_URL}${canonical}">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/animations.css?v=2026">
+    <script src="/js/config.js"></script>
+
+    ${NUMERO_INLINE_CSS}
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    ${JSON.stringify(schemaLD, null, 2)}
+    </script>
+</head>`;
+}
+
+function getHeader() {
+    return `
+    <div class="stars-container"></div>
+    <div class="reading-progress-container">
+        <div class="reading-progress-bar"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <img src="/images/logo.svg" alt="France Voyance Avenir">
+            </a>
+
+            <div class="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-nav">
+                <a href="/" class="nav-logo">
+                    <img src="/images/logo.svg" alt="France Voyance Avenir">
+                </a>
+                <ul>
+                    <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+                    <li class="nav-item">
+                        <a href="/voyance-gratuite/" class="nav-link">Voyance Gratuite <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/voyance-gratuite/tarot-gratuit/">Tarot Gratuit</a></li>
+                            <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
+                            <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie Gratuite</a></li>
+                            <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
+                            <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
+                            <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
+                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Ge</a></li>
+                            <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
+                            <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Consultations <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/consultations/amour-retour-affectif/">Amour & Retour Affectif</a></li>
+                            <li><a href="/consultations/flamme-jumelle/">Flamme Jumelle</a></li>
+                            <li><a href="/consultations/medium-defunts/">Medium & Defunts</a></li>
+                            <li><a href="/consultations/travail-carriere/">Travail & Carriere</a></li>
+                            <li><a href="/consultations/argent-finances/">Argent & Finances</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Consulter <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/consulter/voyance-telephone/">Voyance Telephone</a></li>
+                            <li><a href="/consulter/voyance-sms/">Voyance SMS</a></li>
+                            <li><a href="/consulter/voyance-chat/">Voyance Chat</a></li>
+                            <li><a href="/consulter/voyance-audiotel/">Voyance Audiotel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="/avis/" class="nav-link">Avis & Comparatifs</a></li>
+                </ul>
+                <div class="header-cta text-center mt-3 mt-lg-0 ml-lg-4">
+                    <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('numerologie'), '_blank'); return false;" class="btn btn-gold" data-affiliate="numerologie">Consultation Immediate</a>
+                </div>
+            </nav>
+        </div>
+    </header>`;
+}
+
+function getFooter() {
+    return `
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <i class="fa-solid fa-moon"></i> France Voyance Avenir
+                    </div>
+                    <p>Votre guide vers les arts divinatoires. Trouvez le voyant qui vous correspond parmi notre selection de professionnels verifies.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation Rapide</h4>
+                    <ul class="footer-links">
+                        <li><a href="/consulter/voyance-telephone/">Voyance Telephone</a></li>
+                        <li><a href="/voyance-gratuite/">Voyance Gratuite</a></li>
+                        <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
+                        <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
+                        <li><a href="/numerologie/">Numerologie</a></li>
+                        <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie Gratuite</a></li>
+                        <li><a href="/blog/">Le Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul class="footer-links">
+                        <li><a href="/legal/mentions-legales/">Mentions Legales</a></li>
+                        <li><a href="/legal/politique-confidentialite/">Politique de Confidentialite</a></li>
+                        <li><a href="/legal/politique-cookies/">Politique des Cookies</a></li>
+                        <li><a href="/legal/cgu/">CGU</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/plan-du-site/">Plan du site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--color-secondary);"></i> contact@france-voyance-avenir.fr</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 France Voyance Avenir - Tous droits reserves</p>
+                <div class="disclaimer">
+                    Ce site propose des services de divertissement. Les consultations de voyance ne remplacent pas un avis medical, juridique ou financier professionnel.
+                </div>
+                <p class="affiliate-disclosure">
+                    * Ce site contient des liens affilies. En cliquant sur ces liens et en effectuant un achat, nous pouvons recevoir une commission sans frais supplementaires pour vous. Cela nous aide a maintenir ce site gratuit.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+        <div class="sticky-cta-pulse"></div>
+        <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('numerologie'), '_blank'); return false;" data-affiliate="numerologie" class="btn btn-gold">
+            <span class="sticky-cta-icon"><i class="fas fa-phone-alt"></i></span>
+            <span>Consulter</span>
+        </a>
+    </div>
+
+    <script src="/js/animations.js" defer></script>
+    <script src="/js/main.js?v=2026"></script>`;
+}
+
+// ─── HELPER: escape HTML ────────────────────────────────────────────────────
+
+function esc(str) {
+    return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// ─── HELPER: convert paragraphs ─────────────────────────────────────────────
+
+function toParas(text) {
+    return text.split('\n\n').filter(p => p.trim()).map(p => `<p>${p.trim()}</p>`).join('\n                    ');
+}
+
+// ─── HELPER: find chemin by number ──────────────────────────────────────────
+
+function findChemin(num) {
+    return chemins.find(c => c.number === num);
+}
+
+// ─── HELPER: get display label for a number ─────────────────────────────────
+
+function getLabel(num) {
+    const c = findChemin(num);
+    return c ? `Chemin ${c.number}` : `Chemin ${num}`;
+}
+
+// ─── HELPER: compatibility number links ─────────────────────────────────────
+
+function compatLinks(nums) {
+    return nums.map(num => {
+        const c = findChemin(num);
+        const slug = c ? c.slug : `chemin-de-vie-${num}`;
+        return `<a href="/numerologie/${slug}/" class="compat-num" title="Chemin de vie ${num}">${num}</a>`;
+    }).join('\n                            ');
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// INDIVIDUAL CHEMIN DE VIE PAGE
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function generateCheminPage(chemin) {
+    const navIdx = NAV_ORDER.indexOf(chemin.number);
+    const prevNum = NAV_ORDER[(navIdx - 1 + NAV_ORDER.length) % NAV_ORDER.length];
+    const nextNum = NAV_ORDER[(navIdx + 1) % NAV_ORDER.length];
+    const prevChemin = findChemin(prevNum);
+    const nextChemin = findChemin(nextNum);
+
+    const title = `${chemin.title} : ${chemin.subtitle} - Signification Numerologie | France Voyance Avenir`;
+    const metaDesc = `Decouvrez la signification du ${chemin.title} en numerologie : personnalite, amour, travail, argent, compatibilite. ${chemin.subtitle}. Guide complet 2026.`;
+    const canonical = `/numerologie/${chemin.slug}/`;
+
+    const isMaster = chemin.isMaster === true;
+
+    // Schema.org
+    const schema = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": `${chemin.title} : ${chemin.subtitle} - Signification et Interpretation en Numerologie`,
+            "description": chemin.summary,
+            "author": { "@type": "Organization", "name": "France Voyance Avenir" },
+            "publisher": {
+                "@type": "Organization",
+                "name": "France Voyance Avenir",
+                "logo": { "@type": "ImageObject", "url": `${SITE_URL}/images/logo.svg` }
+            },
+            "datePublished": "2026-02-20",
+            "dateModified": new Date().toISOString().split('T')[0],
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}${canonical}` }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": chemin.faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+            }))
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE_URL },
+                { "@type": "ListItem", "position": 2, "name": "Numerologie", "item": `${SITE_URL}/numerologie/` },
+                { "@type": "ListItem", "position": 3, "name": chemin.title, "item": `${SITE_URL}${canonical}` }
+            ]
+        }
+    ];
+
+    return `${getHead(title, metaDesc, canonical, schema)}
+
+<body>
+${getHeader()}
+
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb-section" style="padding: 15px 0; background: rgba(26,26,74,0.03);">
+        <div class="container">
+            <nav aria-label="Fil d'Ariane">
+                <ol style="display:flex; list-style:none; padding:0; margin:0; font-size:0.9em; gap:8px; flex-wrap:wrap;">
+                    <li><a href="/" style="color:#4A1A6B;">Accueil</a></li>
+                    <li style="color:#999;">›</li>
+                    <li><a href="/numerologie/" style="color:#4A1A6B;">Numerologie</a></li>
+                    <li style="color:#999;">›</li>
+                    <li style="color:#888;">${chemin.title}</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="content-section" style="padding: 50px 0;">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+
+                    <!-- Hero -->
+                    <div class="chemin-hero">
+                        <div class="chemin-number-display"${isMaster ? ' style="background: linear-gradient(135deg, #D4AF37 0%, #8B6914 100%);"' : ''}>
+                            <span>${chemin.number}</span>
+                        </div>
+                        <div class="chemin-intro">
+                            <h1>${chemin.title}</h1>
+                            <div class="chemin-subtitle">${chemin.subtitle}</div>
+                            <div class="chemin-meta">
+                                ${isMaster ? '<span class="chemin-badge master-badge"><i class="fas fa-crown"></i> Maitre Nombre</span>' : ''}
+                                <span class="chemin-badge"><i class="fas fa-fire"></i> ${chemin.element}</span>
+                                <span class="chemin-badge"><i class="fas fa-globe"></i> ${chemin.planet}</span>
+                                <span class="chemin-badge"><i class="fas fa-palette"></i> ${chemin.color}</span>
+                                <span class="chemin-badge"><i class="fas fa-gem"></i> ${chemin.crystal}</span>
+                            </div>
+                            <p style="line-height:1.8; color:#333;">${chemin.summary}</p>
+                        </div>
+                    </div>
+
+                    <!-- Signification generale -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-book-open"></i> Signification generale du ${chemin.title}</h2>
+                        <div class="meaning-content">
+                            ${toParas(chemin.description)}
+                        </div>
+                    </div>
+
+                    <!-- Forces & Faiblesses -->
+                    <div class="forces-grid">
+                        <div class="forces-box forces-positives">
+                            <h3><i class="fas fa-arrow-up"></i> Forces</h3>
+                            ${chemin.strengths.map(s => `<span class="force-tag">${s}</span>`).join('\n                            ')}
+                        </div>
+                        <div class="forces-box forces-negatives">
+                            <h3><i class="fas fa-arrow-down"></i> Faiblesses</h3>
+                            ${chemin.weaknesses.map(w => `<span class="force-tag">${w}</span>`).join('\n                            ')}
+                        </div>
+                    </div>
+
+                    <!-- Amour -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-heart"></i> ${chemin.title} en Amour</h2>
+                        <div class="meaning-content">
+                            ${toParas(chemin.amour)}
+                        </div>
+                        <div style="text-align:center; margin-top:25px;">
+                            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('amour'), '_blank'); return false;" class="btn btn-gold" data-affiliate="amour" style="display:inline-block; padding:14px 30px; font-size:1em;">
+                                <i class="fas fa-heart" style="margin-right:8px;"></i> Consulter un voyant amour
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Travail -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-briefcase"></i> ${chemin.title} au Travail</h2>
+                        <div class="meaning-content">
+                            ${toParas(chemin.travail)}
+                        </div>
+                    </div>
+
+                    <!-- Argent -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-coins"></i> ${chemin.title} en Argent & Finances</h2>
+                        <div class="meaning-content">
+                            ${toParas(chemin.argent)}
+                        </div>
+                    </div>
+
+                    <!-- Sante -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-spa"></i> ${chemin.title} en Sante & Bien-etre</h2>
+                        <div class="meaning-content">
+                            ${toParas(chemin.sante)}
+                        </div>
+                        <p style="font-size:0.85em; color:#999; margin-top:20px; font-style:italic;">
+                            <i class="fas fa-info-circle"></i> Les interpretations en sante sont donnees a titre indicatif et ne remplacent en aucun cas un avis medical professionnel.
+                        </p>
+                    </div>
+
+                    <!-- Compatibilite -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-handshake"></i> Compatibilite du ${chemin.title}</h2>
+                        <p style="margin-bottom:20px; color:#555;">Decouvrez quels chemins de vie sont les plus compatibles avec le ${chemin.title} :</p>
+                        <div class="compat-grid">
+                            <div class="compat-card compat-best">
+                                <h4><i class="fas fa-heart" style="margin-right:6px;"></i> Excellente</h4>
+                                <div class="compat-numbers">
+                                    ${compatLinks(chemin.compatibility.best)}
+                                </div>
+                            </div>
+                            <div class="compat-card compat-good">
+                                <h4><i class="fas fa-thumbs-up" style="margin-right:6px;"></i> Bonne</h4>
+                                <div class="compat-numbers">
+                                    ${compatLinks(chemin.compatibility.good)}
+                                </div>
+                            </div>
+                            <div class="compat-card compat-challenge">
+                                <h4><i class="fas fa-exclamation-triangle" style="margin-right:6px;"></i> Complexe</h4>
+                                <div class="compat-numbers">
+                                    ${compatLinks(chemin.compatibility.challenging)}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Celebrites -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-star"></i> Personnalites celebres ${chemin.title}</h2>
+                        <p style="margin-bottom:15px; color:#555;">Ces personnalites partagent le ${chemin.title} :</p>
+                        <div class="celebs-list">
+                            ${chemin.celebrities.map(c => `<span class="celeb-tag"><i class="fas fa-user"></i> ${c}</span>`).join('\n                            ')}
+                        </div>
+                    </div>
+
+                    <!-- Conseil -->
+                    <div class="conseil-box">
+                        <h3><i class="fas fa-lightbulb" style="margin-right:10px;"></i> Le conseil du ${chemin.title}</h3>
+                        <p>${chemin.conseil}</p>
+                    </div>
+
+                    <!-- CTA -->
+                    <div style="text-align:center; margin:40px 0;">
+                        <p style="font-size:1.1em; color:#4A1A6B; margin-bottom:20px; font-weight:600;">Vous etes ${chemin.title} ? Obtenez une analyse numerologique personnalisee.</p>
+                        <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('numerologie'), '_blank'); return false;" class="btn btn-gold" data-affiliate="numerologie" style="display:inline-block; padding:16px 35px; font-size:1.1em;">
+                            <i class="fas fa-phone-alt" style="margin-right:10px;"></i> Consulter un numerologue maintenant
+                        </a>
+                        <p style="font-size:0.85em; color:#999; margin-top:10px;">* Jusqu'a 10 minutes offertes pour votre premiere consultation</p>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="meaning-section">
+                        <h2><i class="fas fa-question-circle"></i> Questions frequentes sur le ${chemin.title}</h2>
+                        <div class="faq-schema">
+                            ${chemin.faqs.map(faq => `
+                            <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
+                                <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                                    ${faq.question}
+                                </summary>
+                                <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                                    ${faq.answer}
+                                </div>
+                            </details>`).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Navigation prev/next -->
+                    <div class="chemin-nav">
+                        <a href="/numerologie/${prevChemin.slug}/">
+                            <i class="fas fa-chevron-left"></i> Chemin ${prevChemin.number}
+                        </a>
+                        <a href="/numerologie/">
+                            <i class="fas fa-th"></i> Tous les chemins
+                        </a>
+                        <a href="/numerologie/${nextChemin.slug}/">
+                            Chemin ${nextChemin.number} <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="sidebar">
+                    <div class="cta-box" style="text-align:center;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                            <i class="fas fa-calculator" style="color:#D4AF37;"></i> Calculez votre chemin
+                        </h3>
+                        <p style="color:#555; margin-bottom:20px;">Decouvrez votre chemin de vie gratuitement grace a notre calculateur de numerologie en ligne.</p>
+                        <a href="/voyance-gratuite/numerologie-gratuite/" class="btn btn-gold" style="display:block; text-align:center; padding:14px; margin-bottom:15px;">
+                            <i class="fas fa-calculator" style="margin-right:8px;"></i> Calcul Gratuit
+                        </a>
+                    </div>
+
+                    <div class="cta-box" style="margin-top:25px; text-align:center;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                            <i class="fas fa-phone-alt" style="color:#D4AF37;"></i> Consultation privee
+                        </h3>
+                        <p style="color:#555; margin-bottom:15px;">Un numerologue professionnel vous eclaire sur votre chemin de vie et votre avenir.</p>
+                        <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('numerologie'), '_blank'); return false;" class="btn btn-gold" data-affiliate="numerologie" style="display:block; text-align:center; padding:14px;">
+                            <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Appeler un numerologue *
+                        </a>
+                        <p style="font-size:0.8em; color:#999; margin-top:8px;">* 10 min offertes</p>
+                    </div>
+
+                    <div class="cta-box" style="margin-top:25px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                            <i class="fas fa-hashtag" style="color:#D4AF37;"></i> Autres chemins de vie
+                        </h3>
+                        <ul style="list-style:none; padding:0;">
+                            ${chemins.filter(c => c.number !== chemin.number).slice(0, 8).map(c => `
+                            <li style="margin-bottom:8px;">
+                                <a href="/numerologie/${c.slug}/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:6px 0;">
+                                    <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> ${c.title} - ${c.subtitle}
+                                </a>
+                            </li>`).join('')}
+                        </ul>
+                        <a href="/numerologie/" style="display:block; text-align:center; margin-top:12px; color:#4A1A6B; font-weight:600; text-decoration:none;">
+                            Voir les 12 chemins →
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+${getFooter()}
+</body>
+</html>`;
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// PILLAR PAGE
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function generatePillarPage() {
+    const title = 'Chemin de Vie en Numerologie : Signification des 12 Nombres | France Voyance Avenir';
+    const metaDesc = 'Guide complet des chemins de vie en numerologie : decouvrez la signification des nombres 1 a 9 et des maitres nombres 11, 22, 33. Calculez votre chemin de vie gratuitement.';
+    const canonical = '/numerologie/';
+
+    const schema = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Chemin de Vie en Numerologie : Guide Complet des 12 Nombres",
+            "description": metaDesc,
+            "author": { "@type": "Organization", "name": "France Voyance Avenir" },
+            "publisher": {
+                "@type": "Organization",
+                "name": "France Voyance Avenir",
+                "logo": { "@type": "ImageObject", "url": `${SITE_URL}/images/logo.svg` }
+            },
+            "datePublished": "2026-02-20",
+            "dateModified": new Date().toISOString().split('T')[0],
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}${canonical}` }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Les 12 Chemins de Vie en Numerologie",
+            "numberOfItems": 12,
+            "itemListElement": chemins.map((c, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": `${c.title} - ${c.subtitle}`,
+                "url": `${SITE_URL}/numerologie/${c.slug}/`
+            }))
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE_URL },
+                { "@type": "ListItem", "position": 2, "name": "Numerologie", "item": `${SITE_URL}${canonical}` }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Qu'est-ce que le chemin de vie en numerologie ?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Le chemin de vie est le nombre le plus important en numerologie. Calcule a partir de votre date de naissance, il revele votre mission de vie, vos talents naturels et les defis que vous devrez surmonter. Il existe 9 chemins de base (1 a 9) et 3 maitres nombres (11, 22, 33) qui portent une vibration superieure." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment calculer son chemin de vie ?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Pour calculer votre chemin de vie, additionnez tous les chiffres de votre date de naissance et reduisez le resultat a un seul chiffre. Par exemple, pour le 15 mars 1990 : 1+5+0+3+1+9+9+0 = 28, puis 2+8 = 10, puis 1+0 = 1. Si vous obtenez 11, 22 ou 33, ne reduisez pas : ce sont des maitres nombres." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Quels sont les maitres nombres en numerologie ?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Les maitres nombres sont le 11, le 22 et le 33. Ils possedent une vibration superieure et ne sont pas reduits a un seul chiffre lors du calcul. Le 11 est le Visionnaire, le 22 le Maitre Batisseur et le 33 le Maitre Guerisseur. Ces nombres confèrent une mission de vie exceptionnelle et des defis proportionnels." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Quel est le chemin de vie le plus chanceux ?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Chaque chemin de vie possede ses propres forces et opportunites. Le chemin 3, gouverne par Jupiter, est souvent associe a la chance. Le chemin 8 est lie a la reussite financiere. Cependant, aucun chemin n'est intrinsequement superieur : le veritable bonheur depend de la facon dont vous vivez les qualites de votre nombre." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Peut-on changer de chemin de vie ?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Non, votre chemin de vie est determine par votre date de naissance et reste le meme toute votre vie. Cependant, d'autres nombres de votre theme numerologique (nombre d'expression, nombre intime, annee personnelle) evoluent et nuancent l'influence de votre chemin de vie au fil du temps." }
+                }
+            ]
+        }
+    ];
+
+    return `${getHead(title, metaDesc, canonical, schema)}
+
+<body>
+${getHeader()}
+
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb-section" style="padding: 15px 0; background: rgba(26,26,74,0.03);">
+        <div class="container">
+            <nav aria-label="Fil d'Ariane">
+                <ol style="display:flex; list-style:none; padding:0; margin:0; font-size:0.9em; gap:8px;">
+                    <li><a href="/" style="color:#4A1A6B;">Accueil</a></li>
+                    <li style="color:#999;">›</li>
+                    <li style="color:#888;">Numerologie - Chemins de Vie</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <section style="background: linear-gradient(135deg, #1A1A4A 0%, #4A1A6B 100%); color:#fff; padding:60px 0; text-align:center;">
+        <div class="container">
+            <h1 style="font-family:'Playfair Display',serif; font-size:2.5em; margin-bottom:20px;">
+                <i class="fas fa-hashtag" style="color:#D4AF37; margin-right:15px;"></i>
+                Chemin de Vie en Numerologie : Guide Complet
+            </h1>
+            <p style="font-size:1.2em; max-width:700px; margin:0 auto 30px; opacity:0.9;">
+                Decouvrez la signification de votre chemin de vie : personnalite, amour, travail, compatibilite. Les 9 nombres de base et les 3 maitres nombres expliques.
+            </p>
+            <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+                <a href="/voyance-gratuite/numerologie-gratuite/" class="btn btn-gold" style="padding:14px 30px; font-size:1em;">
+                    <i class="fas fa-calculator" style="margin-right:8px;"></i> Calcul Gratuit
+                </a>
+                <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('numerologie'), '_blank'); return false;" class="btn" data-affiliate="numerologie" style="padding:14px 30px; font-size:1em; background:rgba(255,255,255,0.15); color:#fff; border-radius:10px; text-decoration:none; border:2px solid #D4AF37;">
+                    <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Consulter un numerologue *
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="content-section" style="padding: 50px 0;">
+        <div class="container">
+
+            <!-- Introduction -->
+            <div style="max-width:800px; margin:0 auto 50px;">
+                <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:25px;">Comprendre le Chemin de Vie</h2>
+                <p style="line-height:1.8; color:#444; margin-bottom:15px;">Le chemin de vie est le nombre le plus fondamental de votre theme numerologique. Calcule a partir de votre date de naissance complete, il revele votre mission de vie, vos talents naturels, vos defis karmiques et les grandes orientations de votre destinee. Comprendre votre chemin de vie, c'est dechiffrer le code que l'univers a inscrit en vous le jour de votre naissance.</p>
+                <p style="line-height:1.8; color:#444; margin-bottom:15px;">La numerologie reconnait 9 chemins de vie fondamentaux (de 1 a 9) et 3 maitres nombres (11, 22 et 33) qui portent une vibration superieure et une mission de vie exceptionnelle. Chaque nombre possede sa propre personnalite, ses forces, ses faiblesses et ses compatibilites avec les autres chemins.</p>
+                <p style="line-height:1.8; color:#444;">Explorez ci-dessous chaque chemin de vie pour decouvrir sa signification complete en amour, travail, finances et sante. Vous pouvez egalement utiliser notre calculateur gratuit pour connaitre votre propre chemin de vie.</p>
+            </div>
+
+            <!-- How to calculate -->
+            <div class="calcul-section">
+                <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:10px;">
+                    <i class="fas fa-calculator" style="color:#D4AF37; margin-right:10px;"></i> Comment calculer votre chemin de vie ?
+                </h2>
+                <p style="text-align:center; color:#555; margin-bottom:20px;">Le calcul est simple : additionnez tous les chiffres de votre date de naissance jusqu'a obtenir un seul chiffre (ou un maitre nombre).</p>
+                <div class="calcul-steps">
+                    <div class="calcul-step">
+                        <div class="step-num">1</div>
+                        <p><strong>Ecrivez</strong> votre date de naissance complete<br>(ex : 15/03/1990)</p>
+                    </div>
+                    <div class="calcul-step">
+                        <div class="step-num">2</div>
+                        <p><strong>Additionnez</strong> tous les chiffres<br>1+5+0+3+1+9+9+0 = 28</p>
+                    </div>
+                    <div class="calcul-step">
+                        <div class="step-num">3</div>
+                        <p><strong>Reduisez</strong> jusqu'a un seul chiffre<br>2+8 = 10, puis 1+0 = <strong>1</strong></p>
+                    </div>
+                    <div class="calcul-step">
+                        <div class="step-num">!</div>
+                        <p><strong>Exception :</strong> si vous obtenez 11, 22 ou 33, ne reduisez pas — c'est un maitre nombre !</p>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:25px;">
+                    <a href="/voyance-gratuite/numerologie-gratuite/" class="btn btn-gold" style="display:inline-block; padding:14px 30px; font-size:1em;">
+                        <i class="fas fa-calculator" style="margin-right:8px;"></i> Calculer mon chemin de vie gratuitement
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cards Grid: chemins 1-9 -->
+            <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin:40px 0 30px;">Les 9 Chemins de Vie</h2>
+
+            <div class="pillar-card-grid">
+                ${chemins.filter(c => c.number <= 9).map(c => `
+                <a href="/numerologie/${c.slug}/" class="pillar-card">
+                    <div class="pillar-number">
+                        <span>${c.number}</span>
+                    </div>
+                    <div class="pillar-card-info">
+                        <h3>${c.title}</h3>
+                        <span>${c.subtitle}</span>
+                    </div>
+                </a>`).join('')}
+            </div>
+
+            <!-- Cards Grid: master numbers -->
+            <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin:40px 0 30px;">
+                <i class="fas fa-crown" style="color:#D4AF37; margin-right:10px;"></i> Les 3 Maitres Nombres
+            </h2>
+
+            <div class="pillar-card-grid">
+                ${chemins.filter(c => c.number > 9).map(c => `
+                <a href="/numerologie/${c.slug}/" class="pillar-card pillar-master">
+                    <div class="pillar-number">
+                        <span>${c.number}</span>
+                    </div>
+                    <div class="pillar-card-info">
+                        <h3>${c.title}</h3>
+                        <span>${c.subtitle}</span>
+                    </div>
+                </a>`).join('')}
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align:center; margin:50px 0 40px;">
+                <div class="conseil-box">
+                    <h3><i class="fas fa-phone-alt" style="margin-right:10px;"></i> Besoin d'une analyse numerologique complete ?</h3>
+                    <p style="max-width:600px; margin:0 auto 20px;">Nos numerologues professionnels vous revelent les secrets de votre theme numerologique et vous guident dans vos decisions de vie.</p>
+                    <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('numerologie'), '_blank'); return false;" class="btn btn-gold" data-affiliate="numerologie" style="display:inline-block; padding:16px 35px; font-size:1.1em;">
+                        <i class="fas fa-phone-alt" style="margin-right:10px;"></i> Consulter maintenant
+                    </a>
+                    <p style="font-size:0.85em; opacity:0.7; margin-top:10px;">* Jusqu'a 10 minutes offertes pour votre premiere consultation</p>
+                </div>
+            </div>
+
+            <!-- Related links -->
+            <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:25px;">Explorez nos outils gratuits</h2>
+            <div class="hub-links">
+                <a href="/voyance-gratuite/numerologie-gratuite/" class="hub-link"><i class="fas fa-calculator"></i> Calculateur de Numerologie</a>
+                <a href="/voyance-gratuite/tarot-gratuit/" class="hub-link"><i class="fas fa-magic"></i> Tirage de Tarot Gratuit</a>
+                <a href="/voyance-gratuite/tarot-d-amour/" class="hub-link"><i class="fas fa-heart"></i> Tirage Tarot Amour</a>
+                <a href="/tarot-marseille/" class="hub-link"><i class="fas fa-star"></i> Tarot de Marseille</a>
+                <a href="/voyance-gratuite/pendule-oui-non/" class="hub-link"><i class="fas fa-circle-notch"></i> Pendule Oui/Non</a>
+                <a href="/voyance-gratuite/tarot-oui-non/" class="hub-link"><i class="fas fa-check-circle"></i> Tarot Oui/Non</a>
+            </div>
+
+            <!-- FAQ -->
+            <div class="meaning-section" style="margin-top:40px;">
+                <h2><i class="fas fa-question-circle"></i> Questions frequentes sur la Numerologie</h2>
+                <div class="faq-schema">
+                    <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                            Qu'est-ce que le chemin de vie en numerologie ?
+                        </summary>
+                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                            Le chemin de vie est le nombre le plus important en numerologie. Calcule a partir de votre date de naissance, il revele votre mission de vie, vos talents naturels et les defis que vous devrez surmonter. Il existe 9 chemins de base (1 a 9) et 3 maitres nombres (11, 22, 33) qui portent une vibration superieure.
+                        </div>
+                    </details>
+                    <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                            Comment calculer son chemin de vie ?
+                        </summary>
+                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                            Pour calculer votre chemin de vie, additionnez tous les chiffres de votre date de naissance et reduisez le resultat a un seul chiffre. Par exemple, pour le 15 mars 1990 : 1+5+0+3+1+9+9+0 = 28, puis 2+8 = 10, puis 1+0 = 1. Si vous obtenez 11, 22 ou 33, ne reduisez pas : ce sont des maitres nombres.
+                        </div>
+                    </details>
+                    <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                            Quels sont les maitres nombres en numerologie ?
+                        </summary>
+                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                            Les maitres nombres sont le 11, le 22 et le 33. Ils possedent une vibration superieure et ne sont pas reduits a un seul chiffre lors du calcul. Le 11 est le Visionnaire, le 22 le Maitre Batisseur et le 33 le Maitre Guerisseur. Ces nombres conferent une mission de vie exceptionnelle et des defis proportionnels.
+                        </div>
+                    </details>
+                    <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                            Quel est le chemin de vie le plus chanceux ?
+                        </summary>
+                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                            Chaque chemin de vie possede ses propres forces et opportunites. Le chemin 3, gouverne par Jupiter, est souvent associe a la chance. Le chemin 8 est lie a la reussite financiere. Cependant, aucun chemin n'est intrinsequement superieur : le veritable bonheur depend de la facon dont vous vivez les qualites de votre nombre.
+                        </div>
+                    </details>
+                    <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                            Peut-on changer de chemin de vie ?
+                        </summary>
+                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                            Non, votre chemin de vie est determine par votre date de naissance et reste le meme toute votre vie. Cependant, d'autres nombres de votre theme numerologique (nombre d'expression, nombre intime, annee personnelle) evoluent et nuancent l'influence de votre chemin de vie au fil du temps.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+${getFooter()}
+</body>
+</html>`;
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// GENERATE ALL PAGES
+// ═══════════════════════════════════════════════════════════════════════════════
+
+let generated = 0;
+
+// Individual chemin de vie pages
+chemins.forEach(chemin => {
+    const dirPath = path.join(outputDir, chemin.slug);
+    if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
+
+    const html = generateCheminPage(chemin);
+    fs.writeFileSync(path.join(dirPath, 'index.html'), html, 'utf8');
+    generated++;
+});
+
+// Pillar page
+const pillarHtml = generatePillarPage();
+fs.writeFileSync(path.join(outputDir, 'index.html'), pillarHtml, 'utf8');
+generated++;
+
+console.log(`Numerologie pages generated: ${generated} pages`);
+console.log(`   - 12 individual chemin de vie pages`);
+console.log(`   - 1 pillar page`);
+console.log(`\nOutput: ${outputDir}`);

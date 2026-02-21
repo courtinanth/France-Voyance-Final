@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirage de Runes Gratuit en Ligne | Futhark | France Voyance Avenir</title>
+    <meta name="description"
+        content="Tirage de runes gratuit en ligne avec le Futhark ancien. Découvrez les 24 runes Elder Futhark et obtenez une interprétation immédiate de votre tirage de runes.">
+    <link rel="canonical" href="https://france-voyance-avenir.fr/voyance-gratuite/tirage-runes/">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/animations.css?v=2026">
+    <script src="/js/config.js"></script>
+
+    <!-- Inline Rune-Specific CSS -->
+    <style>
+        /* Rune Grid */
+        .rune-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .rune-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                padding: 10px;
+            }
+        }
+
+        /* Rune Stone */
+        .rune-stone {
+            width: 100%;
+            aspect-ratio: 1;
+            perspective: 600px;
+            cursor: pointer;
+            position: relative;
+            animation: runeAppear 0.5s ease-out both;
+        }
+
+        @keyframes runeAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotateY(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
+        }
+
+        .rune-stone-front,
+        .rune-stone-back {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            backface-visibility: hidden;
+            transition: transform 0.6s ease;
+            font-size: 1.8rem;
+        }
+
+        .rune-stone-back {
+            background: linear-gradient(145deg, #2a1045, #4A1A6B);
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            transform: rotateY(0deg);
+            box-shadow: 0 4px 15px rgba(74, 26, 107, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .rune-stone-back i {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .rune-stone-front {
+            background: linear-gradient(145deg, #1A1A4A, #0d0d2b);
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            transform: rotateY(180deg);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        .rune-stone:hover:not(.selected) {
+            transform: translateY(-5px);
+        }
+
+        .rune-stone:hover:not(.selected) .rune-stone-back {
+            box-shadow: 0 8px 25px rgba(74, 26, 107, 0.6), inset 0 0 30px rgba(212, 175, 55, 0.2);
+            border-color: #fff;
+        }
+
+        .rune-stone.flipped .rune-stone-back {
+            transform: rotateY(-180deg);
+        }
+
+        .rune-stone.flipped .rune-stone-front {
+            transform: rotateY(0deg);
+        }
+
+        .rune-stone.selected {
+            pointer-events: none;
+        }
+
+        .rune-stone.selected .rune-stone-front {
+            animation: runeGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes runeGlow {
+            from {
+                box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 60px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        /* Unselected stones after selection complete */
+        .rune-stone.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+            filter: grayscale(0.8);
+        }
+
+        /* Result Cards */
+        .rune-result {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rune-result-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .rune-position-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #4A1A6B, #6B2FA0);
+            color: #D4AF37;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .rune-symbol-display {
+            font-size: 4rem;
+            color: #D4AF37;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            margin: 15px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .rune-symbol-display.reversed {
+            transform: rotate(180deg);
+        }
+
+        .rune-name {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .rune-orientation {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .rune-element {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .rune-element i {
+            color: #D4AF37;
+            margin-right: 5px;
+        }
+
+        .rune-keywords {
+            color: #D4AF37;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .rune-result-body {
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding-top: 20px;
+        }
+
+        .rune-meaning {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .rune-themes {
+            display: grid;
+            gap: 12px;
+        }
+
+        .rune-theme {
+            background: rgba(74, 26, 107, 0.2);
+            border-left: 3px solid #D4AF37;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .rune-theme strong {
+            color: #D4AF37;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .rune-theme strong i {
+            margin-right: 5px;
+        }
+
+        /* Selection Counter */
+        #rune-selection-counter {
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Spread type description */
+        .spread-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* CTA Box in results */
+        .rune-cta-box {
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, rgba(74, 26, 107, 0.3), rgba(26, 26, 74, 0.3));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+        }
+
+        .rune-cta-box h3 {
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .rune-cta-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .faq-item summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #D4AF37;
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin-top: 10px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-nav {
+            padding: 15px 0;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb-nav a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-nav span {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 8px;
+        }
+
+        /* SEO Section */
+        .seo-content {
+            padding: 60px 0;
+        }
+
+        .seo-content h2 {
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .seo-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .seo-content p,
+        .seo-content ul {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .seo-content ul {
+            padding-left: 20px;
+        }
+
+        .seo-content li {
+            margin-bottom: 8px;
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Tirage de Runes Gratuit",
+                "url": "https://france-voyance-avenir.fr/voyance-gratuite/tirage-runes/",
+                "description": "Outil gratuit de tirage de runes Elder Futhark en ligne avec interprétation immédiate.",
+                "applicationCategory": "Entertainment",
+                "operatingSystem": "Web Browser",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Comment fonctionne le tirage de runes gratuit en ligne ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Notre outil de tirage de runes utilise les 24 runes du Futhark ancien. Vous choisissez un type de tirage (1 rune, 3 runes ou tirage en croix), puis vous sélectionnez intuitivement vos runes parmi les pierres face cachée. Chaque rune tirée est interprétée selon sa position et son orientation."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Quelle est la différence entre les runes et le tarot ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Les runes sont un ancien alphabet germanique utilisé à des fins divinatoires depuis plus de 2000 ans, tandis que le tarot utilise des cartes illustrées apparues au Moyen Âge. Les runes offrent des messages plus directs et bruts, ancrés dans la tradition nordique."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Que signifie une rune inversée ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Une rune inversée (renversée) indique généralement un blocage, un défi ou un aspect négatif de l'énergie de la rune. Elle invite à la prudence et à l'introspection. Certaines runes, comme Gebo ou Isa, ne peuvent pas être inversées dans la tradition."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Quel tirage de runes choisir pour une question d'amour ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Pour une question d'amour, le tirage 3 runes (Passé, Présent, Futur) est idéal car il montre l'évolution de votre situation sentimentale. Le tirage en croix offre une analyse plus complète avec les obstacles et les conseils."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Peut-on faire un tirage de runes tous les jours ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Oui, le tirage d'une rune quotidienne est une pratique courante pour recevoir un message de guidance pour la journée. En revanche, il est déconseillé de reposer la même question plusieurs fois de suite. Laissez le temps aux énergies de se manifester."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": "https://france-voyance-avenir.fr/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Voyance Gratuite",
+                        "item": "https://france-voyance-avenir.fr/voyance-gratuite/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Tirage de Runes",
+                        "item": "https://france-voyance-avenir.fr/voyance-gratuite/tirage-runes/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="stars-container"></div>
+    <div class="reading-progress"></div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <img src="/images/logo.svg" alt="France Voyance Avenir">
+            </a>
+
+            <div class="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-nav">
+                <a href="/" class="nav-logo">
+                    <img src="/images/logo.svg" alt="France Voyance Avenir">
+                </a>
+                <ul>
+                    <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+                    <li class="nav-item">
+                        <a href="/voyance-gratuite/" class="nav-link">Voyance Gratuite <i
+                                class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/voyance-gratuite/tarot-gratuit/">Tarot Gratuit</a></li>
+                            <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
+                            <li><a href="/voyance-gratuite/numerologie-gratuite/">Numérologie Gratuite</a></li>
+                            <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
+                            <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
+                            <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
+                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
+                            <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
+                            <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Consultations <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/consultations/amour-retour-affectif/">Amour &amp; Retour Affectif</a></li>
+                            <li><a href="/consultations/flamme-jumelle/">Flamme Jumelle</a></li>
+                            <li><a href="/consultations/medium-defunts/">Medium &amp; Défunts</a></li>
+                            <li><a href="/consultations/travail-carriere/">Travail &amp; Carrière</a></li>
+                            <li><a href="/consultations/argent-finances/">Argent &amp; Finances</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Consulter <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
+                            <li><a href="/consulter/voyance-sms/">Voyance SMS</a></li>
+                            <li><a href="/consulter/voyance-chat/">Voyance Chat</a></li>
+                            <li><a href="/consulter/voyance-audiotel/">Voyance Audiotel</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="/avis/" class="nav-link">Avis &amp; Comparatifs</a></li>
+                </ul>
+
+                <div class="header-cta text-center mt-3 mt-lg-0 ml-lg-4">
+                    <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+                        class="btn btn-gold" data-affiliate="voyance-telephone">Consultation Immédiate</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="container">
+        <nav class="breadcrumb-nav">
+            <a href="/">Accueil</a>
+            <span>&rsaquo;</span>
+            <a href="/voyance-gratuite/">Voyance Gratuite</a>
+            <span>&rsaquo;</span>
+            Tirage de Runes
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="tarot-hero">
+            <div class="container">
+                <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+
+                    <!-- LEFT COLUMN: APP -->
+                    <div style="flex: 2; min-width: 300px;">
+                        <h1 class="reveal" style="margin-bottom: 20px;">Tirage de Runes Gratuit en Ligne</h1>
+
+                        <div class="tarot-app-container">
+
+                            <!-- SCREEN 1: INTRO -->
+                            <div id="screen-intro" class="app-screen active">
+                                <p class="reveal reveal-delay-1" style="font-size: 1.1rem; margin-bottom: 30px;">
+                                    Les runes du Futhark ancien sont un oracle millénaire, hérité des peuples
+                                    nordiques. Concentrez-vous sur votre question, connectez-vous à l'énergie des
+                                    symboles sacrés, et laissez les runes vous dévoiler leur message.
+                                </p>
+
+                                <div class="selection-group reveal reveal-delay-2">
+                                    <label for="rune-spread-type"
+                                        style="display: block; margin-bottom: 10px;">Type de tirage :</label>
+                                    <select id="rune-spread-type" class="mystic-select">
+                                        <option value="one-rune">Tirage 1 Rune (Guidance Rapide)</option>
+                                        <option value="three-rune">Tirage 3 Runes (Passé, Présent, Futur)</option>
+                                        <option value="cross">Tirage en Croix (Analyse Complète - 5 Runes)</option>
+                                    </select>
+                                </div>
+
+                                <button id="btn-start-runes" class="btn btn-gold reveal reveal-delay-3"
+                                    style="margin-top: 30px; font-size: 1.2rem;">
+                                    <i class="fa-solid fa-gem" style="margin-right: 8px;"></i>Tirer les Runes
+                                </button>
+                            </div>
+
+                            <!-- SCREEN 2: SELECTION -->
+                            <div id="screen-selection" class="app-screen">
+                                <h2 style="margin-bottom: 10px;">Choisissez vos runes</h2>
+                                <p style="color: rgba(255,255,255,0.7); margin-bottom: 5px;">Laissez votre intuition
+                                    guider votre choix parmi les 24 pierres runiques.</p>
+                                <p id="rune-selection-counter" style="margin-bottom: 20px;">Rune 0/0
+                                    sélectionnée(s)</p>
+                                <div id="rune-grid" class="rune-grid">
+                                    <!-- JS will populate this -->
+                                </div>
+                            </div>
+
+                            <!-- SCREEN 3: RESULT -->
+                            <div id="screen-result" class="app-screen">
+                                <h2 style="margin-bottom: 30px;">Votre Lecture Runique</h2>
+                                <div id="rune-results-display">
+                                    <!-- JS will populate this -->
+                                </div>
+
+                                <!-- Synthesis Container -->
+                                <div id="rune-synthesis-display" class="result-container"
+                                    style="display:none; margin-top: 40px; text-align: left;">
+                                    <!-- JS will populate this -->
+                                </div>
+
+                                <div class="result-actions">
+                                    <div class="rune-cta-box">
+                                        <h3><i class="fa-solid fa-star" style="margin-right: 8px;"></i>Besoin
+                                            d'approfondir ce tirage ?</h3>
+                                        <p>Un automate ne remplace pas l'expérience d'un voyant. Obtenez une
+                                            interprétation personnalisée de vos runes.</p>
+                                        <a href="javascript:void(0)"
+                                            onclick="window.open(getAffiliateUrl('default'), '_blank'); return false;"
+                                            class="btn btn-gold" data-affiliate="voyance-telephone">
+                                            <i class="fa-solid fa-phone" style="margin-right: 8px;"></i>Consulter un
+                                            Spécialiste
+                                        </a>
+                                    </div>
+
+                                    <div class="secondary-actions" style="margin-top: 20px; text-align: center;">
+                                        <button class="btn btn-outline btn-restart-runes">
+                                            <i class="fa-solid fa-rotate-right" style="margin-right: 8px;"></i>Nouveau
+                                            Tirage
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: SIDEBAR -->
+                    <div style="flex: 1; min-width: 300px; max-width: 400px; margin-top: 60px;">
+                        <div class="card sidebar-card"
+                            style="position: sticky; top: 120px; text-align: center; border: 1px solid var(--color-secondary);">
+                            <h3 style="color: var(--color-secondary);">Un doute subsiste ?</h3>
+                            <p style="margin-bottom: 20px;">Nos experts sont connectés en ce moment pour
+                                interpréter votre tirage de runes.</p>
+
+                            <div
+                                style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <div style="position: relative;">
+                                    <img src="/images/profiles/profile_sarah.png" alt="Sarah"
+                                        style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--color-secondary); object-fit: cover;">
+                                    <span
+                                        style="position: absolute; bottom: 0; right: 0; width: 15px; height: 15px; background: #00ff00; border-radius: 50%; border: 2px solid #000;"></span>
+                                </div>
+                                <div style="margin-left: 15px; text-align: left;">
+                                    <div style="font-weight: bold;">Sarah</div>
+                                    <div style="font-size: 0.8rem; opacity: 0.8;">Runologue - <span
+                                            class="count-up" data-target="97">0</span>% avis positifs</div>
+                                </div>
+                            </div>
+
+                            <a href="javascript:void(0)"
+                                onclick="window.open(getAffiliateUrl(), '_blank'); return false;" class="btn btn-gold"
+                                data-affiliate="voyance-telephone" style="width: 100%; margin-bottom: 10px;">Appeler
+                                Sarah</a>
+                            <a href="javascript:void(0)"
+                                onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+                                class="btn btn-outline" data-affiliate="chat" style="width: 100%;">Chatter</a>
+                        </div>
+
+                        <!-- Related Links -->
+                        <div class="card sidebar-card"
+                            style="margin-top: 20px; border: 1px solid rgba(212, 175, 55, 0.2);">
+                            <h4 style="color: var(--color-secondary); margin-bottom: 15px;">Nos autres outils
+                                gratuits</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 10px;"><a href="/voyance-gratuite/tarot-gratuit/"
+                                        style="color: rgba(255,255,255,0.8); text-decoration: none;"><i
+                                            class="fa-solid fa-star" style="color: #D4AF37; margin-right: 8px;"></i>Tarot
+                                        Gratuit</a></li>
+                                <li style="margin-bottom: 10px;"><a href="/voyance-gratuite/tarot-d-amour/"
+                                        style="color: rgba(255,255,255,0.8); text-decoration: none;"><i
+                                            class="fa-solid fa-heart" style="color: #D4AF37; margin-right: 8px;"></i>Tarot
+                                        de l'Amour</a></li>
+                                <li style="margin-bottom: 10px;"><a href="/voyance-gratuite/numerologie-gratuite/"
+                                        style="color: rgba(255,255,255,0.8); text-decoration: none;"><i
+                                            class="fa-solid fa-calculator"
+                                            style="color: #D4AF37; margin-right: 8px;"></i>Numérologie</a></li>
+                                <li style="margin-bottom: 10px;"><a href="/voyance-gratuite/pendule-oui-non/"
+                                        style="color: rgba(255,255,255,0.8); text-decoration: none;"><i
+                                            class="fa-solid fa-circle-dot"
+                                            style="color: #D4AF37; margin-right: 8px;"></i>Pendule Oui/Non</a></li>
+                                <li><a href="/voyance-gratuite/tarot-oui-non/"
+                                        style="color: rgba(255,255,255,0.8); text-decoration: none;"><i
+                                            class="fa-solid fa-question-circle"
+                                            style="color: #D4AF37; margin-right: 8px;"></i>Tarot Oui/Non</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT -->
+        <section class="seo-content">
+            <div class="container content-readable">
+                <h2>Comment fonctionne le tirage de runes gratuit en ligne ?</h2>
+                <p>Le tirage de runes est un art divinatoire ancestral qui puise ses origines dans la tradition
+                    nordique et germanique. Les 24 runes du Futhark ancien (Elder Futhark) sont des symboles sacrés
+                    gravés sur des pierres, des os ou des morceaux de bois. Chaque rune porte un nom, une signification
+                    et une énergie spécifique qui peut éclairer votre chemin de vie.</p>
+                <p>Notre outil de tirage de runes en ligne reproduit fidèlement le rituel traditionnel. Vous
+                    commencez par choisir un type de tirage selon la profondeur de guidance souhaitée, puis vous
+                    sélectionnez intuitivement les pierres runiques face cachée. Le principe de synchronicité
+                    s'applique : votre intention au moment du choix guide la sélection vers les runes qui résonnent avec
+                    votre situation.</p>
+
+                <h2>Les 24 runes du Futhark ancien</h2>
+                <p>L'alphabet runique Elder Futhark se compose de 24 symboles répartis en trois groupes de huit,
+                    appelés "aettir". Chaque aett correspond à une divinité nordique et représente un aspect de
+                    l'expérience humaine, de la richesse matérielle (Fehu) à l'héritage ancestral (Othala).</p>
+                <ul>
+                    <li><strong>Premier Aett (Fehu à Wunjo) :</strong> Les forces créatives et matérielles de la vie.
+                    </li>
+                    <li><strong>Deuxième Aett (Hagalaz à Sowilo) :</strong> Les épreuves, la transformation et la
+                        croissance spirituelle.</li>
+                    <li><strong>Troisième Aett (Tiwaz à Othala) :</strong> L'accomplissement social, les relations
+                        humaines et l'héritage.</li>
+                </ul>
+
+                <h2>Quel tirage de runes choisir ?</h2>
+                <ul>
+                    <li><strong>Tirage 1 Rune :</strong> Idéal pour une guidance quotidienne rapide ou une réponse
+                        directe à une question simple. La rune tirée délivre un message clair et immédiat.</li>
+                    <li><strong>Tirage 3 Runes :</strong> Basé sur les trois Nornes (Urd, Verdandi, Skuld), ce tirage
+                        révèle l'influence du passé, la situation présente et la tendance future. Parfait pour
+                        comprendre l'évolution d'une situation.</li>
+                    <li><strong>Tirage en Croix (5 Runes) :</strong> L'analyse la plus complète. Elle examine votre
+                        situation, l'obstacle principal, le conseil des runes, la force cachée qui agit en coulisse et
+                        le résultat probable.</li>
+                </ul>
+
+                <h2>Runes droites et runes inversées</h2>
+                <p>Comme les cartes de tarot, les runes peuvent apparaître en position droite ou inversée. Une rune
+                    droite exprime pleinement son énergie positive, tandis qu'une rune inversée pointe vers des
+                    blocages, des défis ou des leçons à intégrer. L'interprétation de chaque rune dépend de son
+                    orientation, de sa position dans le tirage et de la question posée.</p>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <div class="container content-readable">
+                <h2 style="color: #D4AF37; font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 30px;">
+                    Questions fréquentes sur le tirage de runes</h2>
+
+                <details class="faq-item">
+                    <summary>Comment fonctionne le tirage de runes gratuit en ligne ?</summary>
+                    <p>Notre outil utilise les 24 runes du Futhark ancien (Elder Futhark). Vous choisissez un type
+                        de tirage selon la profondeur d'analyse souhaitée, puis vous sélectionnez intuitivement vos
+                        runes parmi les 24 pierres face cachée. Chaque rune tirée est interprétée selon sa position
+                        dans le tirage et son orientation (droite ou inversée), pour vous offrir un message
+                        personnalisé.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quelle est la différence entre les runes et le tarot ?</summary>
+                    <p>Les runes sont un ancien alphabet germanique sacré utilisé à des fins divinatoires depuis plus
+                        de 2000 ans, bien avant l'apparition du tarot au Moyen Âge. Alors que le tarot s'appuie sur
+                        des archétypes illustrés sur des cartes, les runes sont des symboles abstraits gravés sur des
+                        pierres. Les messages des runes sont souvent plus directs et concis, ancrés dans la sagesse
+                        nordique et la connexion à la nature.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Que signifie une rune inversée dans un tirage ?</summary>
+                    <p>Une rune inversée (renversée ou merkstave) indique généralement un blocage, un défi ou un
+                        aspect négatif de l'énergie portée par la rune en question. Elle invite à la prudence, à
+                        l'introspection et à la prise de conscience. Ce n'est pas forcément un mauvais signe : c'est
+                        un appel à travailler sur certains aspects de votre vie pour débloquer la situation.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quel tirage de runes choisir pour une question d'amour ?</summary>
+                    <p>Pour les questions sentimentales, le tirage 3 runes (Passé, Présent, Futur) est
+                        particulièrement adapté car il montre l'évolution de votre situation amoureuse dans le temps.
+                        Si vous avez besoin d'une analyse plus approfondie incluant les obstacles et les conseils, le
+                        tirage en croix à 5 runes est recommandé. Pour une réponse rapide et directe, le tirage à 1
+                        rune convient parfaitement.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Peut-on faire un tirage de runes tous les jours ?</summary>
+                    <p>Oui, le tirage d'une rune quotidienne est une pratique traditionnelle et recommandée. Chaque
+                        matin, tirez une rune pour recevoir un message de guidance pour votre journée. En revanche,
+                        évitez de reposer la même question plusieurs fois de suite dans un court laps de temps. Les
+                        runes ont livré leur message et il faut laisser le temps aux énergies de se manifester avant
+                        de réinterroger l'oracle.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <i class="fa-solid fa-moon"></i> France Voyance Avenir
+                    </div>
+                    <p>Votre guide vers les arts divinatoires. Trouvez le voyant qui vous correspond parmi notre
+                        sélection de professionnels vérifiés.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation Rapide</h4>
+                    <ul class="footer-links">
+                        <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
+                        <li><a href="/voyance-gratuite/">Voyance Gratuite</a></li>
+                        <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
+                        <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
+                        <li><a href="/voyance-gratuite/numerologie-gratuite/">Numérologie</a></li>
+                        <li><a href="/blog/">Le Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul class="footer-links">
+                        <li><a href="/legal/mentions-legales/">Mentions Légales</a></li>
+                        <li><a href="/legal/politique-confidentialite/">Politique de Confidentialité</a></li>
+                        <li><a href="/legal/politique-cookies/">Politique des Cookies</a></li>
+                        <li><a href="/legal/cgu/">CGU</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/plan-du-site/">Plan du site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-envelope"
+                                style="margin-right: 10px; color: var(--color-secondary);"></i>
+                            contact@france-voyance-avenir.fr</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 France Voyance Avenir - Tous droits réservés</p>
+                <div class="disclaimer">Ce site propose des services de divertissement. Les consultations de voyance
+                    ne remplacent pas un avis médical, juridique ou financier professionnel.</div>
+                <p class="affiliate-disclosure">* Ce site contient des liens affiliés. En cliquant sur ces liens et
+                    en effectuant un achat, nous pouvons recevoir une commission sans frais supplémentaires pour
+                    vous.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+        <div class="sticky-cta-pulse"></div>
+        <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
+            data-affiliate="telephone" class="btn btn-gold">
+            <span class="sticky-cta-icon"><i class="fas fa-phone-alt"></i></span>
+            <span>Consulter</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/animations.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/runes.js"></script>
+</body>
+
+</html>

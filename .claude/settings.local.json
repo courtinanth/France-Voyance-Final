@@ -9,7 +9,10 @@
       "Bash(del \"C:\\\\Users\\\\court\\\\Desktop\\\\Siteapps\\\\France-Voyance-Final\\\\fix-defer.js\")",
       "mcp__Desktop_Commander__list_directory",
       "Bash(del fix-revert-async.js fix-encoding.js fix-css-encoding.js find-bad-chars.js check-favicon.js)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "mcp__Desktop_Commander__read_file",
+      "mcp__Desktop_Commander__get_file_info",
+      "Bash(grep:*)"
     ]
   }
 }

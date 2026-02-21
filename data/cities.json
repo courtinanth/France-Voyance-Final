@@ -847,24 +847,6 @@
             "specificity": "ville de Nostradamus et de la Patrouille de France"
         },
         {
-            "name": "Fréjus",
-            "slug": "frejus",
-            "postalCode": "83600",
-            "region": "Provence-Alpes-Côte d'Azur",
-            "monument": "les arènes romaines",
-            "landmark": "la cité épiscopale",
-            "specificity": "cité romaine sur la Côte d'Azur"
-        },
-        {
-            "name": "Sarcelles",
-            "slug": "sarcelles",
-            "postalCode": "95200",
-            "region": "Île-de-France",
-            "monument": "l'église Saint-Pierre-Saint-Paul",
-            "landmark": "le grand ensemble des années 60",
-            "specificity": "ville multiculturelle aux portes de Paris"
-        },
-        {
             "name": "Neuilly-sur-Seine",
             "slug": "neuilly-sur-seine",
             "postalCode": "92200",
@@ -881,24 +863,6 @@
             "monument": "le parc Jacques Duclos",
             "landmark": "le musée de l'Air et de l'Espace",
             "specificity": "ville dynamique proche de l'aéroport du Bourget"
-        },
-        {
-            "name": "Niort",
-            "slug": "niort",
-            "postalCode": "79000",
-            "region": "Nouvelle-Aquitaine",
-            "monument": "le donjon de Niort",
-            "landmark": "le marais poitevin",
-            "specificity": "capitale française des mutuelles d'assurance"
-        },
-        {
-            "name": "Chambéry",
-            "slug": "chambery",
-            "postalCode": "73000",
-            "region": "Auvergne-Rhône-Alpes",
-            "monument": "le château des Ducs de Savoie",
-            "landmark": "la fontaine des Éléphants",
-            "specificity": "ancienne capitale du duché de Savoie"
         },
         {
             "name": "Maisons-Alfort",
@@ -928,42 +892,6 @@
             "specificity": "technopole verte de la métropole lilloise"
         },
         {
-            "name": "Hyères",
-            "slug": "hyeres",
-            "postalCode": "83400",
-            "region": "Provence-Alpes-Côte d'Azur",
-            "monument": "la villa Noailles",
-            "landmark": "les îles d'Or (Porquerolles)",
-            "specificity": "première station climatique et balnéaire de France"
-        },
-        {
-            "name": "Troyes",
-            "slug": "troyes",
-            "postalCode": "10000",
-            "region": "Grand Est",
-            "monument": "la cathédrale Saint-Pierre-et-Saint-Paul",
-            "landmark": "le bouchon de champagne (vieille ville)",
-            "specificity": "capitale historique de la Champagne aux maisons à colombages"
-        },
-        {
-            "name": "Montauban",
-            "slug": "montauban",
-            "postalCode": "82000",
-            "region": "Occitanie",
-            "monument": "le musée Ingres-Bourdelle",
-            "landmark": "la place Nationale",
-            "specificity": "ville rose du Quercy blanc"
-        },
-        {
-            "name": "La Seyne-sur-Mer",
-            "slug": "la-seyne-sur-mer",
-            "postalCode": "83500",
-            "region": "Provence-Alpes-Côte d'Azur",
-            "monument": "le fort Balaguier",
-            "landmark": "les plages des Sablettes",
-            "specificity": "ancienne cité navale de la rade de Toulon"
-        },
-        {
             "name": "Cayenne",
             "slug": "cayenne",
             "postalCode": "97300",
@@ -991,24 +919,6 @@
             "specificity": "ville résidentielle verdoyante du sud parisien"
         },
         {
-            "name": "Blois",
-            "slug": "blois",
-            "postalCode": "41000",
-            "region": "Centre-Val de Loire",
-            "monument": "le château royal de Blois",
-            "landmark": "l'escalier François Ier",
-            "specificity": "ville royale au cœur des châteaux de la Loire"
-        },
-        {
-            "name": "Bourges",
-            "slug": "bourges",
-            "postalCode": "18000",
-            "region": "Centre-Val de Loire",
-            "monument": "la cathédrale Saint-Étienne",
-            "landmark": "le Palais Jacques-Cœur",
-            "specificity": "capitale du Berry et ville d'art"
-        },
-        {
             "name": "Vincennes",
             "slug": "vincennes",
             "postalCode": "94300",
@@ -1018,15 +928,6 @@
             "specificity": "ville royale aux portes de Paris"
         },
         {
-            "name": "Valence",
-            "slug": "valence",
-            "postalCode": "26000",
-            "region": "Auvergne-Rhône-Alpes",
-            "monument": "la maison des Têtes",
-            "landmark": "le parc Jouvet",
-            "specificity": "porte du Midi sur le Rhône"
-        },
-        {
             "name": "Ivry-sur-Seine",
             "slug": "ivry-sur-seine",
             "postalCode": "94200",
@@ -1034,15 +935,6 @@
             "monument": "le château d'Ivry",
             "landmark": "la manufacture des Œillets",
             "specificity": "ville d'art contemporain et d'histoire ouvrière"
-        },
-        {
-            "name": "Quimper",
-            "slug": "quimper",
-            "postalCode": "29000",
-            "region": "Bretagne",
-            "monument": "la cathédrale Saint-Corentin",
-            "landmark": "les faïenceries de Quimper",
-            "specificity": "capitale de la Cornouaille et de l'art breton"
         },
         {
             "name": "Clamart",
@@ -1061,15 +953,6 @@
             "monument": "le pavillon Vendôme",
             "landmark": "les bords de Seine",
             "specificity": "ville dynamique de la proche banlieue parisienne"
-        },
-        {
-            "name": "Cholet",
-            "slug": "cholet",
-            "postalCode": "49300",
-            "region": "Pays de la Loire",
-            "monument": "le musée d'Art et d'Histoire",
-            "landmark": "les Mouchoirs de Cholet",
-            "specificity": "capitale du textile et des guerres de Vendée"
         },
         {
             "name": "Villejuif",
@@ -1117,24 +1000,6 @@
             "specificity": "ville d'architecture moderne au sud de Nantes"
         },
         {
-            "name": "Chartres",
-            "slug": "chartres",
-            "postalCode": "28000",
-            "region": "Centre-Val de Loire",
-            "monument": "la cathédrale Notre-Dame",
-            "landmark": "les vitraux médiévaux",
-            "specificity": "chef-d'œuvre mondial de l'art gothique"
-        },
-        {
-            "name": "Arles",
-            "slug": "arles",
-            "postalCode": "13200",
-            "region": "Provence-Alpes-Côte d'Azur",
-            "monument": "les Arènes",
-            "landmark": "le théâtre antique",
-            "specificity": "cité romaine classée UNESCO et ville de Van Gogh"
-        },
-        {
             "name": "Saint-Quentin",
             "slug": "saint-quentin",
             "postalCode": "02100",
@@ -1151,15 +1016,6 @@
             "monument": "le musée Bonnard",
             "landmark": "le vieux Cannet",
             "specificity": "ville d'art sur les hauteurs de Cannes"
-        },
-        {
-            "name": "Beauvais",
-            "slug": "beauvais",
-            "postalCode": "60000",
-            "region": "Hauts-de-France",
-            "monument": "la cathédrale Saint-Pierre",
-            "landmark": "l'horloge astronomique",
-            "specificity": "ville de la tapisserie et du gothique"
         },
         {
             "name": "Grasse",
@@ -1189,15 +1045,6 @@
             "specificity": "ville dynamique de l'Est lyonnais"
         },
         {
-            "name": "Laval",
-            "slug": "laval",
-            "postalCode": "53000",
-            "region": "Pays de la Loire",
-            "monument": "le vieux château",
-            "landmark": "le Bateau-Lavoir sur la Mayenne",
-            "specificity": "cité d'art naïf au patrimoine médiéval"
-        },
-        {
             "name": "Montrouge",
             "slug": "montrouge",
             "postalCode": "92120",
@@ -1216,15 +1063,6 @@
             "specificity": "ville universitaire de la métropole bordelaise"
         },
         {
-            "name": "Brive-la-Gaillarde",
-            "slug": "brive-la-gaillarde",
-            "postalCode": "19100",
-            "region": "Nouvelle-Aquitaine",
-            "monument": "la collégiale Saint-Martin",
-            "landmark": "le marché de Brive",
-            "specificity": "porte de la Corrèze et ville gourmande"
-        },
-        {
             "name": "Cagnes-sur-Mer",
             "slug": "cagnes-sur-mer",
             "postalCode": "06800",
@@ -1232,24 +1070,6 @@
             "monument": "le château-musée Grimaldi",
             "landmark": "le domaine des Collettes (maison Renoir)",
             "specificity": "ville d'art entre mer et collines"
-        },
-        {
-            "name": "Carcassonne",
-            "slug": "carcassonne",
-            "postalCode": "11000",
-            "region": "Occitanie",
-            "monument": "la Cité médiévale fortifiée",
-            "landmark": "le canal du Midi",
-            "specificity": "plus grande forteresse médiévale d'Europe"
-        },
-        {
-            "name": "Compiègne",
-            "slug": "compiegne",
-            "postalCode": "60200",
-            "region": "Hauts-de-France",
-            "monument": "le château impérial",
-            "landmark": "la forêt de Compiègne",
-            "specificity": "résidence des rois et des empereurs"
         },
         {
             "name": "Belfort",
@@ -1306,24 +1126,6 @@
             "specificity": "ville aux pieds des tours de La Défense"
         },
         {
-            "name": "Tarbes",
-            "slug": "tarbes",
-            "postalCode": "65000",
-            "region": "Occitanie",
-            "monument": "le Jardin Massey",
-            "landmark": "le Haras National",
-            "specificity": "porte des Pyrénées et ville équestre"
-        },
-        {
-            "name": "Angoulême",
-            "slug": "angouleme",
-            "postalCode": "16000",
-            "region": "Nouvelle-Aquitaine",
-            "monument": "la cathédrale Saint-Pierre",
-            "landmark": "les murs peints BD",
-            "specificity": "capitale mondiale de la bande dessinée"
-        },
-        {
             "name": "Suresnes",
             "slug": "suresnes",
             "postalCode": "92150",
@@ -1349,24 +1151,6 @@
             "monument": "le monastère royal de Brou",
             "landmark": "les Halles",
             "specificity": "capitale de la volaille de Bresse"
-        },
-        {
-            "name": "Saint-Malo",
-            "slug": "saint-malo",
-            "postalCode": "35400",
-            "region": "Bretagne",
-            "monument": "les remparts de la cité corsaire",
-            "landmark": "le Grand Bé",
-            "specificity": "cité corsaire légendaire sur la Manche"
-        },
-        {
-            "name": "Évreux",
-            "slug": "evreux",
-            "postalCode": "27000",
-            "region": "Normandie",
-            "monument": "la cathédrale Notre-Dame",
-            "landmark": "le beffroi médiéval",
-            "specificity": "préfecture de l'Eure au riche patrimoine"
         },
         {
             "name": "Garges-lès-Gonesse",
@@ -1466,15 +1250,6 @@
             "monument": "l'abbaye royale de Chelles",
             "landmark": "les bords de Marne",
             "specificity": "ancienne abbaye royale aux portes de Paris"
-        },
-        {
-            "name": "Vannes",
-            "slug": "vannes",
-            "postalCode": "56000",
-            "region": "Bretagne",
-            "monument": "les remparts médiévaux",
-            "landmark": "le port de plaisance",
-            "specificity": "porte du Golfe du Morbihan"
         },
         {
             "name": "Montélimar",
@@ -1594,15 +1369,6 @@
             "specificity": "capitale du Beaujolais"
         },
         {
-            "name": "Gap",
-            "slug": "gap",
-            "postalCode": "05000",
-            "region": "Provence-Alpes-Côte d'Azur",
-            "monument": "la cathédrale Notre-Dame-et-Saint-Arnoux",
-            "landmark": "le lac de Serre-Ponçon",
-            "specificity": "préfecture des Hautes-Alpes au cœur des montagnes"
-        },
-        {
             "name": "Annemasse",
             "slug": "annemasse",
             "postalCode": "74100",
@@ -1646,15 +1412,6 @@
             "monument": "le château-musée",
             "landmark": "le port de pêche",
             "specificity": "plus ancienne station balnéaire de France"
-        },
-        {
-            "name": "Bastia",
-            "slug": "bastia",
-            "postalCode": "20200",
-            "region": "Corse",
-            "monument": "la citadelle Terra-Nova",
-            "landmark": "le Vieux-Port",
-            "specificity": "capitale économique de la Corse"
         },
         {
             "name": "Viry-Châtillon",
