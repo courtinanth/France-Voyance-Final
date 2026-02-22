@@ -20,7 +20,9 @@
       "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-extract.js\":*)",
       "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-check-nojs.js\":*)",
       "Bash(del \"C:\\\\Users\\\\court\\\\Desktop\\\\Siteapps\\\\France-Voyance-Final\\\\fix-nojs.js\")",
-      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-verify-nojs.js\":*)"
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-verify-nojs.js\":*)",
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/fix-headings.js\":*)",
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-find-colors.js\":*)"
     ]
   }
 }

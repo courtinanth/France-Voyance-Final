@@ -680,6 +680,32 @@
     }
 }
 
+@media (max-width: 480px) {
+    .yn-page-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .tf-gauge-label {
+        font-size: 0.95rem;
+        gap: 8px;
+    }
+    .yn-label-text {
+        font-size: 1.1rem;
+    }
+    .yn-input {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    .yn-btn-action {
+        font-size: 1rem;
+        padding: 1rem;
+        letter-spacing: 1px;
+    }
+    .tf-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ------------------------------------- */
 /* END ADVANCED TAROT FLOW STYLES        */
 /* ------------------------------------- */

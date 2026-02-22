@@ -140,6 +140,51 @@ const AVIS_INLINE_CSS = `
         color: #D4AF37;
         letter-spacing: 2px;
     }
+    /* ── Contrast fix: override .content-block p light color on white cards ── */
+    .platform-card p,
+    .platform-card span,
+    .platform-card div,
+    .criteria-card p,
+    .criteria-card span,
+    .profile-card p,
+    .profile-card span {
+        color: #444;
+    }
+    .platform-card p strong,
+    .criteria-card p strong,
+    .profile-card p strong {
+        color: #222;
+    }
+    .platform-card h3 { color: #4A1A6B; }
+    .platform-card .card-rating { color: #4A1A6B; font-weight: 600; }
+    .platform-card .card-rating .star-rating { color: #D4AF37; }
+    .ranking-table td,
+    .comparison-table td {
+        color: #444;
+    }
+    .ranking-table td a,
+    .comparison-table td a {
+        color: #4A1A6B;
+        font-weight: 600;
+    }
+    .ranking-table tr:first-child td {
+        color: #2d0a4e;
+        font-weight: 700;
+    }
+    .comparison-table td:first-child {
+        color: #4A1A6B;
+        font-weight: 600;
+    }
+    .comparison-table .winner {
+        color: #1b5e20;
+        font-weight: 700;
+    }
+    .review-table td {
+        color: #444;
+    }
+    .hub-link {
+        color: #4A1A6B;
+    }
     .verdict-box {
         background: linear-gradient(135deg, #4A1A6B 0%, #1A1A4A 100%);
         color: #fff;
@@ -367,6 +412,18 @@ const AVIS_INLINE_CSS = `
         .ranking-table td { padding: 8px 6px; font-size: 0.8em; word-break: break-word; }
         .review-tldr { padding: 15px; }
         .review-tldr .tldr-rating { font-size: 1.1em; }
+    }
+    @media (max-width: 480px) {
+        .platform-card h3 { font-size: 1.1rem; }
+        .platform-card .card-rating { font-size: 1rem; }
+        .platform-card p { font-size: 0.9rem; }
+        .criteria-card h4 { font-size: 0.95rem; }
+        .criteria-card p { font-size: 0.88rem; }
+        .profile-card h4 { font-size: 0.95rem; }
+        .profile-card p { font-size: 0.88rem; }
+        .verdict-box .verdict-score { font-size: 1.8em; }
+        .review-tldr { padding: 12px; }
+        .hub-link { padding: 14px 16px; font-size: 0.9rem; }
     }
 </style>`;
 

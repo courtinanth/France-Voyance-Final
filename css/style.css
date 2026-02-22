@@ -6,4 +6,7 @@ html.no-js .testimonial-track{flex-wrap:wrap}
 html.no-js .testimonial-card{min-width:100%}
 html.no-js .testimonial-nav{display:none}
 html.no-js .reading-progress-container{display:none}
-html.no-js .cookie-banner,html.no-js .cookie-modal{display:none}
+html.no-js .cookie-banner,html.no-js .cookie-modal{display:none}/* Responsive Headings */
+@media(max-width:992px){h3{font-size:1.4rem}h4{font-size:1.1rem}}
+@media(max-width:768px){h1{font-size:1.75rem !important;line-height:1.3 !important}h2{font-size:1.35rem !important}h3{font-size:1.15rem !important}h4{font-size:1rem !important}h5{font-size:0.95rem !important}h6{font-size:0.9rem !important}.hero h1,.landing-hero h1,.local-hero h1,.tarot-hero h1{font-size:1.75rem !important}.hero-subtitle,.hero p{font-size:1rem !important}.faq-section h2,.faq-section h3,.testimonials-section h2{font-size:1.3rem !important}.content-readable h2,.content-block h2{font-size:1.25rem !important}.verdict-box h3,.review-tldr h3{font-size:1.15rem !important}.footer-col h4{font-size:1rem !important}}
+@media(max-width:480px){h1{font-size:1.45rem !important;line-height:1.25 !important}h2{font-size:1.2rem !important}h3{font-size:1.05rem !important}h4{font-size:0.95rem !important}h5{font-size:0.9rem !important}h6{font-size:0.85rem !important}.hero h1,.landing-hero h1,.local-hero h1,.tarot-hero h1{font-size:1.45rem !important}.hero-subtitle,.hero p{font-size:0.9rem !important}.faq-section h2,.faq-section h3,.testimonials-section h2{font-size:1.1rem !important}.content-readable h2,.content-block h2{font-size:1.1rem !important}.faq-question span{font-size:0.95rem !important}}
