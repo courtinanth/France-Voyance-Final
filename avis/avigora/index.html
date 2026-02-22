@@ -294,6 +294,54 @@
         transform: translateY(-2px);
     }
     .hub-link i { color: #D4AF37; margin-right: 10px; }
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 25px 0;
+        border-radius: 12px;
+    }
+    .table-responsive .comparison-table,
+    .table-responsive .ranking-table {
+        margin: 0;
+        min-width: 500px;
+    }
+    @media (max-width: 768px) {
+        .review-table th { width: auto; padding: 10px 12px; font-size: 0.9em; }
+        .review-table td { padding: 10px 12px; font-size: 0.9em; }
+        .comparison-table thead th { padding: 10px 8px; font-size: 0.85em; }
+        .comparison-table td { padding: 10px 8px; font-size: 0.85em; }
+        .ranking-table thead th { padding: 10px 8px; font-size: 0.85em; }
+        .ranking-table td { padding: 10px 8px; font-size: 0.85em; }
+        .verdict-box { padding: 20px; }
+        .verdict-box .verdict-score { font-size: 2em; }
+        .review-tldr { padding: 20px; }
+    }
+    @media (max-width: 576px) {
+        .review-table th {
+            display: block;
+            width: 100%;
+            border-bottom: none;
+            padding-bottom: 4px;
+            font-size: 0.85em;
+        }
+        .review-table td {
+            display: block;
+            width: 100%;
+            padding-top: 4px;
+            padding-bottom: 12px;
+        }
+        .review-table tr {
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+        .review-table tr:last-child { border-bottom: none; }
+        .comparison-table thead th { padding: 8px 6px; font-size: 0.8em; }
+        .comparison-table td { padding: 8px 6px; font-size: 0.8em; word-break: break-word; }
+        .ranking-table thead th { padding: 8px 6px; font-size: 0.8em; }
+        .ranking-table td { padding: 8px 6px; font-size: 0.8em; word-break: break-word; }
+        .review-tldr { padding: 15px; }
+        .review-tldr .tldr-rating { font-size: 1.1em; }
+    }
 </style>
 
     <!-- Schema JSON-LD -->
@@ -433,6 +481,8 @@
                             <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie Gratuite</a></li>
                             <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
                             <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+                            <li><a href="/voyance-gratuite/compatibilite-astrale/">Compatibilite Astrale</a></li>
+                            <li><a href="/voyance-gratuite/tirage-runes/">Tirage de Runes</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -586,6 +636,7 @@
                         <section class="content-block fade-in-up">
                             <h2>Avigora face a la concurrence</h2>
                             <p>Comment Avigora se positionne par rapport aux autres plateformes de voyance en ligne ? Voici un comparatif rapide avec deux alternatives populaires.</p>
+                            <div class="table-responsive">
                             <table class="comparison-table">
                                 <thead>
                                     <tr>
@@ -628,6 +679,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            </div>
                             <p>Pour un comparatif plus detaille, consultez nos pages de comparaison dediees :</p>
                             <ul>
                                 <li><a href="/avis/wengo-vs-avigora/">Avigora vs Wengo</a></li>

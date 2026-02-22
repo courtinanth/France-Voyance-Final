@@ -12,7 +12,10 @@
       "Bash(npm install:*)",
       "mcp__Desktop_Commander__read_file",
       "mcp__Desktop_Commander__get_file_info",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(while read file)",
+      "Bash(do grep -l \"grid-template-columns\\\\|comparison\\\\|data-table\\\\|zones-grid\" \"$file\")",
+      "Bash(done)"
     ]
   }
 }

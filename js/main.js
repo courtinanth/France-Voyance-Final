@@ -49,6 +49,8 @@ function initMobileMenu() {
     });
 
     // Mobile Menu Item Handling
+    // First click on a dropdown parent = expand submenu
+    // Second click (when already open) = navigate to the link
     const navLinks = mainNav.querySelectorAll('.nav-link');
 
     navLinks.forEach(link => {
@@ -64,20 +66,32 @@ function initMobileMenu() {
             const submenu = parentItem.querySelector('.dropdown-menu');
 
             if (submenu) {
-                // IT HAS A DROPDOWN - TOGGLE IT
-                e.preventDefault();
-                e.stopPropagation();
-
-                // Toggle the class on the parent
-                parentItem.classList.toggle('dropdown-open');
-
-                // Optional: Close other open dropdowns (accordion behavior)
-                const allNavItems = mainNav.querySelectorAll('.nav-item');
-                allNavItems.forEach(item => {
-                    if (item !== parentItem && item.classList.contains('dropdown-open')) {
-                        item.classList.remove('dropdown-open');
+                if (parentItem.classList.contains('dropdown-open')) {
+                    // ALREADY OPEN - Navigate to the link (allow default)
+                    // Close the mobile menu
+                    mainNav.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    const icon = mobileToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
-                });
+                    // Don't preventDefault - let the browser navigate
+                } else {
+                    // CLOSED - Open the dropdown
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    parentItem.classList.add('dropdown-open');
+
+                    // Close other open dropdowns (accordion behavior)
+                    const allNavItems = mainNav.querySelectorAll('.nav-item');
+                    allNavItems.forEach(item => {
+                        if (item !== parentItem && item.classList.contains('dropdown-open')) {
+                            item.classList.remove('dropdown-open');
+                        }
+                    });
+                }
             } else {
                 // NO DROPDOWN - IT IS A LINK - NAVIGATE AND CLOSE MENU
                 // Allow default click action (navigation) to proceed
