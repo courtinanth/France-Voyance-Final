@@ -86,6 +86,7 @@ const AVIS_INLINE_CSS = `
     .review-table td {
         padding: 14px 18px;
         background: #fff;
+        color: #333;
         border-bottom: 1px solid #eee;
     }
     .review-table tr:last-child td {
@@ -133,6 +134,7 @@ const AVIS_INLINE_CSS = `
     .pros-box li, .cons-box li {
         padding: 6px 0;
         line-height: 1.5;
+        color: #333;
     }
     .star-rating {
         color: #D4AF37;
@@ -160,6 +162,7 @@ const AVIS_INLINE_CSS = `
     }
     .platform-card {
         background: #fff;
+        color: #333;
         border-radius: 12px;
         padding: 25px;
         margin: 20px 0;
@@ -205,6 +208,7 @@ const AVIS_INLINE_CSS = `
         text-align: center;
         border-bottom: 1px solid #eee;
         background: #fff;
+        color: #333;
     }
     .comparison-table td:first-child {
         text-align: left;
@@ -213,7 +217,7 @@ const AVIS_INLINE_CSS = `
         color: #4A1A6B;
     }
     .comparison-table tr:last-child td { border-bottom: none; }
-    .comparison-table .winner { background: #e8f5e9; font-weight: 600; }
+    .comparison-table .winner { background: #e8f5e9; font-weight: 600; color: #2e7d32; }
     .verdict-by-profile {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -225,6 +229,7 @@ const AVIS_INLINE_CSS = `
     }
     .profile-card {
         background: #f8f6fc;
+        color: #333;
         border-radius: 12px;
         padding: 20px;
         border-left: 4px solid #D4AF37;
@@ -252,6 +257,7 @@ const AVIS_INLINE_CSS = `
         padding: 12px 14px;
         border-bottom: 1px solid #eee;
         background: #fff;
+        color: #333;
         text-align: center;
     }
     .ranking-table td:first-child,
@@ -261,6 +267,7 @@ const AVIS_INLINE_CSS = `
     .ranking-table tr:first-child td {
         background: linear-gradient(135deg, #fdf6e3, #fff8e1);
         font-weight: 600;
+        color: #4A1A6B;
     }
     .criteria-grid {
         display: grid;
@@ -273,6 +280,7 @@ const AVIS_INLINE_CSS = `
     }
     .criteria-card {
         background: #fff;
+        color: #333;
         border-radius: 12px;
         padding: 20px;
         border: 1px solid #eee;
@@ -393,6 +401,8 @@ function getHead(title, metaDesc, canonical, extraSchemaLD) {
     <script src="/js/config.js"></script>
 
     ${AVIS_INLINE_CSS}
+
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
 
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
@@ -613,6 +623,71 @@ const REVIEW_CONTENT = {
             { q: "Avigora est-il disponible 24h/24 ?", a: "Oui, c'est l'un des atouts majeurs de la plateforme." },
             { q: "Avigora offre-t-il des minutes gratuites ?", a: "Oui, 5 premieres minutes offertes pour les nouveaux inscrits." },
             { q: "L'interface d'Avigora est-elle moderne ?", a: "L'interface est fonctionnelle mais datee comparee aux plateformes plus recentes." }
+        ]
+    },
+    cosmospace: {
+        introP1: `Cosmospace est un pionnier de la voyance par audiotel en France, en activite depuis 2001. Avec plus de 20 ans d'experience et 200 voyants disponibles, la plateforme a bati sa reputation sur l'accessibilite : pas besoin de carte bancaire, pas d'inscription, il suffit d'un telephone. Note 3.6/5 sur 4 200 avis, Cosmospace reste un acteur incontournable du marche.`,
+        introP2: `Nous avons teste Cosmospace pour evaluer si ce veteran de l'audiotel reste competitif face aux plateformes modernes. Qualite des voyants, tarifs, ergonomie : voici notre analyse complete.`,
+        pricingDetail: `L'atout principal de Cosmospace est son tarif audiotel a partir de 0,40 euro/min, le plus bas du marche. Les consultations par CB vont de 1,50 a 3,00 euros/min. L'offre decouverte permet de tester le service par audiotel sans engagement. L'absence de necessite d'inscription ou de carte bancaire est un avantage unique pour les consultants ponctuels.`,
+        clientReview: `Les 4 200 avis de Cosmospace sont partages. Les utilisateurs fideles apprecient l'accessibilite et les tarifs audiotel imbattables. Les critiques portent sur l'interface tres datee, le manque de transparence dans la selection des voyants et l'absence de chat ou d'email. Le score Trustpilot de 3.2/5 est en dessous de la moyenne du secteur.`,
+        faq: [
+            { q: "Cosmospace est-il fiable ?", a: "Cosmospace est un acteur historique fiable, mais la qualite des voyants est variable." },
+            { q: "Comment consulter sur Cosmospace ?", a: "Par audiotel (sans inscription) ou par telephone avec CB." },
+            { q: "Quels sont les tarifs de Cosmospace ?", a: "A partir de 0,40 euro/min en audiotel, jusqu'a 3 euros/min par CB." },
+            { q: "Cosmospace est-il disponible 24h/24 ?", a: "Oui, des voyants sont disponibles a toute heure." },
+            { q: "Peut-on consulter par chat sur Cosmospace ?", a: "Non, Cosmospace propose uniquement le telephone et l'audiotel." }
+        ]
+    },
+    mydeclick: {
+        introP1: `MyDeclick est une plateforme de voyance en ligne lancee en 2019 a Lyon. Elle se distingue par ses consultations en visio et son approche combinant voyance et coaching spirituel. Avec 90 voyants et une note de 3.9/5 sur 1 800 avis, MyDeclick cible un public recherchant une experience plus personnelle et moderne.`,
+        introP2: `Notre test de MyDeclick a porte sur la qualite des consultations en visio, un format encore rare dans le secteur. Nous avons egalement evalue les tarifs, l'interface et la pertinence de l'approche coaching.`,
+        pricingDetail: `Les tarifs de MyDeclick vont de 2,50 a 4,50 euros par minute. L'offre de bienvenue propose 7 premieres minutes offertes, une offre genereuse qui se situe entre Wengo (10 min) et Spiriteo (5 min). Le paiement s'effectue par carte bancaire ou PayPal. Pas d'option audiotel.`,
+        clientReview: `Les 1 800 avis de MyDeclick sont globalement positifs. Les clients apprecient les consultations en visio qui creent un lien plus fort avec le voyant. L'approche coaching est saluee par ceux qui cherchent un accompagnement sur la duree. Les critiques portent sur le panel encore restreint et l'absence de disponibilite 24h/24. Le Trustpilot de 4.0/5 est tres encourageant.`,
+        faq: [
+            { q: "MyDeclick propose-t-il la visio ?", a: "Oui, c'est l'un des rares sites a proposer des consultations en visioconference." },
+            { q: "Quels sont les tarifs de MyDeclick ?", a: "De 2,50 a 4,50 euros par minute, avec 7 minutes offertes." },
+            { q: "MyDeclick combine-t-il voyance et coaching ?", a: "Oui, de nombreux praticiens proposent une approche combinee." },
+            { q: "MyDeclick est-il disponible 24h/24 ?", a: "Non, le service est disponible de 8h a 1h du matin." },
+            { q: "MyDeclick a-t-il une application mobile ?", a: "Oui, une application mobile est disponible pour iOS et Android." }
+        ]
+    },
+    viversum: {
+        introP1: `Viversum est une plateforme de voyance d'origine allemande, presente en France depuis 2009. Elle se demarque par une offre decouverte de 15 minutes gratuites, la plus genereuse du marche. Avec 300 voyants et une note de 3.4/5 sur 3 500 avis, Viversum attire principalement par ses tarifs d'entree parmi les plus bas.`,
+        introP2: `Notre evaluation de Viversum a porte sur la qualite reelle des consultations, au-dela de l'offre de bienvenue attractive. Nous avons teste plusieurs voyants et analyse l'experience complete pour un avis objectif.`,
+        pricingDetail: `Les tarifs de Viversum demarrent a 1,49 euro/min, le deuxieme tarif le plus bas du marche apres Cosmospace. L'offre de 15 minutes gratuites a l'inscription est la meilleure du secteur. Le paiement se fait par carte bancaire uniquement. La combinaison tarifs bas + offre decouverte genereuse en fait l'option la plus economique pour une premiere consultation.`,
+        clientReview: `Les 3 500 avis de Viversum sont mitiges. L'offre de 15 minutes est unanimement saluee. Cependant, la qualite des voyants est jugee tres variable, avec parfois des traductions imparfaites (plateforme d'origine allemande). Le service client est parfois lent a repondre. Le Trustpilot de 3.1/5 est parmi les plus bas du classement.`,
+        faq: [
+            { q: "Viversum offre-t-il vraiment 15 minutes gratuites ?", a: "Oui, c'est l'offre de bienvenue la plus genereuse du marche." },
+            { q: "Viversum est-il un site francais ?", a: "Non, Viversum est d'origine allemande mais propose un service en francais." },
+            { q: "Quels sont les tarifs de Viversum ?", a: "A partir de 1,49 euro/min, parmi les plus bas du marche." },
+            { q: "La qualite des voyants est-elle bonne sur Viversum ?", a: "Variable. Certains voyants sont excellents, d'autres moins precis." },
+            { q: "Viversum est-il disponible 24h/24 ?", a: "Oui, des voyants sont disponibles a toute heure du jour et de la nuit." }
+        ]
+    },
+    "voyance-alice": {
+        introP1: `Voyance Alice est une plateforme de niche lancee en 2016, specialisee dans la guidance amoureuse. Avec un panel volontairement restreint de 40 voyantes triees sur le volet, elle privilegie la qualite et la bienveillance. Note 3.3/5 sur 950 avis, Voyance Alice s'adresse principalement a un public feminin en quete de reponses sur sa vie sentimentale.`,
+        introP2: `Notre test de Voyance Alice a porte sur la pertinence de cette specialisation amoureuse. Nous avons consulte plusieurs voyantes pour evaluer la precision des predictions sentimentales et la qualite de l'accompagnement.`,
+        pricingDetail: `Les tarifs de Voyance Alice sont dans la fourchette haute : de 2,90 a 5,90 euros par minute. Ce positionnement premium se justifie par la specialisation et la selection rigoureuse des voyantes. L'offre de bienvenue propose 3 premieres minutes offertes. Le paiement se fait uniquement par carte bancaire, sans option audiotel ou PayPal.`,
+        clientReview: `Les 950 avis de Voyance Alice revelent une communaute fidele mais restreinte. Les clientes satisfaites louent l'empathie et la precision des voyantes sur les questions amoureuses. Les critiques portent sur les tarifs eleves, le panel tres limite et les horaires restreints (9h-22h). Le Trustpilot de 3.4/5 est correct pour une plateforme de cette taille.`,
+        faq: [
+            { q: "Voyance Alice est-elle specialisee en amour ?", a: "Oui, c'est la specialite principale de la plateforme." },
+            { q: "Les voyantes de Voyance Alice sont-elles fiables ?", a: "Les voyantes sont selectionnees pour leur expertise en guidance amoureuse." },
+            { q: "Quels sont les tarifs de Voyance Alice ?", a: "De 2,90 a 5,90 euros par minute, fourchette haute du marche." },
+            { q: "Peut-on consulter un voyant homme sur Voyance Alice ?", a: "Le panel est principalement compose de voyantes, mais quelques voyants sont disponibles." },
+            { q: "Voyance Alice offre-t-elle des minutes gratuites ?", a: "Oui, 3 premieres minutes offertes pour decouvrir le service." }
+        ]
+    },
+    divinatix: {
+        introP1: `Divinatix est la plus jeune plateforme de notre classement, lancee en 2020 a Paris. Resolument tournee vers le digital, elle ne propose pas de consultation telephonique classique : tout se fait par chat, visio ou email. Avec 50 voyants et une note de 3.2/5 sur 1 200 avis, Divinatix cible un public jeune et connecte.`,
+        introP2: `Notre evaluation de Divinatix s'est concentree sur l'experience 100% digitale proposee par la plateforme. Nous avons teste le chat, la visio et l'email pour mesurer la qualite des consultations dans ces formats modernes.`,
+        pricingDetail: `Les tarifs de Divinatix sont accessibles, allant de 1,50 a 3,50 euros par minute. L'offre de bienvenue propose 5 premieres minutes offertes. L'originalite reside dans l'acceptation d'Apple Pay en plus de la carte bancaire, un signal de modernite. Pas d'option audiotel ni de telephone classique.`,
+        clientReview: `Les 1 200 avis de Divinatix sont encourageants pour une plateforme aussi jeune. Les utilisateurs apprecient l'interface moderne et la possibilite de consulter par chat sans pression telephonique. Les critiques portent sur le panel encore limite, les horaires restreints (10h-minuit) et le manque de recul sur la fiabilite des voyants. Le Trustpilot de 3.0/5 reflete cette jeunesse.`,
+        faq: [
+            { q: "Divinatix propose-t-il des consultations telephoniques ?", a: "Non, Divinatix est 100% digital : chat, visio et email uniquement." },
+            { q: "Quels sont les tarifs de Divinatix ?", a: "De 1,50 a 3,50 euros par minute, tarifs accessibles." },
+            { q: "Peut-on payer par Apple Pay sur Divinatix ?", a: "Oui, c'est l'une des rares plateformes a accepter Apple Pay." },
+            { q: "Divinatix est-il fiable malgre sa jeunesse ?", a: "La plateforme est serieuse mais recente, il manque encore du recul sur la qualite globale." },
+            { q: "Divinatix est-il disponible 24h/24 ?", a: "Non, le service est disponible de 10h a minuit." }
         ]
     }
 };
@@ -1303,8 +1378,8 @@ function generateComparisonPage(comparison) {
 
 function generatePillarPage() {
     const canonicalPath = '/avis/';
-    const title = 'Meilleurs sites de voyance en ligne 2026 : comparatif et avis';
-    const metaDesc = 'Comparatif des meilleurs sites de voyance en ligne en 2026. Avis verifies, tarifs, avantages et inconvenients de chaque plateforme. Guide complet pour bien choisir.';
+    const title = 'Top 10 des meilleurs sites de voyance en ligne 2026 : comparatif et avis';
+    const metaDesc = 'Top 10 des meilleurs sites de voyance en ligne en 2026. Avis verifies, tarifs, avantages et inconvenients de chaque plateforme. Guide complet pour bien choisir.';
 
     const sortedPlatforms = [...platforms].sort((a, b) => b.rating - a.rating);
 
@@ -1373,7 +1448,7 @@ function generatePillarPage() {
         <!-- Hero -->
         <section class="local-hero">
             <div class="container">
-                <h1 class="fade-in-up">Meilleurs sites de voyance en ligne en 2026</h1>
+                <h1 class="fade-in-up">Top 10 des meilleurs sites de voyance en ligne en 2026</h1>
                 <p class="hero-subtitle fade-in-up stagger-1">Comparatif independant des plateformes de voyance : avis, tarifs et classement</p>
             </div>
         </section>
@@ -1393,7 +1468,7 @@ function generatePillarPage() {
 
                         <!-- Global Ranking Table -->
                         <section class="content-block fade-in-up">
-                            <h2>Classement des meilleurs sites de voyance 2026</h2>
+                            <h2>Top 10 : classement des meilleurs sites de voyance 2026</h2>
                             <div class="table-responsive">
                             <table class="ranking-table">
                                 <thead>

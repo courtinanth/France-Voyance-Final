@@ -15,7 +15,12 @@
       "Bash(grep:*)",
       "Bash(while read file)",
       "Bash(do grep -l \"grid-template-columns\\\\|comparison\\\\|data-table\\\\|zones-grid\" \"$file\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(python3:*)",
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-extract.js\":*)",
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-check-nojs.js\":*)",
+      "Bash(del \"C:\\\\Users\\\\court\\\\Desktop\\\\Siteapps\\\\France-Voyance-Final\\\\fix-nojs.js\")",
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-verify-nojs.js\":*)"
     ]
   }
 }

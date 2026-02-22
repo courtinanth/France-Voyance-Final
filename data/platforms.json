@@ -162,6 +162,173 @@
             ],
             "verdict": "Avigora est un acteur historique qui mise sur la disponibilité et l'audiotel. L'interface mériterait un coup de neuf.",
             "bestFor": "Ceux qui consultent la nuit ou qui veulent l'option audiotel"
+        },
+        {
+            "name": "Cosmospace",
+            "slug": "cosmospace",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.6,
+            "ratingCount": 4200,
+            "yearFounded": 2001,
+            "headquarters": "France",
+            "channels": ["Téléphone", "Audiotel"],
+            "specialties": ["Voyance", "Astrologie", "Tarot", "Médiumnité"],
+            "priceRange": "0,40 - 3,00 €/min",
+            "priceMin": 0.40,
+            "freeOffer": "Consultation découverte par audiotel",
+            "nbPractitioners": "200+",
+            "availability": "24h/24, 7j/7",
+            "trustpilotScore": "3.2/5",
+            "paymentMethods": ["Audiotel", "Carte bancaire"],
+            "pros": [
+                "Pionnier de la voyance par audiotel en France",
+                "Tarifs audiotel très accessibles",
+                "Disponibilité 24h/24 avec un large panel",
+                "Pas besoin de carte bancaire pour consulter"
+            ],
+            "cons": [
+                "Interface très datée qui manque de modernité",
+                "Processus de sélection des voyants peu transparent",
+                "Pas de chat ni de consultation par email",
+                "Avis clients difficiles à vérifier"
+            ],
+            "verdict": "Cosmospace reste un acteur incontournable de l'audiotel en France. Les tarifs sont attractifs mais l'expérience utilisateur est vieillissante.",
+            "bestFor": "Ceux qui veulent consulter par audiotel sans carte bancaire"
+        },
+        {
+            "name": "MyDéclick",
+            "slug": "mydeclick",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.9,
+            "ratingCount": 1800,
+            "yearFounded": 2019,
+            "headquarters": "Lyon, France",
+            "channels": ["Téléphone", "Chat", "Visio"],
+            "specialties": ["Voyance", "Tarot", "Coaching spirituel", "Développement personnel"],
+            "priceRange": "2,50 - 4,50 €/min",
+            "priceMin": 2.50,
+            "freeOffer": "7 premières minutes offertes",
+            "nbPractitioners": "90+",
+            "availability": "8h-1h du matin",
+            "trustpilotScore": "4.0/5",
+            "paymentMethods": ["Carte bancaire", "PayPal"],
+            "pros": [
+                "Consultations en visio disponibles",
+                "Approche combinant voyance et coaching",
+                "7 minutes offertes généreuses",
+                "Interface moderne et application mobile"
+            ],
+            "cons": [
+                "Panel encore restreint (plateforme récente)",
+                "Pas disponible 24h/24",
+                "Pas d'option audiotel",
+                "Tarifs moyens un peu élevés"
+            ],
+            "verdict": "MyDéclick est une plateforme récente qui se démarque par ses consultations en visio et son approche coaching. Un bon choix pour une expérience plus personnelle.",
+            "bestFor": "Ceux qui veulent une consultation en visio ou un accompagnement coaching"
+        },
+        {
+            "name": "Viversum",
+            "slug": "viversum",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.4,
+            "ratingCount": 3500,
+            "yearFounded": 2009,
+            "headquarters": "Allemagne / France",
+            "channels": ["Téléphone", "Chat", "Email"],
+            "specialties": ["Voyance", "Astrologie", "Tarot", "Numérologie", "Interprétation des rêves"],
+            "priceRange": "1,49 - 3,99 €/min",
+            "priceMin": 1.49,
+            "freeOffer": "15 minutes offertes à l'inscription",
+            "nbPractitioners": "300+",
+            "availability": "24h/24, 7j/7",
+            "trustpilotScore": "3.1/5",
+            "paymentMethods": ["Carte bancaire"],
+            "pros": [
+                "15 minutes offertes (la meilleure offre du marché)",
+                "Tarifs d'entrée parmi les plus bas",
+                "Disponibilité 24h/24 avec un grand panel",
+                "Spécialité interprétation des rêves unique"
+            ],
+            "cons": [
+                "Plateforme d'origine allemande, parfois des traductions imparfaites",
+                "Système d'avis moins fiable que la concurrence",
+                "Service client pas toujours réactif",
+                "Qualité très variable selon les voyants"
+            ],
+            "verdict": "Viversum attire par son offre découverte de 15 minutes. Les tarifs sont bas mais la qualité est plus aléatoire que chez les leaders français.",
+            "bestFor": "Ceux qui veulent tester longuement avec 15 minutes gratuites"
+        },
+        {
+            "name": "Voyance Alice",
+            "slug": "voyance-alice",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.3,
+            "ratingCount": 950,
+            "yearFounded": 2016,
+            "headquarters": "France",
+            "channels": ["Téléphone", "Chat"],
+            "specialties": ["Voyance", "Tarot", "Oracle", "Guidance amoureuse"],
+            "priceRange": "2,90 - 5,90 €/min",
+            "priceMin": 2.90,
+            "freeOffer": "3 premières minutes offertes",
+            "nbPractitioners": "40+",
+            "availability": "9h-22h",
+            "trustpilotScore": "3.4/5",
+            "paymentMethods": ["Carte bancaire"],
+            "pros": [
+                "Spécialisée dans les questions amoureuses",
+                "Voyantes triées sur le volet",
+                "Ambiance bienveillante et féminine",
+                "Consultations personnalisées"
+            ],
+            "cons": [
+                "Panel très restreint de voyants",
+                "Tarifs dans la fourchette haute",
+                "Horaires de disponibilité limités",
+                "Peu d'avis clients vérifiables",
+                "Pas d'audiotel ni d'email"
+            ],
+            "verdict": "Voyance Alice est une petite plateforme de niche spécialisée dans la guidance amoureuse. Le panel est limité mais l'approche est personnalisée.",
+            "bestFor": "Celles et ceux qui cherchent des réponses sur leur vie sentimentale"
+        },
+        {
+            "name": "Divinatix",
+            "slug": "divinatix",
+            "url": "#",
+            "isAffiliate": false,
+            "rating": 3.2,
+            "ratingCount": 1200,
+            "yearFounded": 2020,
+            "headquarters": "Paris, France",
+            "channels": ["Chat", "Visio", "Email"],
+            "specialties": ["Voyance", "Astrologie", "Numérologie", "Guidance spirituelle"],
+            "priceRange": "1,50 - 3,50 €/min",
+            "priceMin": 1.50,
+            "freeOffer": "5 premières minutes offertes",
+            "nbPractitioners": "50+",
+            "availability": "10h-minuit",
+            "trustpilotScore": "3.0/5",
+            "paymentMethods": ["Carte bancaire", "Apple Pay"],
+            "pros": [
+                "Plateforme 100% digitale et moderne",
+                "Consultation par visio et chat uniquement",
+                "Tarifs accessibles",
+                "Paiement Apple Pay disponible"
+            ],
+            "cons": [
+                "Pas de consultation téléphonique classique",
+                "Plateforme très récente (peu de recul)",
+                "Panel de voyants encore limité",
+                "Horaires de disponibilité restreints",
+                "Manque de notoriété et d'avis"
+            ],
+            "verdict": "Divinatix est la plus jeune plateforme du classement. Son approche 100% digitale peut séduire les plus jeunes, mais le manque de recul impose la prudence.",
+            "bestFor": "Les digital natives qui préfèrent le chat et la visio au téléphone"
         }
     ],
     "comparisons": [
