@@ -22,7 +22,8 @@
       "Bash(del \"C:\\\\Users\\\\court\\\\Desktop\\\\Siteapps\\\\France-Voyance-Final\\\\fix-nojs.js\")",
       "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-verify-nojs.js\":*)",
       "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/fix-headings.js\":*)",
-      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-find-colors.js\":*)"
+      "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-find-colors.js\":*)",
+      "Bash(cat:*)"
     ]
   }
 }
