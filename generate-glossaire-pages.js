@@ -93,7 +93,7 @@ const GLOSSAIRE_CSS = `
         height: 40px;
         border-radius: 50%;
         background: #fff;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-weight: 700;
         font-size: 1em;
         text-decoration: none;
@@ -103,7 +103,7 @@ const GLOSSAIRE_CSS = `
     .alpha-nav a:hover, .alpha-nav a.active {
         background: #4A1A6B;
         color: #fff;
-        border-color: #4A1A6B;
+        border-color:#D4AF37;
     }
     .alpha-nav a.disabled {
         opacity: 0.3;
@@ -135,7 +135,7 @@ const GLOSSAIRE_CSS = `
     }
     .letter-heading h2 {
         font-family: 'Playfair Display', serif;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-size: 1.3em;
         margin: 0;
     }
@@ -162,7 +162,7 @@ const GLOSSAIRE_CSS = `
     }
     .term-card h3 {
         font-family: 'Playfair Display', serif;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-size: 1.4em;
         margin: 0;
     }
@@ -180,12 +180,12 @@ const GLOSSAIRE_CSS = `
     .term-short {
         font-size: 1.05em;
         line-height: 1.7;
-        color: #444;
+        color:#dcdcdc;
         margin-bottom: 15px;
     }
     .term-details summary {
         cursor: pointer;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-weight: 600;
         padding: 10px 0;
         display: flex;
@@ -204,7 +204,7 @@ const GLOSSAIRE_CSS = `
     }
     .term-long p {
         line-height: 1.8;
-        color: #333;
+        color:#e0e0e0;
         margin-bottom: 15px;
     }
     .related-tags {
@@ -218,7 +218,7 @@ const GLOSSAIRE_CSS = `
     .related-tags span {
         font-size: 0.85em;
         font-weight: 600;
-        color: #4A1A6B;
+        color:#D4AF37;
         margin-right: 5px;
     }
     .related-tag {
@@ -227,7 +227,7 @@ const GLOSSAIRE_CSS = `
         background: #f8f6fc;
         border: 1px solid #e0d4f0;
         border-radius: 15px;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-size: 0.83em;
         text-decoration: none;
         transition: all 0.2s ease;
@@ -383,14 +383,18 @@ function getHeader() {
                             <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie Gratuite</a></li>
                             <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
                             <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+                            <li><a href="/voyance-gratuite/compatibilite-astrale/">Compatibilité Astrale</a></li>
+                            <li><a href="/voyance-gratuite/tirage-runes/">Tirage de Runes</a></li>
+                            <li><a href="/glossaire/">Glossaire Ésotérique</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
                             <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
                             <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
-                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Ge</a></li>
+                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
                             <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
                             <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
                         </ul>
@@ -439,11 +443,13 @@ function getFooter() {
                 <div class="footer-col">
                     <h4>Navigation Rapide</h4>
                     <ul class="footer-links">
-                        <li><a href="/consulter/voyance-telephone/">Voyance Telephone</a></li>
+                        <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
                         <li><a href="/voyance-gratuite/">Voyance Gratuite</a></li>
                         <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
                         <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
-                        <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie</a></li>
+                        <li><a href="/numerologie/">Numérologie</a></li>
+                        <li><a href="/avis/">Avis Plateformes</a></li>
+                        <li><a href="/glossaire/">Glossaire</a></li>
                         <li><a href="/blog/">Le Blog</a></li>
                     </ul>
                 </div>
@@ -657,13 +663,13 @@ function generateGlossairePage() {
         const article = t.term.toLowerCase().startsWith('le ') || t.term.toLowerCase().startsWith('la ') || t.term.toLowerCase().startsWith("l'") ? t.term.toLowerCase() : (/^[aeiouhAEIOUH]/.test(t.term) ? "l'" : "le ") + t.term.toLowerCase();
         return `
                     <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Qu'est-ce que ${article} ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                             ${esc(t.shortDef)}
                             <br><br>
-                            <a href="#${t.slug}" style="color:#4A1A6B; font-weight:600; text-decoration:none;">
+                            <a href="#${t.slug}" style="color:#D4AF37; font-weight:600; text-decoration:none;">
                                 <i class="fas fa-arrow-right" style="margin-right:6px; color:#D4AF37;"></i> Lire la definition complete
                             </a>
                         </div>
@@ -680,9 +686,9 @@ ${getHeader()}
         <div class="container">
             <nav aria-label="Fil d'Ariane">
                 <ol style="display:flex; list-style:none; padding:0; margin:0; font-size:0.9em; gap:8px;">
-                    <li><a href="/" style="color:#4A1A6B;">Accueil</a></li>
-                    <li style="color:#999;">&#8250;</li>
-                    <li style="color:#888;">Glossaire Esoterique</li>
+                    <li><a href="/" style="color:#D4AF37;">Accueil</a></li>
+                    <li style="color:#d4d4d4;">&#8250;</li>
+                    <li style="color:#d0d0d0;">Glossaire Esoterique</li>
                 </ol>
             </nav>
         </div>
@@ -722,9 +728,9 @@ ${getHeader()}
 
             <!-- Introduction -->
             <div style="max-width:800px; margin:0 auto 40px;">
-                <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:25px;">Comprendre le vocabulaire esoterique</h2>
-                <p style="line-height:1.8; color:#444; margin-bottom:15px;">Le monde de la voyance et de l'esoterisme possede un vocabulaire riche et specifique. Que vous soyez novice en arts divinatoires ou praticien confirme, la maitrise de ces termes est essentielle pour comprendre pleinement les messages de vos consultations et approfondir votre connaissance des sciences occultes.</p>
-                <p style="line-height:1.8; color:#444;">Ce glossaire reunit 60 definitions detaillees couvrant le Tarot, l'astrologie, la numerologie, la mediumnite, les pratiques divinatoires et l'esoterisme. Chaque terme est accompagne d'une explication approfondie, de liens vers des termes connexes et de ressources pour aller plus loin.</p>
+                <h2 style="font-family:'Playfair Display',serif; color:#D4AF37; text-align:center; margin-bottom:25px;">Comprendre le vocabulaire esoterique</h2>
+                <p style="line-height:1.8; color:#dcdcdc; margin-bottom:15px;">Le monde de la voyance et de l'esoterisme possede un vocabulaire riche et specifique. Que vous soyez novice en arts divinatoires ou praticien confirme, la maitrise de ces termes est essentielle pour comprendre pleinement les messages de vos consultations et approfondir votre connaissance des sciences occultes.</p>
+                <p style="line-height:1.8; color:#dcdcdc;">Ce glossaire reunit 60 definitions detaillees couvrant le Tarot, l'astrologie, la numerologie, la mediumnite, les pratiques divinatoires et l'esoterisme. Chaque terme est accompagne d'une explication approfondie, de liens vers des termes connexes et de ressources pour aller plus loin.</p>
             </div>
 
             <div class="content-grid">
@@ -734,7 +740,7 @@ ${termsHTML}
 
                     <!-- FAQ -->
                     <div style="background:#fff; border-radius:12px; padding:30px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid #eee; margin-top:40px;">
-                        <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:25px; padding-bottom:10px; border-bottom:2px solid #D4AF37;">
+                        <h2 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:25px; padding-bottom:10px; border-bottom:2px solid #D4AF37;">
                             <i class="fas fa-question-circle" style="color:#D4AF37; margin-right:10px;"></i> Questions frequentes
                         </h2>
 ${faqHTML}
@@ -755,18 +761,18 @@ ${faqHTML}
                 <!-- SIDEBAR -->
                 <aside class="sidebar">
                     <div class="cta-box" style="text-align:center;">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-phone-alt" style="color:#D4AF37;"></i> Consultation privee
                         </h3>
-                        <p style="color:#555; margin-bottom:15px;">Un voyant professionnel vous eclaire sur votre situation et votre avenir.</p>
+                        <p style="color:#d8d8d8; margin-bottom:15px;">Un voyant professionnel vous eclaire sur votre situation et votre avenir.</p>
                         <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('tarot'), '_blank'); return false;" class="btn btn-gold" data-affiliate="tarot" style="display:block; text-align:center; padding:14px;">
                             <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Appeler un voyant *
                         </a>
-                        <p style="font-size:0.8em; color:#999; margin-top:8px;">* 10 min offertes</p>
+                        <p style="font-size:0.8em; color:#d4d4d4; margin-top:8px;">* 10 min offertes</p>
                     </div>
 
                     <div class="cta-box" style="text-align:center;">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-filter" style="color:#D4AF37;"></i> Filtrer par categorie
                         </h3>
                         <div class="cat-filter">
@@ -776,32 +782,32 @@ ${faqHTML}
                     </div>
 
                     <div class="cta-box">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-magic" style="color:#D4AF37;"></i> Outils gratuits
                         </h3>
                         <ul style="list-style:none; padding:0;">
                             <li style="margin-bottom:10px;">
-                                <a href="/voyance-gratuite/tarot-gratuit/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/voyance-gratuite/tarot-gratuit/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-star" style="color:#D4AF37; font-size:0.8em;"></i> Tirage de Tarot Gratuit
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/voyance-gratuite/tarot-d-amour/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/voyance-gratuite/tarot-d-amour/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-heart" style="color:#D4AF37; font-size:0.8em;"></i> Tirage Tarot Amour
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/voyance-gratuite/numerologie-gratuite/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/voyance-gratuite/numerologie-gratuite/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-calculator" style="color:#D4AF37; font-size:0.8em;"></i> Numerologie Gratuite
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/voyance-gratuite/pendule-oui-non/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/voyance-gratuite/pendule-oui-non/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-circle-notch" style="color:#D4AF37; font-size:0.8em;"></i> Pendule Oui/Non
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/voyance-gratuite/tarot-oui-non/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/voyance-gratuite/tarot-oui-non/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-check-circle" style="color:#D4AF37; font-size:0.8em;"></i> Tarot Oui/Non
                                 </a>
                             </li>
@@ -809,37 +815,37 @@ ${faqHTML}
                     </div>
 
                     <div class="cta-box">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-compass" style="color:#D4AF37;"></i> Explorer
                         </h3>
                         <ul style="list-style:none; padding:0;">
                             <li style="margin-bottom:10px;">
-                                <a href="/tarot-marseille/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/tarot-marseille/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> Tarot de Marseille
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/numerologie/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/numerologie/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> Numerologie
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/arts-divinatoires/runes/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/arts-divinatoires/runes/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> Tirage de Runes
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/arts-divinatoires/oracle-belline/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/arts-divinatoires/oracle-belline/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> Oracle Belline
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/consultations/flamme-jumelle/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/consultations/flamme-jumelle/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> Flamme Jumelle
                                 </a>
                             </li>
                             <li style="margin-bottom:10px;">
-                                <a href="/blog/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
+                                <a href="/blog/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:8px 0; font-weight:500;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> Le Blog
                                 </a>
                             </li>

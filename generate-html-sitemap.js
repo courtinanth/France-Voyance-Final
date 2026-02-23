@@ -229,7 +229,7 @@ sortedLetters.forEach((letter, index) => {
     pages.forEach(page => {
         htmlContent += `
                 <li style="margin-bottom: 8px;">
-                    <a href="${page.url}" style="color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;">
+                    <a href="${page.url}" style="color:#d8d8d8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;">
                         ${page.text}
                     </a>
                 </li>

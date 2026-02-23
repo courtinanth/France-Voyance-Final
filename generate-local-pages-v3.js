@@ -672,11 +672,15 @@ function generatePage(city, service) {
                             <li><a href="/voyance-gratuite/numerologie-gratuite/">Numérologie Gratuite</a></li>
                             <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
                             <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+                            <li><a href="/voyance-gratuite/compatibilite-astrale/">Compatibilité Astrale</a></li>
+                            <li><a href="/voyance-gratuite/tirage-runes/">Tirage de Runes</a></li>
+                            <li><a href="/glossaire/">Glossaire Ésotérique</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
                             <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
                             <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
                             <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
@@ -854,8 +858,10 @@ function generatePage(city, service) {
                         <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
                         <li><a href="/voyance-gratuite/">Voyance Gratuite</a></li>
                         <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
-                        <li><a href="/arts-divinatoires/">Horoscope du jour</a></li>
-                        <li><a href="/voyance-gratuite/numerologie-gratuite/">Numérologie</a></li>
+                        <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
+                        <li><a href="/numerologie/">Numérologie</a></li>
+                        <li><a href="/avis/">Avis Plateformes</a></li>
+                        <li><a href="/glossaire/">Glossaire</a></li>
                         <li><a href="/blog/">Le Blog</a></li>
                     </ul>
                 </div>

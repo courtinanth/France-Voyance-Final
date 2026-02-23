@@ -48,7 +48,7 @@ const TAROT_INLINE_CSS = `
     }
     .arcane-intro h1 {
         font-family: 'Playfair Display', serif;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-size: 2em;
         margin-bottom: 15px;
     }
@@ -67,7 +67,7 @@ const TAROT_INLINE_CSS = `
         padding: 6px 14px;
         border-radius: 20px;
         font-size: 0.9em;
-        color: #4A1A6B;
+        color:#D4AF37;
     }
     .arcane-badge i { color: #D4AF37; }
     .keywords-grid {
@@ -125,7 +125,7 @@ const TAROT_INLINE_CSS = `
     }
     .meaning-section h2 {
         font-family: 'Playfair Display', serif;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-size: 1.5em;
         margin-bottom: 20px;
         padding-bottom: 10px;
@@ -164,7 +164,7 @@ const TAROT_INLINE_CSS = `
     .meaning-content p {
         margin-bottom: 15px;
         line-height: 1.8;
-        color: #333;
+        color:#e0e0e0;
     }
     .combinaisons-grid {
         display: grid;
@@ -182,13 +182,13 @@ const TAROT_INLINE_CSS = `
         border-left: 4px solid #D4AF37;
     }
     .combi-card strong {
-        color: #4A1A6B;
+        color:#D4AF37;
         display: block;
         margin-bottom: 6px;
     }
     .combi-card span {
         font-size: 0.92em;
-        color: #555;
+        color:#d8d8d8;
         line-height: 1.5;
     }
     .conseil-box {
@@ -224,7 +224,7 @@ const TAROT_INLINE_CSS = `
         padding: 12px 20px;
         background: #f8f6fc;
         border-radius: 10px;
-        color: #4A1A6B;
+        color:#D4AF37;
         text-decoration: none;
         font-weight: 600;
         border: 1px solid #e0d4f0;
@@ -266,13 +266,13 @@ const TAROT_INLINE_CSS = `
     }
     .pillar-card-info h3 {
         font-family: 'Playfair Display', serif;
-        color: #4A1A6B;
+        color:#D4AF37;
         font-size: 0.95em;
         margin-bottom: 4px;
     }
     .pillar-card-info span {
         font-size: 0.8em;
-        color: #888;
+        color:#d0d0d0;
     }
     .hub-links {
         display: grid;
@@ -288,7 +288,7 @@ const TAROT_INLINE_CSS = `
         padding: 18px 20px;
         background: #f8f6fc;
         border-radius: 10px;
-        color: #4A1A6B;
+        color:#D4AF37;
         text-decoration: none;
         font-weight: 600;
         border: 1px solid #e0d4f0;
@@ -372,14 +372,18 @@ function getHeader() {
                             <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie Gratuite</a></li>
                             <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
                             <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
+                            <li><a href="/voyance-gratuite/compatibilite-astrale/">Compatibilité Astrale</a></li>
+                            <li><a href="/voyance-gratuite/tirage-runes/">Tirage de Runes</a></li>
+                            <li><a href="/glossaire/">Glossaire Ésotérique</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
                             <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
                             <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
-                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Ge</a></li>
+                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
                             <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
                             <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
                         </ul>
@@ -428,11 +432,13 @@ function getFooter() {
                 <div class="footer-col">
                     <h4>Navigation Rapide</h4>
                     <ul class="footer-links">
-                        <li><a href="/consulter/voyance-telephone/">Voyance Telephone</a></li>
+                        <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
                         <li><a href="/voyance-gratuite/">Voyance Gratuite</a></li>
                         <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
                         <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
-                        <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie</a></li>
+                        <li><a href="/numerologie/">Numérologie</a></li>
+                        <li><a href="/avis/">Avis Plateformes</a></li>
+                        <li><a href="/glossaire/">Glossaire</a></li>
                         <li><a href="/blog/">Le Blog</a></li>
                     </ul>
                 </div>
@@ -553,11 +559,11 @@ ${getHeader()}
         <div class="container">
             <nav aria-label="Fil d'Ariane">
                 <ol style="display:flex; list-style:none; padding:0; margin:0; font-size:0.9em; gap:8px; flex-wrap:wrap;">
-                    <li><a href="/" style="color:#4A1A6B;">Accueil</a></li>
-                    <li style="color:#999;">›</li>
-                    <li><a href="/tarot-marseille/" style="color:#4A1A6B;">Tarot de Marseille</a></li>
-                    <li style="color:#999;">›</li>
-                    <li style="color:#888;">${card.name}</li>
+                    <li><a href="/" style="color:#D4AF37;">Accueil</a></li>
+                    <li style="color:#d4d4d4;">›</li>
+                    <li><a href="/tarot-marseille/" style="color:#D4AF37;">Tarot de Marseille</a></li>
+                    <li style="color:#d4d4d4;">›</li>
+                    <li style="color:#d0d0d0;">${card.name}</li>
                 </ol>
             </nav>
         </div>
@@ -582,7 +588,7 @@ ${getHeader()}
                                 ${card.zodiac ? `<span class="arcane-badge"><i class="fas fa-star-of-david"></i> ${card.zodiac}</span>` : ''}
                                 <span class="arcane-badge"><i class="fas fa-hashtag"></i> Arcane ${card.number}</span>
                             </div>
-                            <p style="line-height:1.8; color:#333;">${card.summary}</p>
+                            <p style="line-height:1.8; color:#e0e0e0;">${card.summary}</p>
                         </div>
                     </div>
 
@@ -678,7 +684,7 @@ ${getHeader()}
                             ${toParas(card.sante.reversed)}
                         </div>
 
-                        <p style="font-size:0.85em; color:#999; margin-top:20px; font-style:italic;">
+                        <p style="font-size:0.85em; color:#d4d4d4; margin-top:20px; font-style:italic;">
                             <i class="fas fa-info-circle"></i> Les interpretations en sante sont donnees a titre indicatif et ne remplacent en aucun cas un avis medical professionnel.
                         </p>
                     </div>
@@ -686,7 +692,7 @@ ${getHeader()}
                     <!-- Combinaisons -->
                     <div class="meaning-section">
                         <h2><i class="fas fa-layer-group"></i> Combinaisons de ${card.name} avec d'autres arcanes</h2>
-                        <p style="margin-bottom:20px; color:#555;">Lorsque ${card.name} apparait dans un tirage a cote d'autres arcanes, sa signification se nuance et s'enrichit :</p>
+                        <p style="margin-bottom:20px; color:#d8d8d8;">Lorsque ${card.name} apparait dans un tirage a cote d'autres arcanes, sa signification se nuance et s'enrichit :</p>
 
                         <div class="combinaisons-grid">
                             ${card.combinaisons.map(c => `
@@ -705,11 +711,11 @@ ${getHeader()}
 
                     <!-- CTA -->
                     <div style="text-align:center; margin:40px 0;">
-                        <p style="font-size:1.1em; color:#4A1A6B; margin-bottom:20px; font-weight:600;">${card.name} est apparu dans votre tirage ? Obtenez une interpretation personnalisee.</p>
+                        <p style="font-size:1.1em; color:#D4AF37; margin-bottom:20px; font-weight:600;">${card.name} est apparu dans votre tirage ? Obtenez une interpretation personnalisee.</p>
                         <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('tarot'), '_blank'); return false;" class="btn btn-gold" data-affiliate="tarot" style="display:inline-block; padding:16px 35px; font-size:1.1em;">
                             <i class="fas fa-phone-alt" style="margin-right:10px;"></i> Consulter un tarologue maintenant
                         </a>
-                        <p style="font-size:0.85em; color:#999; margin-top:10px;">* Jusqu'a 10 minutes offertes pour votre premiere consultation</p>
+                        <p style="font-size:0.85em; color:#d4d4d4; margin-top:10px;">* Jusqu'a 10 minutes offertes pour votre premiere consultation</p>
                     </div>
 
                     <!-- FAQ -->
@@ -718,10 +724,10 @@ ${getHeader()}
                         <div class="faq-schema">
                             ${card.faqs.map(faq => `
                             <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                                <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                                <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                                     ${faq.question}
                                 </summary>
-                                <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                                <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                                     ${faq.answer}
                                 </div>
                             </details>`).join('')}
@@ -746,42 +752,42 @@ ${getHeader()}
                 <!-- SIDEBAR -->
                 <aside class="sidebar">
                     <div class="cta-box" style="text-align:center;">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-star" style="color:#D4AF37;"></i> Tirage gratuit
                         </h3>
-                        <p style="color:#555; margin-bottom:20px;">Faites votre tirage de tarot gratuit en ligne et decouvrez ce que les cartes revelent pour vous.</p>
+                        <p style="color:#d8d8d8; margin-bottom:20px;">Faites votre tirage de tarot gratuit en ligne et decouvrez ce que les cartes revelent pour vous.</p>
                         <a href="/voyance-gratuite/tarot-gratuit/" class="btn btn-gold" style="display:block; text-align:center; padding:14px; margin-bottom:15px;">
                             <i class="fas fa-magic" style="margin-right:8px;"></i> Tirage Gratuit
                         </a>
-                        <a href="/voyance-gratuite/tarot-d-amour/" class="btn" style="display:block; text-align:center; padding:14px; background:#f8f6fc; color:#4A1A6B; border-radius:10px; text-decoration:none; font-weight:600; border:1px solid #e0d4f0;">
+                        <a href="/voyance-gratuite/tarot-d-amour/" class="btn" style="display:block; text-align:center; padding:14px; background:#f8f6fc; color:#D4AF37; border-radius:10px; text-decoration:none; font-weight:600; border:1px solid #e0d4f0;">
                             <i class="fas fa-heart" style="margin-right:8px; color:#D4AF37;"></i> Tirage Amour
                         </a>
                     </div>
 
                     <div class="cta-box" style="margin-top:25px; text-align:center;">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-phone-alt" style="color:#D4AF37;"></i> Consultation privee
                         </h3>
-                        <p style="color:#555; margin-bottom:15px;">Un tarologue professionnel vous eclaire sur votre tirage et votre avenir.</p>
+                        <p style="color:#d8d8d8; margin-bottom:15px;">Un tarologue professionnel vous eclaire sur votre tirage et votre avenir.</p>
                         <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('tarot'), '_blank'); return false;" class="btn btn-gold" data-affiliate="tarot" style="display:block; text-align:center; padding:14px;">
                             <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Appeler un tarologue *
                         </a>
-                        <p style="font-size:0.8em; color:#999; margin-top:8px;">* 10 min offertes</p>
+                        <p style="font-size:0.8em; color:#d4d4d4; margin-top:8px;">* 10 min offertes</p>
                     </div>
 
                     <div class="cta-box" style="margin-top:25px;">
-                        <h3 style="font-family:'Playfair Display',serif; color:#4A1A6B; margin-bottom:15px;">
+                        <h3 style="font-family:'Playfair Display',serif; color:#D4AF37; margin-bottom:15px;">
                             <i class="fas fa-book" style="color:#D4AF37;"></i> Autres arcanes
                         </h3>
                         <ul style="list-style:none; padding:0;">
                             ${arcanes.filter(c => c.id !== card.id).slice(0, 8).map(c => `
                             <li style="margin-bottom:8px;">
-                                <a href="/tarot-marseille/${c.slug}/" style="color:#4A1A6B; text-decoration:none; display:flex; align-items:center; gap:8px; padding:6px 0;">
+                                <a href="/tarot-marseille/${c.slug}/" style="color:#D4AF37; text-decoration:none; display:flex; align-items:center; gap:8px; padding:6px 0;">
                                     <i class="fas fa-chevron-right" style="color:#D4AF37; font-size:0.7em;"></i> ${c.name}
                                 </a>
                             </li>`).join('')}
                         </ul>
-                        <a href="/tarot-marseille/" style="display:block; text-align:center; margin-top:12px; color:#4A1A6B; font-weight:600; text-decoration:none;">
+                        <a href="/tarot-marseille/" style="display:block; text-align:center; margin-top:12px; color:#D4AF37; font-weight:600; text-decoration:none;">
                             Voir les 22 arcanes →
                         </a>
                     </div>
@@ -884,9 +890,9 @@ ${getHeader()}
         <div class="container">
             <nav aria-label="Fil d'Ariane">
                 <ol style="display:flex; list-style:none; padding:0; margin:0; font-size:0.9em; gap:8px;">
-                    <li><a href="/" style="color:#4A1A6B;">Accueil</a></li>
-                    <li style="color:#999;">›</li>
-                    <li style="color:#888;">Tarot de Marseille</li>
+                    <li><a href="/" style="color:#D4AF37;">Accueil</a></li>
+                    <li style="color:#d4d4d4;">›</li>
+                    <li style="color:#d0d0d0;">Tarot de Marseille</li>
                 </ol>
             </nav>
         </div>
@@ -919,14 +925,14 @@ ${getHeader()}
 
             <!-- Introduction -->
             <div style="max-width:800px; margin:0 auto 50px;">
-                <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:25px;">Comprendre les Arcanes Majeurs</h2>
-                <p style="line-height:1.8; color:#444; margin-bottom:15px;">Le Tarot de Marseille est l'un des outils divinatoires les plus anciens et les plus respectes au monde. Ses 22 arcanes majeurs forment le coeur du jeu et representent les grandes forces universelles qui faconnent notre destinee. Du Mat, symbole de liberte et de nouveaux departs, au Monde, carte de l'accomplissement total, chaque arcane raconte une etape du voyage de l'ame.</p>
-                <p style="line-height:1.8; color:#444; margin-bottom:15px;">Que vous soyez debutant ou praticien confirme, la connaissance des arcanes majeurs est essentielle pour interpreter correctement un tirage. Chaque carte possede une double signification selon qu'elle apparait a l'endroit ou a l'envers, et son sens se nuance en fonction du domaine de vie concerne : amour, travail, argent ou sante.</p>
-                <p style="line-height:1.8; color:#444;">Explorez ci-dessous chaque arcane majeur pour decouvrir sa signification complete, ses conseils et ses combinaisons avec les autres cartes.</p>
+                <h2 style="font-family:'Playfair Display',serif; color:#D4AF37; text-align:center; margin-bottom:25px;">Comprendre les Arcanes Majeurs</h2>
+                <p style="line-height:1.8; color:#dcdcdc; margin-bottom:15px;">Le Tarot de Marseille est l'un des outils divinatoires les plus anciens et les plus respectes au monde. Ses 22 arcanes majeurs forment le coeur du jeu et representent les grandes forces universelles qui faconnent notre destinee. Du Mat, symbole de liberte et de nouveaux departs, au Monde, carte de l'accomplissement total, chaque arcane raconte une etape du voyage de l'ame.</p>
+                <p style="line-height:1.8; color:#dcdcdc; margin-bottom:15px;">Que vous soyez debutant ou praticien confirme, la connaissance des arcanes majeurs est essentielle pour interpreter correctement un tirage. Chaque carte possede une double signification selon qu'elle apparait a l'endroit ou a l'envers, et son sens se nuance en fonction du domaine de vie concerne : amour, travail, argent ou sante.</p>
+                <p style="line-height:1.8; color:#dcdcdc;">Explorez ci-dessous chaque arcane majeur pour decouvrir sa signification complete, ses conseils et ses combinaisons avec les autres cartes.</p>
             </div>
 
             <!-- Cards Grid -->
-            <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:30px;">Les 22 Arcanes Majeurs</h2>
+            <h2 style="font-family:'Playfair Display',serif; color:#D4AF37; text-align:center; margin-bottom:30px;">Les 22 Arcanes Majeurs</h2>
 
             <div class="pillar-card-grid">
                 ${arcanes.map(card => `
@@ -952,7 +958,7 @@ ${getHeader()}
             </div>
 
             <!-- Related links -->
-            <h2 style="font-family:'Playfair Display',serif; color:#4A1A6B; text-align:center; margin-bottom:25px;">Explorez nos outils gratuits</h2>
+            <h2 style="font-family:'Playfair Display',serif; color:#D4AF37; text-align:center; margin-bottom:25px;">Explorez nos outils gratuits</h2>
             <div class="hub-links">
                 <a href="/voyance-gratuite/tarot-gratuit/" class="hub-link"><i class="fas fa-magic"></i> Tirage de Tarot Gratuit</a>
                 <a href="/voyance-gratuite/tarot-d-amour/" class="hub-link"><i class="fas fa-heart"></i> Tirage Tarot Amour</a>
@@ -967,42 +973,42 @@ ${getHeader()}
                 <h2><i class="fas fa-question-circle"></i> Questions frequentes sur le Tarot de Marseille</h2>
                 <div class="faq-schema">
                     <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Qu'est-ce que le Tarot de Marseille ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                             Le Tarot de Marseille est un jeu de 78 cartes utilise depuis le XVe siecle pour la divination et le developpement personnel. Les 22 arcanes majeurs representent les grandes etapes du parcours de vie et les forces universelles qui influencent notre destinee. C'est l'outil divinatoire le plus utilise en France et dans le monde.
                         </div>
                     </details>
                     <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Combien y a-t-il d'arcanes majeurs dans le Tarot de Marseille ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                             Le Tarot de Marseille compte 22 arcanes majeurs, numerotes de 0 (Le Mat) a 21 (Le Monde). Chaque arcane possede une symbolique unique et des significations differentes selon qu'il est tire a l'endroit ou a l'envers.
                         </div>
                     </details>
                     <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Comment interpreter les arcanes majeurs du Tarot ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                             L'interpretation depend de la position de la carte (endroit ou envers), de sa place dans le tirage et des cartes qui l'entourent. Chaque arcane a des significations en amour, travail, argent et sante. Un tarologue professionnel peut vous aider a comprendre les nuances de votre tirage.
                         </div>
                     </details>
                     <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Quelle est la carte la plus positive du Tarot de Marseille ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                             Le Soleil (arcane XIX) est generalement considere comme la carte la plus positive du Tarot. Elle annonce le bonheur, le succes et la clarte. Le Monde (arcane XXI) est aussi tres favorable, symbolisant l'accomplissement total d'un cycle.
                         </div>
                     </details>
                     <details style="margin-bottom:15px; border:1px solid #eee; border-radius:10px; overflow:hidden;">
-                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#4A1A6B; background:#f8f6fc; font-size:1em;">
+                        <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Peut-on tirer le Tarot de Marseille soi-meme ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#444;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
                             Oui, il est tout a fait possible de tirer le Tarot soi-meme. Cependant, l'interpretation requiert de l'experience et de l'intuition. Pour des questions importantes, il est recommande de consulter un tarologue professionnel qui saura lire les subtilites de votre tirage.
                         </div>
                     </details>

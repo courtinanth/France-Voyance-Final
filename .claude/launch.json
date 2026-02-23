@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "local-server",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/court/Desktop/Siteapps/France-Voyance-Final/serve.js"],
+      "port": 8080,
+      "autoPort": true
+    }
+  ]
+}

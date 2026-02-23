@@ -86,7 +86,7 @@ const AVIS_INLINE_CSS = `
     .review-table td {
         padding: 14px 18px;
         background: #fff;
-        color: #333;
+        color:#e0e0e0;
         border-bottom: 1px solid #eee;
     }
     .review-table tr:last-child td {
@@ -134,7 +134,7 @@ const AVIS_INLINE_CSS = `
     .pros-box li, .cons-box li {
         padding: 6px 0;
         line-height: 1.5;
-        color: #333;
+        color:#e0e0e0;
     }
     .star-rating {
         color: #D4AF37;
@@ -148,23 +148,23 @@ const AVIS_INLINE_CSS = `
     .criteria-card span,
     .profile-card p,
     .profile-card span {
-        color: #444;
+        color:#dcdcdc;
     }
     .platform-card p strong,
     .criteria-card p strong,
     .profile-card p strong {
         color: #222;
     }
-    .platform-card h3 { color: #4A1A6B; }
-    .platform-card .card-rating { color: #4A1A6B; font-weight: 600; }
+    .platform-card h3 { color:#D4AF37; }
+    .platform-card .card-rating { color:#D4AF37; font-weight: 600; }
     .platform-card .card-rating .star-rating { color: #D4AF37; }
     .ranking-table td,
     .comparison-table td {
-        color: #444;
+        color:#dcdcdc;
     }
     .ranking-table td a,
     .comparison-table td a {
-        color: #4A1A6B;
+        color:#D4AF37;
         font-weight: 600;
     }
     .ranking-table tr:first-child td {
@@ -172,7 +172,7 @@ const AVIS_INLINE_CSS = `
         font-weight: 700;
     }
     .comparison-table td:first-child {
-        color: #4A1A6B;
+        color:#D4AF37;
         font-weight: 600;
     }
     .comparison-table .winner {
@@ -180,10 +180,10 @@ const AVIS_INLINE_CSS = `
         font-weight: 700;
     }
     .review-table td {
-        color: #444;
+        color:#dcdcdc;
     }
     .hub-link {
-        color: #4A1A6B;
+        color:#D4AF37;
     }
     .verdict-box {
         background: linear-gradient(135deg, #4A1A6B 0%, #1A1A4A 100%);
@@ -207,7 +207,7 @@ const AVIS_INLINE_CSS = `
     }
     .platform-card {
         background: #fff;
-        color: #333;
+        color:#e0e0e0;
         border-radius: 12px;
         padding: 25px;
         margin: 20px 0;
@@ -220,7 +220,7 @@ const AVIS_INLINE_CSS = `
         box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
     .platform-card h3 {
-        color: #4A1A6B;
+        color:#D4AF37;
         font-family: 'Playfair Display', serif;
     }
     .platform-card .card-rating {
@@ -253,13 +253,13 @@ const AVIS_INLINE_CSS = `
         text-align: center;
         border-bottom: 1px solid #eee;
         background: #fff;
-        color: #333;
+        color:#e0e0e0;
     }
     .comparison-table td:first-child {
         text-align: left;
         font-weight: 600;
         background: #f8f6fc;
-        color: #4A1A6B;
+        color:#D4AF37;
     }
     .comparison-table tr:last-child td { border-bottom: none; }
     .comparison-table .winner { background: #e8f5e9; font-weight: 600; color: #2e7d32; }
@@ -274,13 +274,13 @@ const AVIS_INLINE_CSS = `
     }
     .profile-card {
         background: #f8f6fc;
-        color: #333;
+        color:#e0e0e0;
         border-radius: 12px;
         padding: 20px;
         border-left: 4px solid #D4AF37;
     }
     .profile-card h4 {
-        color: #4A1A6B;
+        color:#D4AF37;
         margin-bottom: 8px;
     }
     .ranking-table {
@@ -302,7 +302,7 @@ const AVIS_INLINE_CSS = `
         padding: 12px 14px;
         border-bottom: 1px solid #eee;
         background: #fff;
-        color: #333;
+        color:#e0e0e0;
         text-align: center;
     }
     .ranking-table td:first-child,
@@ -312,7 +312,7 @@ const AVIS_INLINE_CSS = `
     .ranking-table tr:first-child td {
         background: linear-gradient(135deg, #fdf6e3, #fff8e1);
         font-weight: 600;
-        color: #4A1A6B;
+        color:#D4AF37;
     }
     .criteria-grid {
         display: grid;
@@ -325,14 +325,14 @@ const AVIS_INLINE_CSS = `
     }
     .criteria-card {
         background: #fff;
-        color: #333;
+        color:#e0e0e0;
         border-radius: 12px;
         padding: 20px;
         border: 1px solid #eee;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .criteria-card h4 {
-        color: #4A1A6B;
+        color:#D4AF37;
         margin-bottom: 10px;
     }
     .criteria-card i {
@@ -353,7 +353,7 @@ const AVIS_INLINE_CSS = `
         padding: 18px 20px;
         background: #f8f6fc;
         border-radius: 10px;
-        color: #4A1A6B;
+        color:#D4AF37;
         text-decoration: none;
         font-weight: 600;
         border: 1px solid #e0d4f0;
@@ -500,16 +500,18 @@ function getHeader() {
                             <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie Gratuite</a></li>
                             <li><a href="/voyance-gratuite/pendule-oui-non/">Pendule Oui/Non</a></li>
                             <li><a href="/voyance-gratuite/tarot-oui-non/">Tarot Oui/Non</a></li>
-                            <li><a href="/voyance-gratuite/compatibilite-astrale/">Compatibilite Astrale</a></li>
+                            <li><a href="/voyance-gratuite/compatibilite-astrale/">Compatibilité Astrale</a></li>
                             <li><a href="/voyance-gratuite/tirage-runes/">Tirage de Runes</a></li>
+                            <li><a href="/glossaire/">Glossaire Ésotérique</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Arts Divinatoires <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
                             <li><a href="/arts-divinatoires/pendule/">Voyance Pendule</a></li>
                             <li><a href="/arts-divinatoires/oracle-belline/">Oracle Belline</a></li>
-                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Ge</a></li>
+                            <li><a href="/arts-divinatoires/oracle-ge/">Oracle Gé</a></li>
                             <li><a href="/arts-divinatoires/runes/">Tirage Runes</a></li>
                             <li><a href="/arts-divinatoires/cartomancie/">Cartomancie</a></li>
                         </ul>
@@ -558,11 +560,13 @@ function getFooter() {
                 <div class="footer-col">
                     <h4>Navigation Rapide</h4>
                     <ul class="footer-links">
-                        <li><a href="/consulter/voyance-telephone/">Voyance Telephone</a></li>
+                        <li><a href="/consulter/voyance-telephone/">Voyance Téléphone</a></li>
                         <li><a href="/voyance-gratuite/">Voyance Gratuite</a></li>
                         <li><a href="/voyance-gratuite/tarot-d-amour/">Tarot Amour</a></li>
-                        <li><a href="/arts-divinatoires/">Horoscope du jour</a></li>
-                        <li><a href="/voyance-gratuite/numerologie-gratuite/">Numerologie</a></li>
+                        <li><a href="/tarot-marseille/">Tarot de Marseille</a></li>
+                        <li><a href="/numerologie/">Numérologie</a></li>
+                        <li><a href="/avis/">Avis Plateformes</a></li>
+                        <li><a href="/glossaire/">Glossaire</a></li>
                         <li><a href="/blog/">Le Blog</a></li>
                     </ul>
                 </div>
@@ -1542,7 +1546,7 @@ function generatePillarPage() {
                                     ${sortedPlatforms.map((p, i) => `
                                     <tr>
                                         <td><strong>${i + 1}</strong></td>
-                                        <td><a href="/avis/${p.slug}/" style="color:#4A1A6B;font-weight:600;">${p.name}</a></td>
+                                        <td><a href="/avis/${p.slug}/" style="color:#D4AF37;font-weight:600;">${p.name}</a></td>
                                         <td><span class="star-rating">${starsHTML(p.rating)}</span> ${p.rating}/5</td>
                                         <td>${p.priceRange}</td>
                                         <td>${p.nbPractitioners}</td>
