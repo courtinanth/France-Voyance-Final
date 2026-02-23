@@ -24,7 +24,11 @@
       "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/fix-headings.js\":*)",
       "Bash(\"C:/Users/court/Desktop/Siteapps/France-Voyance-Final/temp-find-colors.js\":*)",
       "Bash(cat:*)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(for f in tarot-marseille/*/index.html)",
+      "Bash(do sed -i '/<style>/,/<\\\\/style>/{s/color:#e0e0e0/color:#444/g; s/color:#dcdcdc/color:#444/g; s/color:#d8d8d8/color:#555/g; s/color:#d0d0d0/color:#666/g; s/color:#d4d4d4/color:#999/g}' \"$f\")",
+      "Bash(echo:*)",
+      "Bash(for f in avis/*/index.html)"
     ]
   }
 }
