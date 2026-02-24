@@ -59,7 +59,7 @@
       "logo": "https://france-voyance-avenir.fr/images/logo.svg",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+33100000000",
+        "telephone": "+33892686882",
         "contactType": "customer service"
       }
     },
@@ -398,29 +398,19 @@
         <div style="flex: 1; min-width: 250px;">
           <div class="card sidebar-card"
             style="position: sticky; top: 120px; text-align: center; border: 1px solid var(--color-secondary);">
-            <h3 style="color: var(--color-secondary);">Un doute subsiste ?</h3>
-            <p style="margin-bottom: 20px;">Nos experts sont connectés en ce moment pour interpréter votre
-              thème.</p>
-
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <div style="position: relative;">
-                <img src="/images/profiles/profile_lucas.png" alt="Lucas"
-                  style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--color-secondary); object-fit: cover;">
-                <span
-                  style="position: absolute; bottom: 0; right: 0; width: 15px; height: 15px; background: #00ff00; border-radius: 50%; border: 2px solid #000;"></span>
+            <h3 style="color: var(--color-secondary);"><i class="fa-solid fa-phone-volume" style="margin-right: 8px;"></i> Faites-vous rappeler</h3>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">Un numérologue vous recontacte pour approfondir votre thème.</p>
+            <form class="callback-form">
+              <div style="margin-bottom: 12px;"><input type="email" placeholder="Votre email" required style="width: 100%; padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); color: white; border-radius: 30px; font-size: 0.9rem; font-family: var(--font-body);"></div>
+              <div style="margin-bottom: 12px;"><input type="tel" placeholder="Votre téléphone" required pattern="[0-9\s\+\-]{10,15}" style="width: 100%; padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); color: white; border-radius: 30px; font-size: 0.9rem; font-family: var(--font-body);"></div>
+              <div style="margin-bottom: 12px; text-align: left; display: flex; align-items: flex-start; gap: 8px;">
+                <input type="checkbox" required style="margin-top: 3px; accent-color: var(--color-secondary); min-width: 14px; min-height: 14px;">
+                <label style="font-size: 0.7rem; color: var(--color-text-muted); cursor: pointer;">J'accepte la <a href="/legal/politique-confidentialite/" style="color: var(--color-secondary); text-decoration: underline;">politique de confidentialité</a>.</label>
               </div>
-              <div style="margin-left: 15px; text-align: left;">
-                <div style="font-weight: bold;">Lucas</div>
-                <div style="font-size: 0.8rem; opacity: 0.8;">Numérologue - <span class="count-up"
-                    data-target="98">98</span>% avis positifs</div>
-              </div>
-            </div>
-
-            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
-              class="btn btn-gold" data-affiliate="voyance-telephone" style="width: 100%; margin-bottom: 10px;">Appeler
-              Lucas</a>
-            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
-              class="btn btn-outline" data-affiliate="chat" style="width: 100%;">Chatter</a>
+              <button type="submit" class="btn btn-gold" style="width: 100%;"><i class="fa-solid fa-phone-volume" style="margin-right: 8px;"></i> Demander un rappel</button>
+              <div class="cb-success" style="display: none; margin-top: 10px; padding: 10px; background: rgba(46,204,113,0.15); border-radius: 8px; color: #2ecc71; font-size: 0.8rem;"><i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Envoyé !</div>
+              <div class="cb-error" style="display: none; margin-top: 10px; padding: 10px; background: rgba(231,76,60,0.15); border-radius: 8px; color: #e74c3c; font-size: 0.8rem;"><i class="fa-solid fa-circle-exclamation" style="margin-right: 5px;"></i> Erreur.</div>
+            </form>
           </div>
         </div>
       </div>
@@ -568,6 +558,7 @@
   <script src="/js/animations.js" defer></script>
 
   <script src="/js/main.js?v=2028" defer></script>
+  <script src="/js/callback-form.js" defer></script>
   <script src="/js/numerologie.js?v=2028"></script>
   <script src="/js/logger.js" defer></script>
 </body>

@@ -53,7 +53,7 @@
       "logo": "https://france-voyance-avenir.fr/images/logo.svg",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+33100000000",
+        "telephone": "+33892686882",
         "contactType": "customer service"
       }
     },
@@ -245,15 +245,21 @@
  </div>
  </div>
 
- <!-- CTA Button Inside Result -->
- <div
- style="text-align: center; margin-top:20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
- <a href="javascript:void(0)"
- onclick="window.open(getAffiliateUrl(), '_blank'); return false;"
- class="yn-btn-action" data-affiliate="voyance-telephone"
- style="text-decoration: none; display: inline-block; padding: 10px 25px; font-size: 0.9rem; background: #fff; color: var(--color-primary); margin: 0; max-width: 250px;">
- <i class="fa-solid fa-phone" style="margin-right: 8px;"></i> Parler à un Tarologue
- </a>
+ <!-- Formulaire de rappel -->
+ <div class="cta-box" style="text-align: center; margin-top: 20px;">
+ <h3 style="font-size: 1.2rem;"><i class="fa-solid fa-phone-volume" style="margin-right: 8px; color: var(--color-secondary);"></i> Faites-vous rappeler</h3>
+ <p style="font-size: 0.9rem;">Un tarologue vous recontacte pour approfondir ce tirage.</p>
+ <form class="callback-form" style="max-width: 400px; margin: 0 auto;">
+  <div style="margin-bottom: 15px;"><input type="email" placeholder="Votre adresse email" required style="width: 100%; padding: 12px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); color: white; border-radius: 30px; font-size: 0.95rem; font-family: var(--font-body);"></div>
+  <div style="margin-bottom: 15px;"><input type="tel" placeholder="Votre numéro de téléphone" required pattern="[0-9\s\+\-]{10,15}" style="width: 100%; padding: 12px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); color: white; border-radius: 30px; font-size: 0.95rem; font-family: var(--font-body);"></div>
+  <div style="margin-bottom: 15px; text-align: left; display: flex; align-items: flex-start; gap: 10px;">
+   <input type="checkbox" required style="margin-top: 4px; accent-color: var(--color-secondary); min-width: 16px; min-height: 16px;">
+   <label style="font-size: 0.75rem; color: var(--color-text-muted); cursor: pointer;">J'accepte que mes données soient utilisées pour être recontacté(e). <a href="/legal/politique-confidentialite/" style="color: var(--color-secondary); text-decoration: underline;">Politique de confidentialité</a>.</label>
+  </div>
+  <button type="submit" class="btn btn-gold" style="width: 100%;"><i class="fa-solid fa-phone-volume" style="margin-right: 8px;"></i> Demander un rappel</button>
+  <div class="cb-success" style="display: none; margin-top: 15px; padding: 12px; background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.3); border-radius: 8px; color: #2ecc71; font-size: 0.9rem;"><i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i> Demande envoyée !</div>
+  <div class="cb-error" style="display: none; margin-top: 15px; padding: 12px; background: rgba(231,76,60,0.15); border: 1px solid rgba(231,76,60,0.3); border-radius: 8px; color: #e74c3c; font-size: 0.9rem;"><i class="fa-solid fa-circle-exclamation" style="margin-right: 8px;"></i> Erreur. Veuillez réessayer.</div>
+ </form>
  </div>
 
  <div class="tf-synthesis">
@@ -593,6 +599,7 @@
  <script src="/js/animations.js" defer></script>
 
  <script src="/js/main.js?v=2028" defer></script>
+ <script src="/js/callback-form.js" defer></script>
  <script src="/js/oui-non.js?v=2028_fix_grid_v7"></script>
 <script src="/js/logger.js" defer></script></body>
 

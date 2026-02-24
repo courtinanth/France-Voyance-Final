@@ -1,48 +1,32 @@
-// config.js — Configuration des liens d'affiliation
-const AFFILIATE_CONFIG = {
-    // URL principale
-    mainUrl: "https://www.wengo.fr/voyance-astrologie-1270",
-
-    // URLs par thématique
-    urls: {
-        default: "https://www.wengo.fr/voyance-astrologie-1270",
-        telephone: "https://www.wengo.fr/voyance-astrologie-1270/thema/voyance-telephone",
-        chat: "https://www.wengo.fr/voyance-astrologie-1270/thema/voyance-chat",
-        tarot: "https://www.wengo.fr/voyance-astrologie-1270/thema/tarot",
-        medium: "https://www.wengo.fr/voyance-astrologie-1270/thema/medium",
-        amour: "https://www.wengo.fr/voyance-astrologie-1270/thema/voyance-amour",
-        astrologie: "https://www.wengo.fr/voyance-astrologie-1270/thema/astrologie",
-        numerologie: "https://www.wengo.fr/voyance-astrologie-1270/thema/numerologie"
+// config.js — Configuration des consultations audiotel & SMS
+const CONSULTATION_CONFIG = {
+    // Numéro audiotel affilié
+    audiotel: {
+        numero: "08 92 68 68 82",
+        code: "1211",
+        tarif: "0,80€/min + prix appel"
     },
-
-    // Paramètres UTM (optionnels, laissés vides pour l'instant ou configurables)
-    utmSource: "monsite",
-    utmMedium: "affiliation",
-    utmCampaign: "voyance"
+    // SMS affilié
+    sms: {
+        mot: "VOY1211",
+        numero: "71700",
+        tarif: "0,99€ par SMS + prix SMS"
+    },
+    // Page de consultation dédiée
+    consultationPage: "/consultation/"
 };
 
-// Fonction pour générer l'URL avec UTM
-function getAffiliateUrl(type = 'default') {
-    const baseUrl = AFFILIATE_CONFIG.urls[type] || AFFILIATE_CONFIG.urls.default;
-    // Si besoin d'UTM, décommenter la ligne suivante :
-    // const utm = `?utm_source=${AFFILIATE_CONFIG.utmSource}&utm_medium=${AFFILIATE_CONFIG.utmMedium}&utm_campaign=${AFFILIATE_CONFIG.utmCampaign}`;
-    // return baseUrl + utm;
-    return baseUrl;
+// Redirige vers la page consultation (remplace l'ancien système Wengo)
+function getAffiliateUrl(type) {
+    return CONSULTATION_CONFIG.consultationPage;
 }
 
-// Applique les URLs à tous les liens d'affiliation au chargement
+// Au chargement : redirige tous les anciens liens d'affiliation vers /consultation/
 document.addEventListener('DOMContentLoaded', function () {
-    // Liens génériques
-    document.querySelectorAll('a[data-affiliate="default"]').forEach(link => {
-        link.href = getAffiliateUrl('default');
-    });
-
-    // Liens par thématique
-    document.querySelectorAll('a[data-affiliate]').forEach(link => {
-        const type = link.getAttribute('data-affiliate');
-        // Pour éviter d'écraser si c'est déjà "default" traité au-dessus
-        if (type !== 'default') {
-            link.href = getAffiliateUrl(type);
-        }
+    document.querySelectorAll('a[data-affiliate]').forEach(function(link) {
+        link.href = CONSULTATION_CONFIG.consultationPage;
+        link.removeAttribute('onclick');
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
     });
 });

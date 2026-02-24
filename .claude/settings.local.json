@@ -29,7 +29,11 @@
       "Bash(do sed -i '/<style>/,/<\\\\/style>/{s/color:#e0e0e0/color:#444/g; s/color:#dcdcdc/color:#444/g; s/color:#d8d8d8/color:#555/g; s/color:#d0d0d0/color:#666/g; s/color:#d4d4d4/color:#999/g}' \"$f\")",
       "Bash(echo:*)",
       "Bash(for f in avis/*/index.html)",
-      "Bash(/c/Users/court/AppData/Local/Programs/Python/Python313/python.exe:*)"
+      "Bash(/c/Users/court/AppData/Local/Programs/Python/Python313/python.exe:*)",
+      "mcp__Desktop_Commander__start_search",
+      "mcp__Desktop_Commander__get_more_search_results",
+      "Bash(while read f)",
+      "Bash(do sed -i 's/+33100000000/+33892686882/g' \"$f\")"
     ]
   }
 }

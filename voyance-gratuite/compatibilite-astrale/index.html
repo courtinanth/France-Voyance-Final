@@ -1003,16 +1003,23 @@
                             <a href="/consultations/amour-retour-affectif/" class="btn btn-outline" style="width: 100%;">En savoir plus</a>
                         </div>
 
-                        <!-- CTA Box -->
-                        <div class="sidebar-card" style="border-color: rgba(212,175,55,0.4);">
-                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 15px;">
-                                <i class="fa-solid fa-star" style="color: #D4AF37;"></i>
-                                Ce test vous donne les grandes tendances. Pour une <strong>synastrie complete</strong> basee sur vos themes nataux, consultez un expert.
+                        <!-- Formulaire de rappel -->
+                        <div class="sidebar-card" style="border-color: rgba(212,175,55,0.4); text-align: center;">
+                            <h4 style="color: var(--color-secondary); margin-bottom: 10px;"><i class="fa-solid fa-phone-volume" style="margin-right: 8px;"></i> Faites-vous rappeler</h4>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                                Pour une synastrie complète, laissez vos coordonnées.
                             </p>
-                            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl('astrologie'), '_blank'); return false;"
-                                class="btn btn-gold" data-affiliate="astrologie" style="width: 100%; font-size: 0.9rem;">
-                                Synastrie Personnalisee
-                            </a>
+                            <form class="callback-form">
+                                <div style="margin-bottom: 12px;"><input type="email" placeholder="Votre email" required style="width: 100%; padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); color: white; border-radius: 30px; font-size: 0.9rem; font-family: var(--font-body);"></div>
+                                <div style="margin-bottom: 12px;"><input type="tel" placeholder="Votre téléphone" required pattern="[0-9\s\+\-]{10,15}" style="width: 100%; padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); color: white; border-radius: 30px; font-size: 0.9rem; font-family: var(--font-body);"></div>
+                                <div style="margin-bottom: 12px; text-align: left; display: flex; align-items: flex-start; gap: 8px;">
+                                    <input type="checkbox" required style="margin-top: 3px; accent-color: var(--color-secondary); min-width: 14px; min-height: 14px;">
+                                    <label style="font-size: 0.7rem; color: var(--color-text-muted); cursor: pointer;">J'accepte la <a href="/legal/politique-confidentialite/" style="color: var(--color-secondary); text-decoration: underline;">politique de confidentialité</a>.</label>
+                                </div>
+                                <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-phone-volume" style="margin-right: 8px;"></i> Demander un rappel</button>
+                                <div class="cb-success" style="display: none; margin-top: 10px; padding: 10px; background: rgba(46,204,113,0.15); border-radius: 8px; color: #2ecc71; font-size: 0.8rem;"><i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Envoyé !</div>
+                                <div class="cb-error" style="display: none; margin-top: 10px; padding: 10px; background: rgba(231,76,60,0.15); border-radius: 8px; color: #e74c3c; font-size: 0.8rem;"><i class="fa-solid fa-circle-exclamation" style="margin-right: 5px;"></i> Erreur.</div>
+                            </form>
                         </div>
 
                         <!-- Related Links -->
@@ -1219,6 +1226,7 @@
     <!-- SCRIPTS -->
     <script src="/js/animations.js" defer></script>
     <script src="/js/main.js?v=2028" defer></script>
+    <script src="/js/callback-form.js" defer></script>
     <script src="/js/logger.js" defer></script>
     <script src="/js/compatibilite-astrale.js"></script>
 </body>
