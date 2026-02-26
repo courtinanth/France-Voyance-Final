@@ -139,18 +139,6 @@ function collectCorePages() {
         });
     }
 
-    // Blog
-    const blogDir = path.join(ROOT, 'blog');
-    const blogScanned = scanDirectory(blogDir, '/blog');
-    for (const page of blogScanned) {
-        const isPillar = page.url === '/blog/';
-        pages.push({
-            ...page,
-            changefreq: isPillar ? 'weekly' : 'monthly',
-            priority: isPillar ? '0.7' : '0.6'
-        });
-    }
-
     // Glossaire
     const glossDir = path.join(ROOT, 'glossaire');
     const glossScanned = scanDirectory(glossDir, '/glossaire');
@@ -261,7 +249,23 @@ function collectNumerologiePages() {
     });
 }
 
-// ─── 6. Villes (Local SEO) ───────────────────────────────
+// ─── 6. Blog ─────────────────────────────────────────────
+
+function collectBlogPages() {
+    const dir = path.join(ROOT, 'blog');
+    const scanned = scanDirectory(dir, '/blog');
+
+    return scanned.map(page => {
+        const isPillar = page.url === '/blog/';
+        return {
+            ...page,
+            changefreq: isPillar ? 'daily' : 'monthly',
+            priority: isPillar ? '0.7' : '0.6'
+        };
+    });
+}
+
+// ─── 7. Villes (Local SEO) ───────────────────────────────
 
 function collectVillesPages() {
     const dir = path.join(ROOT, 'villes');
@@ -320,6 +324,7 @@ function main() {
         { filename: 'sitemap-avis.xml', label: 'Avis', collector: collectAvisPages },
         { filename: 'sitemap-tarot.xml', label: 'Tarot', collector: collectTarotPages },
         { filename: 'sitemap-numerologie.xml', label: 'Numérologie', collector: collectNumerologiePages },
+        { filename: 'sitemap-blog.xml', label: 'Blog', collector: collectBlogPages },
         { filename: 'sitemap-villes.xml', label: 'Villes', collector: collectVillesPages },
     ];
 
