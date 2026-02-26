@@ -351,3 +351,193 @@ h1 {
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
 }
+
+/* ==========================================
+   CONSULTER PAGES - Mobile Responsive Fix
+   Overrides inline styles on landing-hero, CTA buttons,
+   content layout, and comparison tables.
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Hero layout: reduce gap and min-width */
+  .landing-hero .container > div[style*="display: flex"] {
+    gap: 20px !important;
+  }
+  .landing-hero .container > div[style*="display: flex"] > div[style*="min-width"] {
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+  }
+
+  /* Hero title */
+  .landing-hero h1 {
+    font-size: 1.8rem !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Hero subtitle */
+  .landing-hero .subtitle {
+    font-size: 1rem !important;
+  }
+
+  /* CTA buttons: remove nowrap, reduce size */
+  .landing-hero .btn.btn-gold,
+  .landing-hero a.btn.btn-gold {
+    white-space: normal !important;
+    padding: 14px 20px !important;
+    font-size: 1.1rem !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    display: inline-block !important;
+    text-align: center !important;
+  }
+
+  /* Phone number in hero */
+  .landing-hero a[href^="tel:"] {
+    font-size: 1.6rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Hero image: center and reduce */
+  .landing-hero img {
+    max-width: 180px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  /* Center the image wrapper div */
+  .landing-hero .container > div[style*="display: flex"] > div:last-child {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Content CTA boxes: reduce phone number and button sizes */
+  .price-box a[href^="tel:"],
+  .content-readable a[href^="tel:"],
+  .content-block a[href^="tel:"] {
+    font-size: 1.6rem !important;
+    letter-spacing: 1px !important;
+  }
+  .price-box .btn.btn-gold,
+  .content-readable .btn.btn-gold,
+  .content-block .btn.btn-gold {
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    white-space: normal !important;
+  }
+  /* Sidebar card: remove sticky, reduce padding */
+  .card[style*="position: sticky"] {
+    position: relative !important;
+    top: auto !important;
+  }
+  .card[style*="position: sticky"] div[style*="font-size: 1.4rem"] {
+    font-size: 1.1rem !important;
+    padding: 15px !important;
+  }
+
+  /* Main content + sidebar layout */
+  .content-readable > div[style*="display: flex"],
+  .content-layout,
+  main > div[style*="display: flex"] {
+    gap: 20px !important;
+  }
+  .content-readable > div[style*="display: flex"] > div[style*="min-width"],
+  main > div[style*="display: flex"] > div[style*="min-width"] {
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+  }
+
+  /* Comparison tables inside content */
+  table[style*="width: 100%"] {
+    font-size: 0.85rem !important;
+  }
+  table[style*="width: 100%"] td {
+    padding: 8px 6px !important;
+  }
+
+  /* Counter/stats boxes */
+  div[style*="font-size: 2.5rem"] {
+    font-size: 1.8rem !important;
+  }
+
+  /* Feature cards grids */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Sidebar sticky */
+  .sidebar-sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* Sticky CTA at bottom */
+  .sticky-cta .btn {
+    font-size: 0.85rem !important;
+    padding: 10px 15px !important;
+  }
+  .sticky-cta .btn span {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero title even smaller */
+  .landing-hero h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* CTA button */
+  .landing-hero .btn.btn-gold,
+  .landing-hero a.btn.btn-gold {
+    padding: 12px 16px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Phone number */
+  .landing-hero a[href^="tel:"] {
+    font-size: 1.4rem !important;
+  }
+
+  /* Hero image smaller */
+  .landing-hero img {
+    max-width: 140px !important;
+  }
+
+  /* Content CTA boxes: even smaller */
+  .price-box a[href^="tel:"],
+  .content-readable a[href^="tel:"],
+  .content-block a[href^="tel:"] {
+    font-size: 1.4rem !important;
+  }
+  .price-box .btn.btn-gold,
+  .content-readable .btn.btn-gold,
+  .content-block .btn.btn-gold {
+    padding: 10px 20px !important;
+    font-size: 0.95rem !important;
+  }
+  .card[style*="position: sticky"] div[style*="font-size: 1.4rem"] {
+    font-size: 1rem !important;
+    padding: 12px !important;
+  }
+
+  /* Counter stats */
+  div[style*="font-size: 2.5rem"] {
+    font-size: 1.5rem !important;
+  }
+
+  /* Content text */
+  .content-readable p,
+  .content-block p {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Sticky CTA */
+  .sticky-cta .btn {
+    font-size: 0.8rem !important;
+    padding: 8px 12px !important;
+  }
+}

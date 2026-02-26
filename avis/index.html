@@ -408,9 +408,54 @@
         .hub-link { padding: 14px 16px; font-size: 0.9rem; }
     }
 .cta-box p, .cta-box span { color: #ccc !important; } .cta-box p small, .cta-box .small-text { color: #bbb !important; }
+
+    /* ── Enhanced Mobile Responsive ── */
+    @media (max-width: 768px) {
+        .ranking-table thead th:nth-child(4),
+        .ranking-table thead th:nth-child(5),
+        .ranking-table td:nth-child(4),
+        .ranking-table td:nth-child(5) {
+            display: none;
+        }
+        .ranking-table thead th { padding: 10px 6px; font-size: 0.8em; }
+        .ranking-table td { padding: 10px 6px; font-size: 0.85em; }
+        .ranking-table thead th:last-child,
+        .ranking-table td:last-child {
+            max-width: 140px;
+            word-break: break-word;
+            font-size: 0.78em;
+        }
+        .comparison-table { min-width: 0 !important; }
+        .table-responsive .ranking-table,
+        .table-responsive .comparison-table { min-width: 0 !important; }
+        .verdict-box { padding: 15px; }
+        .verdict-box .verdict-score { font-size: 1.8em; }
+        .platform-card { padding: 15px; margin: 15px 0; }
+    }
+    @media (max-width: 480px) {
+        .ranking-table thead th:nth-child(4),
+        .ranking-table thead th:nth-child(5),
+        .ranking-table td:nth-child(4),
+        .ranking-table td:nth-child(5) {
+            display: none;
+        }
+        .ranking-table thead th { padding: 8px 4px; font-size: 0.75em; }
+        .ranking-table td { padding: 8px 4px; font-size: 0.8em; }
+        .ranking-table thead th:last-child,
+        .ranking-table td:last-child {
+            max-width: 110px;
+            font-size: 0.72em;
+        }
+        .hub-links { grid-template-columns: 1fr; gap: 8px; }
+        .hub-link { padding: 12px 14px; font-size: 0.85rem; }
+        .platform-card { padding: 12px; }
+        .platform-card h3 { font-size: 1rem; }
+    }
+
 </style>
 
-    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}
+</style></noscript>
 
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
@@ -450,38 +495,38 @@
         {
           "@type": "ListItem",
           "position": 1,
+          "name": "Cosmospace",
+          "url": "https://france-voyance-avenir.fr/avis/cosmospace/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
           "name": "Wengo",
           "url": "https://france-voyance-avenir.fr/avis/wengo/"
         },
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 3,
           "name": "Spiriteo",
           "url": "https://france-voyance-avenir.fr/avis/spiriteo/"
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 4,
           "name": "MyDéclick",
           "url": "https://france-voyance-avenir.fr/avis/mydeclick/"
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 5,
           "name": "Jimini",
           "url": "https://france-voyance-avenir.fr/avis/jimini/"
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 6,
           "name": "Avigora",
           "url": "https://france-voyance-avenir.fr/avis/avigora/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Cosmospace",
-          "url": "https://france-voyance-avenir.fr/avis/cosmospace/"
         },
         {
           "@type": "ListItem",
@@ -517,7 +562,7 @@
           "name": "Quel est le meilleur site de voyance en ligne en 2026 ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wengo est notre choix numero 1 grace a son panel de 500 voyants, ses avis verifies et ses 10 minutes offertes."
+            "text": "Cosmospace est notre choix numero 1 grace a ses 25 ans d'experience, ses 200+ voyants disponibles 24h/24 et son acces sans CB par audiotel au 08 92 68 68 82 (code 1211)."
           }
         },
         {
@@ -683,9 +728,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+
                                     <tr>
                                         <td><strong>1</strong></td>
+                                        <td><a href="/avis/cosmospace/" style="color:#D4AF37;font-weight:600;">Cosmospace</a></td>
+                                        <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span> 4.8/5</td>
+                                        <td>0,40 - 3,00 €/min</td>
+                                        <td>200+</td>
+                                        <td>Audiotel sans CB : <strong>08 92 68 68 82</strong> (code <strong>1211</strong>)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>2</strong></td>
                                         <td><a href="/avis/wengo/" style="color:#D4AF37;font-weight:600;">Wengo</a></td>
                                         <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span> 4.5/5</td>
                                         <td>2,00 - 5,00 €/min</td>
@@ -693,7 +746,7 @@
                                         <td>Jusqu'à 10 minutes offertes à l'inscription</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>2</strong></td>
+                                        <td><strong>3</strong></td>
                                         <td><a href="/avis/spiriteo/" style="color:#D4AF37;font-weight:600;">Spiriteo</a></td>
                                         <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span> 4/5</td>
                                         <td>2,90 - 4,90 €/min</td>
@@ -701,7 +754,7 @@
                                         <td>5 premières minutes offertes</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>3</strong></td>
+                                        <td><strong>4</strong></td>
                                         <td><a href="/avis/mydeclick/" style="color:#D4AF37;font-weight:600;">MyDéclick</a></td>
                                         <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> 3.9/5</td>
                                         <td>2,50 - 4,50 €/min</td>
@@ -709,7 +762,7 @@
                                         <td>7 premières minutes offertes</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>4</strong></td>
+                                        <td><strong>5</strong></td>
                                         <td><a href="/avis/jimini/" style="color:#D4AF37;font-weight:600;">Jimini</a></td>
                                         <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> 3.8/5</td>
                                         <td>1,90 - 3,90 €/min</td>
@@ -717,20 +770,12 @@
                                         <td>3 premières minutes offertes</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>5</strong></td>
+                                        <td><strong>6</strong></td>
                                         <td><a href="/avis/avigora/" style="color:#D4AF37;font-weight:600;">Avigora</a></td>
                                         <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> 3.7/5</td>
                                         <td>2,00 - 4,50 €/min</td>
                                         <td>120+</td>
                                         <td>5 premières minutes offertes</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>6</strong></td>
-                                        <td><a href="/avis/cosmospace/" style="color:#D4AF37;font-weight:600;">Cosmospace</a></td>
-                                        <td><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> 3.6/5</td>
-                                        <td>0,40 - 3,00 €/min</td>
-                                        <td>200+</td>
-                                        <td>Consultation découverte par audiotel</td>
                                     </tr>
                                     <tr>
                                         <td><strong>7</strong></td>
@@ -772,7 +817,24 @@
                         <!-- Platform Summaries -->
                         
                         <section class="content-block fade-in-up">
-                            <h2>1. Wengo - 4.5/5</h2>
+                            <h2>1. Cosmospace - 4.8/5</h2>
+                            <div class="platform-card" style="border: 2px solid #D4AF37; position: relative;">
+                                <span style="position:absolute;top:-12px;left:20px;background:#D4AF37;color:#000;padding:3px 14px;border-radius:20px;font-size:0.8rem;font-weight:700;"><i class="fas fa-trophy"></i> NOTRE CHOIX #1</span>
+                                <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span> Cosmospace (2001)</h3>
+                                <div class="card-rating">4.8/5 sur 4 200 avis</div>
+                                <p><strong>Tarifs :</strong> 0,40 - 3,00 €/min | <strong>Voyants :</strong> 200+ | <strong>Disponibilite :</strong> 24h/24, 7j/7</p>
+                                <p>Cosmospace est le leader historique de la voyance par audiotel en France depuis 2001. Avec plus de 200 voyants disponibles jour et nuit, des tarifs parmi les plus bas du marche et un acces sans carte bancaire, c’est la plateforme ideale pour consulter immediatement en toute discretion. Son experience de 25 ans et ses milliers d’avis positifs en font la reference incontournable.</p>
+                                <p><strong>Ideal pour :</strong> Ceux qui veulent consulter immediatement sans CB, sans attente, 24h/24</p>
+                                <div style="background:linear-gradient(135deg, #1A1A4A 0%, #2D1B69 100%);border-radius:10px;padding:20px;margin-top:15px;text-align:center;">
+                                    <p style="color:#fff !important;margin-bottom:8px;font-size:0.95rem;">Appelez maintenant - Sans carte bancaire :</p>
+                                    <a href="tel:0892686882" style="font-size:1.8rem;font-weight:bold;color:#D4AF37;text-decoration:none;letter-spacing:2px;"><i class="fas fa-phone"></i> 08 92 68 68 82</a>
+                                    <p style="color:#fff !important;margin-top:6px;">Code : <strong style="color:#D4AF37;font-size:1.2rem;">1211</strong></p>
+                                </div>
+                                <p style="margin-top:12px;"><a href="/avis/cosmospace/" class="btn btn-gold" style="display:inline-block;">Lire l’avis complet Cosmospace</a></p>
+                            </div>
+                        </section>
+                        <section class="content-block fade-in-up">
+                            <h2>2. Wengo - 4.5/5</h2>
                             <div class="platform-card">
                                 <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span> Wengo (2007)</h3>
                                 <div class="card-rating">4.5/5 sur 12 500 avis</div>
@@ -783,7 +845,7 @@
                             </div>
                         </section>
                         <section class="content-block fade-in-up">
-                            <h2>2. Spiriteo - 4/5</h2>
+                            <h2>3. Spiriteo - 4/5</h2>
                             <div class="platform-card">
                                 <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span> Spiriteo (2015)</h3>
                                 <div class="card-rating">4/5 sur 3 200 avis</div>
@@ -794,7 +856,7 @@
                             </div>
                         </section>
                         <section class="content-block fade-in-up">
-                            <h2>3. MyDéclick - 3.9/5</h2>
+                            <h2>4. MyDéclick - 3.9/5</h2>
                             <div class="platform-card">
                                 <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> MyDéclick (2019)</h3>
                                 <div class="card-rating">3.9/5 sur 1 800 avis</div>
@@ -805,7 +867,7 @@
                             </div>
                         </section>
                         <section class="content-block fade-in-up">
-                            <h2>4. Jimini - 3.8/5</h2>
+                            <h2>5. Jimini - 3.8/5</h2>
                             <div class="platform-card">
                                 <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> Jimini (2018)</h3>
                                 <div class="card-rating">3.8/5 sur 2 800 avis</div>
@@ -816,7 +878,7 @@
                             </div>
                         </section>
                         <section class="content-block fade-in-up">
-                            <h2>5. Avigora - 3.7/5</h2>
+                            <h2>6. Avigora - 3.7/5</h2>
                             <div class="platform-card">
                                 <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> Avigora (2010)</h3>
                                 <div class="card-rating">3.7/5 sur 2 100 avis</div>
@@ -826,17 +888,7 @@
                                 <p style="margin-top:12px;"><a href="/avis/avigora/" class="btn btn-gold" style="display:inline-block;">Lire l'avis complet Avigora</a></p>
                             </div>
                         </section>
-                        <section class="content-block fade-in-up">
-                            <h2>6. Cosmospace - 3.6/5</h2>
-                            <div class="platform-card">
-                                <h3><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> Cosmospace (2001)</h3>
-                                <div class="card-rating">3.6/5 sur 4 200 avis</div>
-                                <p><strong>Tarifs :</strong> 0,40 - 3,00 €/min | <strong>Voyants :</strong> 200+ | <strong>Disponibilite :</strong> 24h/24, 7j/7</p>
-                                <p>Cosmospace reste un acteur incontournable de l'audiotel en France. Les tarifs sont attractifs mais l'expérience utilisateur est vieillissante.</p>
-                                <p><strong>Ideal pour :</strong> Ceux qui veulent consulter par audiotel sans carte bancaire</p>
-                                <p style="margin-top:12px;"><a href="/avis/cosmospace/" class="btn btn-gold" style="display:inline-block;">Lire l'avis complet Cosmospace</a></p>
-                            </div>
-                        </section>
+                        
                         <section class="content-block fade-in-up">
                             <h2>7. Kang - 3.5/5</h2>
                             <div class="platform-card">
@@ -953,7 +1005,7 @@
                                         <span class="faq-icon">+</span>
                                     </button>
                                     <div class="faq-answer">
-                                        <p>Wengo est notre choix numero 1 grace a son panel de 500 voyants, ses avis verifies et ses 10 minutes offertes.</p>
+                                        <p>Cosmospace est notre choix numero 1 grace a ses 25 ans d'experience, ses 200+ voyants disponibles 24h/24 et son acces sans CB par audiotel au 08 92 68 68 82 (code 1211).</p>
                                     </div>
                                 </div>
                                 <div class="faq-item">
@@ -997,11 +1049,15 @@
 
                         <!-- CTA -->
                         <div class="verdict-box fade-in-up" style="margin-top:40px;">
-                            <h3><i class="fas fa-trophy"></i> Notre choix #1 : Wengo</h3>
-                            <div class="verdict-score">4.5/5</div>
-                            <div class="star-rating" style="font-size:1.5em;margin:10px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                            <p style="margin-bottom:20px;">Wengo est la plateforme la plus complète du marché français. Son système d'avis vérifiés et ses minutes offertes en font un choix sûr pour débuter comme pour consulter régulièrement.</p>
-                            <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;" data-affiliate="default" class="btn btn-gold btn-xl"><i class="fas fa-star"></i> Essayer Wengo - Jusqu'à 10 minutes offertes à l'inscription</a>
+                            <h3><i class="fas fa-trophy"></i> Notre choix #1 : Cosmospace</h3>
+                            <div class="verdict-score">4.8/5</div>
+                            <div class="star-rating" style="font-size:1.5em;margin:10px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p style="margin-bottom:15px;">Cosmospace est le leader historique de la voyance audiotel en France. 200+ voyants, 24h/24, sans carte bancaire.</p>
+                            <div style="margin-bottom:20px;">
+                                <a href="tel:0892686882" style="font-size:1.6rem;font-weight:bold;color:#D4AF37;text-decoration:none;letter-spacing:2px;"><i class="fas fa-phone"></i> 08 92 68 68 82</a>
+                                <p style="margin-top:5px;">Code : <strong style="color:#D4AF37;">1211</strong></p>
+                            </div>
+                            <a href="tel:0892686882" class="btn btn-gold btn-xl"><i class="fas fa-phone"></i> Appeler Cosmospace - Code 1211</a>
                         </div>
 
                     </article>
@@ -1010,11 +1066,15 @@
                     <aside class="sidebar">
                         <div class="sidebar-sticky">
                             <div class="cta-box fade-in-right">
-                                <h3><i class="fas fa-trophy icon-pulse"></i> Top 1 : Wengo</h3>
-                                <div class="star-rating" style="margin:8px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                                <p>4.5/5 - 12 500 avis</p>
-                                <p style="font-size:0.9em;margin:8px 0;">Jusqu'à 10 minutes offertes à l'inscription</p>
-                                <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;" data-affiliate="default" class="btn btn-gold btn-block">Essayer Wengo</a>
+                                <h3><i class="fas fa-trophy icon-pulse"></i> Top 1 : Cosmospace</h3>
+                                <div class="star-rating" style="margin:8px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p>4.8/5 - 4 200 avis</p>
+                                <p style="font-size:0.9em;margin:8px 0;">Sans CB - Audiotel 24h/24</p>
+                                <div style="margin:12px 0;text-align:center;">
+                                    <a href="tel:0892686882" style="font-size:1.3rem;font-weight:bold;color:#D4AF37;text-decoration:none;"><i class="fas fa-phone"></i> 08 92 68 68 82</a>
+                                    <p style="font-size:0.85em;margin-top:4px;">Code : <strong style="color:#D4AF37;">1211</strong></p>
+                                </div>
+                                <a href="tel:0892686882" class="btn btn-gold btn-block">Appeler - Code 1211</a>
                             </div>
 
                             <div class="pillar-link-box fade-in-right stagger-1">
@@ -1035,7 +1095,7 @@
                                 <a href="/avis/avigora/" class="pillar-link" style="display:block;margin-bottom:6px;">
                                     <i class="fas fa-arrow-right"></i> Avis Avigora
                                 </a>
-                                <a href="/avis/cosmospace/" class="pillar-link" style="display:block;margin-bottom:6px;">
+                                <a href="/avis/cosmospace/" class="pillar-link" style="display:block;margin-bottom:6px;font-weight:700;">
                                     <i class="fas fa-arrow-right"></i> Avis Cosmospace
                                 </a>
                                 <a href="/avis/kang/" class="pillar-link" style="display:block;margin-bottom:6px;">
@@ -1116,9 +1176,9 @@
     <!-- Sticky CTA -->
     <div class="sticky-cta">
         <div class="sticky-cta-pulse"></div>
-        <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;" data-affiliate="telephone" class="btn btn-gold">
+        <a href="tel:0892686882" class="btn btn-gold">
             <span class="sticky-cta-icon"><i class="fas fa-phone-alt"></i></span>
-            <span>Consulter</span>
+            <span>08 92 68 68 82 - Code 1211</span>
         </a>
     </div>
 
