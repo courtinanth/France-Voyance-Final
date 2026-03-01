@@ -427,6 +427,17 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
     <meta name="description" content="${metaDesc}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:url" content="${SITE_URL}${canonical}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="${SITE_URL}/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="France Voyance Avenir">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${SITE_URL}/images/og-default.png">
     <link rel="canonical" href="${SITE_URL}${canonical}">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -440,7 +451,7 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
 
@@ -450,6 +461,7 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <script type="application/ld+json">
     ${JSON.stringify(schemaLD, null, 2)}
     </script>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
 </head>`;
 }
 
@@ -598,7 +610,8 @@ function getFooter() {
 
     <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/main.js?v=2026"></script>`;
+    <script src="/js/main.js?v=2029"></script>
+    <script src="/js/logger.js" defer></script>`;
 }
 
 // ─── HELPER: escape HTML ────────────────────────────────────────────────────
@@ -648,7 +661,7 @@ function generateCheminPage(chemin) {
     const prevChemin = findChemin(prevNum);
     const nextChemin = findChemin(nextNum);
 
-    const title = `${chemin.title} : ${chemin.subtitle} - Signification Numerologie | France Voyance Avenir`;
+    const title = `${chemin.title} : ${chemin.subtitle} | Numerologie`;
     const metaDesc = `Decouvrez la signification du ${chemin.title} en numerologie : personnalite, amour, travail, argent, compatibilite. ${chemin.subtitle}. Guide complet 2026.`;
     const canonical = `/numerologie/${chemin.slug}/`;
 
@@ -932,7 +945,7 @@ ${getFooter()}
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function generatePillarPage() {
-    const title = 'Chemin de Vie en Numerologie : Signification des 12 Nombres | France Voyance Avenir';
+    const title = 'Chemin de Vie Numerologie : Les 12 Nombres';
     const metaDesc = 'Guide complet des chemins de vie en numerologie : decouvrez la signification des nombres 1 a 9 et des maitres nombres 11, 22, 33. Calculez votre chemin de vie gratuitement.';
     const canonical = '/numerologie/';
 

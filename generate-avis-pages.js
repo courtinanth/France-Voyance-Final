@@ -443,6 +443,17 @@ function getHead(title, metaDesc, canonical, extraSchemaLD) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
     <meta name="description" content="${metaDesc}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:url" content="${SITE_URL}${canonical}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="${SITE_URL}/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="France Voyance Avenir">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${SITE_URL}/images/og-default.png">
     <link rel="canonical" href="${SITE_URL}${canonical}">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -456,7 +467,7 @@ function getHead(title, metaDesc, canonical, extraSchemaLD) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
 
@@ -616,7 +627,8 @@ function getFooter() {
 
     <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/main.js?v=2026"></script>`;
+    <script src="/js/main.js?v=2029"></script>
+    <script src="/js/logger.js" defer></script>`;
 }
 
 
@@ -1150,7 +1162,7 @@ function generateComparisonPage(comparison) {
     const content = COMPARISON_CONTENT[c.slug];
     const canonicalPath = `/avis/${c.slug}/`;
 
-    const title = `${pA.name} vs ${pB.name} : quelle voyance en ligne choisir en 2026 ?`;
+    const title = `${pA.name} vs ${pB.name} : Quel Site Choisir en 2026 ?`;
     const metaDesc = `${c.title} : comparatif complet des deux plateformes de voyance. Tarifs, voyants, avis clients. Decouvrez laquelle choisir en 2026.`;
 
     // CTA: always link to affiliate (Wengo)

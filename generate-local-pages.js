@@ -195,7 +195,7 @@ function generatePage(city, service) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
 

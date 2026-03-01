@@ -317,6 +317,17 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
     <meta name="description" content="${metaDesc}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:url" content="${SITE_URL}${canonical}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="${SITE_URL}/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="France Voyance Avenir">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${SITE_URL}/images/og-default.png">
     <link rel="canonical" href="${SITE_URL}${canonical}">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -330,7 +341,7 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
 
@@ -340,6 +351,7 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <script type="application/ld+json">
     ${JSON.stringify(schemaLD, null, 2)}
     </script>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
 </head>`;
 }
 
@@ -488,7 +500,8 @@ function getFooter() {
 
     <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/main.js?v=2026"></script>`;
+    <script src="/js/main.js?v=2029"></script>
+    <script src="/js/logger.js" defer></script>`;
 }
 
 // ─── HELPER: escape HTML ────────────────────────────────────────────────────
@@ -511,7 +524,7 @@ function generateArcanePage(card) {
     const prevCard = arcanes.find(c => c.id === card.id - 1) || arcanes[arcanes.length - 1];
     const nextCard = arcanes.find(c => c.id === card.id + 1) || arcanes[0];
 
-    const title = `${card.name} - Signification Tarot de Marseille | France Voyance Avenir`;
+    const title = `${card.name} : Signification Tarot de Marseille`;
     const metaDesc = `Decouvrez la signification de ${card.name} (arcane ${card.number}) du Tarot de Marseille : interpretation endroit et envers, amour, travail, argent. Guide complet 2026.`;
     const canonical = `/tarot-marseille/${card.slug}/`;
 
@@ -811,7 +824,7 @@ ${getFooter()}
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function generatePillarPage() {
-    const title = 'Tarot de Marseille : Signification des 22 Arcanes Majeurs | France Voyance Avenir';
+    const title = 'Tarot de Marseille : Les 22 Arcanes Majeurs';
     const metaDesc = 'Guide complet du Tarot de Marseille : decouvrez la signification des 22 arcanes majeurs, interpretation endroit et envers, amour, travail, argent. Tirage gratuit.';
     const canonical = '/tarot-marseille/';
 

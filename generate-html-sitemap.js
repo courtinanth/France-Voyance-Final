@@ -320,6 +320,17 @@ const fullHtml = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan du site - France Voyance Avenir</title>
     <meta name="description" content="Plan du site complet de France Voyance Avenir. Accédez facilement à toutes nos pages : consultations, voyance gratuite, blog, et services par ville.">
+    <meta property="og:title" content="Plan du site - France Voyance Avenir">
+    <meta property="og:description" content="Plan du site complet de France Voyance Avenir. Accédez facilement à toutes nos pages : consultations, voyance gratuite, blog, et services par ville.">
+    <meta property="og:url" content="https://france-voyance-avenir.fr/plan-du-site/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://france-voyance-avenir.fr/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="France Voyance Avenir">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plan du site - France Voyance Avenir">
+    <meta name="twitter:description" content="Plan du site complet de France Voyance Avenir. Accédez facilement à toutes nos pages : consultations, voyance gratuite, blog, et services par ville.">
+    <meta name="twitter:image" content="https://france-voyance-avenir.fr/images/og-default.png">
     <meta name="robots" content="noindex"> <!-- Sitemap page often noindex to prefer actual pages, but user might want index. Let's keep minimal or remove if desired. Keeping default usually ok, but 'noindex' prevents it from cluttering SERP snippets usually. -->
     
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -334,7 +345,7 @@ const fullHtml = `<!DOCTYPE html>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
 
@@ -348,6 +359,7 @@ const fullHtml = `<!DOCTYPE html>
             padding-left: 5px;
         }
     </style>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
 </head>
 
 <body>
@@ -510,7 +522,8 @@ const fullHtml = `<!DOCTYPE html>
 
     <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/main.js?v=2026"></script>
+    <script src="/js/main.js?v=2029"></script>
+    <script src="/js/logger.js" defer></script>
 </body>
 
 </html>`;

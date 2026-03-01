@@ -24,7 +24,7 @@ const SERVICE_CONFIGS = {
 // VOYANCE AMOUR — Intent: relationship/love guidance
 // ══════════════════════════════════════════════════════════════════════════
 'voyance-amour': {
-    titleTemplate: '{service} à {city} ({postal_code}) : guidance sentimentale',
+    titleTemplate: '{service} à {city} : Consultation',
     metaTemplate: 'Voyance amour à {city} : consultez un voyant spécialisé en amour, couple et retour affectif. Réponses sur votre vie sentimentale. Consultation immédiate.',
     h1Template: '{service} à {city} : éclairez votre vie sentimentale',
     subtitleTemplate: 'Un voyant spécialisé en amour vous guide à {city} ({postal_code}), {region}',
@@ -98,7 +98,7 @@ const SERVICE_CONFIGS = {
 // VOYANCE TELEPHONE — Intent: channel/method (phone consultation)
 // ══════════════════════════════════════════════════════════════════════════
 'voyance-telephone': {
-    titleTemplate: 'Voyance par téléphone à {city} ({postal_code}) : consultation immédiate',
+    titleTemplate: 'Voyance Telephone à {city} : Consultation',
     metaTemplate: 'Voyance par téléphone à {city} : consultez un voyant sérieux par téléphone. Réponses immédiates, premières minutes offertes. Disponible 24h/24.',
     h1Template: 'Voyance par téléphone à {city} : consultez un voyant maintenant',
     subtitleTemplate: 'Des voyants expérimentés vous répondent par téléphone à {city} ({postal_code}), {region}',
@@ -172,7 +172,7 @@ const SERVICE_CONFIGS = {
 // VOYANCE AUDIOTEL — Intent: no credit card, anonymous, premium-rate
 // ══════════════════════════════════════════════════════════════════════════
 'voyance-audiotel': {
-    titleTemplate: 'Voyance audiotel à {city} ({postal_code}) : consultation sans carte bancaire',
+    titleTemplate: 'Voyance Audiotel à {city} : Sans CB',
     metaTemplate: 'Voyance audiotel à {city} : consultation de voyance sans CB, anonyme et immédiate. Appelez et obtenez des réponses. Tarifs clairs et transparents.',
     h1Template: 'Voyance audiotel à {city} : consultez sans carte bancaire',
     subtitleTemplate: 'Consultation de voyance immédiate et anonyme par audiotel à {city} ({postal_code}), {region}',
@@ -246,7 +246,7 @@ const SERVICE_CONFIGS = {
 // VOYANCE GRATUITE — Intent: free tools, discovery, no commitment
 // ══════════════════════════════════════════════════════════════════════════
 'voyance-gratuite': {
-    titleTemplate: 'Voyance gratuite à {city} ({postal_code}) : tirage de tarot et consultation offerte',
+    titleTemplate: 'Voyance Gratuite à {city} : Tirage Offert',
     metaTemplate: 'Voyance gratuite à {city} : tirage de tarot gratuit, numérologie et premières minutes offertes avec un voyant. Découvrez votre avenir sans engagement.',
     h1Template: 'Voyance gratuite à {city} : découvrez nos outils sans engagement',
     subtitleTemplate: 'Tirages gratuits et premières minutes offertes pour les habitants de {city} ({postal_code}), {region}',
@@ -320,7 +320,7 @@ const SERVICE_CONFIGS = {
 // VOYANCE SMS — Intent: quick, discreet, text-based
 // ══════════════════════════════════════════════════════════════════════════
 'voyance-sms': {
-    titleTemplate: 'Voyance par SMS à {city} ({postal_code}) : réponse rapide et discrète',
+    titleTemplate: 'Voyance SMS à {city} : Reponse Rapide',
     metaTemplate: 'Voyance par SMS à {city} : posez votre question par message et recevez une réponse de voyant en quelques minutes. Discret, rapide, sans engagement.',
     h1Template: 'Voyance par SMS à {city} : posez votre question par message',
     subtitleTemplate: 'Réponses de voyance rapides et discrètes par SMS à {city} ({postal_code}), {region}',
@@ -394,7 +394,7 @@ const SERVICE_CONFIGS = {
 // VOYANCE CHAT — Intent: real-time text, online, comfortable
 // ══════════════════════════════════════════════════════════════════════════
 'voyance-chat': {
-    titleTemplate: 'Voyance par chat à {city} ({postal_code}) : consultation en direct par écrit',
+    titleTemplate: 'Voyance Chat à {city} : Consultation',
     metaTemplate: 'Voyance par chat à {city} : échangez en direct avec un voyant par écrit. Consultation en temps réel, confortable et confidentielle. Essayez maintenant.',
     h1Template: 'Voyance par chat à {city} : échangez en direct avec un voyant',
     subtitleTemplate: 'Consultation de voyance en direct par écrit à {city} ({postal_code}), {region}',
@@ -576,6 +576,17 @@ function generatePage(city, service) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
     <meta name="description" content="${meta}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${meta}">
+    <meta property="og:url" content="https://france-voyance-avenir.fr/villes/${service.slug}-${city.slug}/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://france-voyance-avenir.fr/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="France Voyance Avenir">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${meta}">
+    <meta name="twitter:image" content="https://france-voyance-avenir.fr/images/og-default.png">
     <link rel="canonical" href="https://france-voyance-avenir.fr/villes/${service.slug}-${city.slug}/">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -589,7 +600,7 @@ function generatePage(city, service) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
 
@@ -641,6 +652,7 @@ function generatePage(city, service) {
       ]
     }
     </script>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
 </head>
 
 <body>
@@ -910,7 +922,8 @@ function generatePage(city, service) {
 
     <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/main.js?v=2026"></script>
+    <script src="/js/main.js?v=2029"></script>
+    <script src="/js/logger.js" defer></script>
 </body>
 
 </html>`;

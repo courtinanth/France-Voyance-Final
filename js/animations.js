@@ -52,6 +52,15 @@
 
         animatedElements.forEach(el => observer.observe(el));
 
+        // Fallback: force visibility after 3s for elements observer may miss
+        setTimeout(() => {
+            animatedElements.forEach(el => {
+                if (!el.classList.contains('visible')) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 3000);
+
         // Also handle .reveal class elements for backwards compatibility
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {

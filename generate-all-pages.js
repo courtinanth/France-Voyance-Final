@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SITE_URL = "https://france-voyance-avenir.com";
+const SITE_URL = "https://france-voyance-avenir.fr";
 const dataRaw = fs.readFileSync(path.join(__dirname, "data", "platforms.json"), "utf8");
 const data = JSON.parse(dataRaw);
 const platforms = data.platforms;
@@ -37,6 +37,17 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
     <meta name="description" content="${metaDesc}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:url" content="${SITE_URL}${canonical}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="${SITE_URL}/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="France Voyance Avenir">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${SITE_URL}/images/og-default.png">
     <link rel="canonical" href="${SITE_URL}${canonical}">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -44,11 +55,11 @@ function getHead(title, metaDesc, canonical, schemaLD) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026">
+    <link rel="stylesheet" href="/css/style.css?v=2029">
     <link rel="stylesheet" href="/css/animations.css?v=2026">
     <script src="/js/config.js"></script>
     ${AVIS_INLINE_CSS}
-    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1!important;transform:none!important;transition:none!important}.faq-answer{max-height:none!important;overflow:visible!important;padding:0 24px 20px!important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1!important;transform:none!important;pointer-events:auto!important}</style></noscript>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right,.scale-in,.reveal{opacity:1 !important;transform:none !important;transition:none !important}.faq-answer{max-height:none !important;overflow:visible !important;padding:0 24px 20px !important}.faq-icon,.faq-toggle{display:none}.sticky-cta{opacity:1 !important;transform:none !important;pointer-events:auto !important}.testimonial-nav{display:none}.reading-progress-container{display:none}</style></noscript>
     <script type="application/ld+json">
     ${JSON.stringify(schemaLD, null, 2)}
     </script>
@@ -164,6 +175,7 @@ function getFooter() {
                         <li><span class="obf-link" data-o="${b64('/legal/politique-cookies/')}" role="link" tabindex="0">Politique des Cookies</span></li>
                         <li><span class="obf-link" data-o="${b64('/legal/cgu/')}" role="link" tabindex="0">CGU</span></li>
                         <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/plan-du-site/">Plan du site</a></li>
                     </ul>
                 </div>
             </div>
@@ -179,7 +191,8 @@ function getFooter() {
     <div class="sticky-cta"><div class="sticky-cta-pulse"></div><a href="tel:0892686882" class="btn btn-gold"><span class="sticky-cta-icon"><i class="fas fa-phone-alt"></i></span><span>Consulter</span></a></div>
     <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/main.js?v=2026"></script>`;
+    <script src="/js/main.js?v=2029"></script>
+    <script src="/js/logger.js" defer></script>`;
 }
 
 
@@ -414,7 +427,7 @@ function generateComparisonPage(comp) {
     else if (pB.slug === "cosmospace") { winner = B; winnerP = pB; }
     else if (pA.rating >= pB.rating) { winner = A; winnerP = pA; }
     else { winner = B; winnerP = pB; }
-    const title = A + " ou " + B + " : comparatif complet pour bien choisir";
+    const title = A + " ou " + B + " : Avis & Comparatif 2026";
     const metaDesc = "Comparatif " + A + " vs " + B + " : tarifs, voyants, avis. Decouvre quelle plateforme choisir en 2026.";
     const relatedComps = comparisons.filter(c => c.slug !== comp.slug && (c.platformA === pA.slug || c.platformB === pA.slug || c.platformA === pB.slug || c.platformB === pB.slug)).slice(0, 3);
     const schema = { "@context": "https://schema.org", "@graph": [
@@ -569,7 +582,7 @@ function generateAlternativesPage(platform) {
 
 function generateHubPage() {
     const canonicalPath = "/comparatif/";
-    const title = "Classement des meilleures plateformes de voyance en 2026";
+    const title = "Top 10 Meilleurs Sites de Voyance 2026 : Avis";
     const metaDesc = "Classement complet des 10 meilleures plateformes de voyance en ligne en 2026. Tableau comparatif, avis, tarifs et 45 comparatifs detailles.";
     const sorted = [...platforms].sort((a, b) => b.rating - a.rating);
     const schema = { "@context": "https://schema.org", "@graph": [
@@ -599,7 +612,7 @@ function generateHubPage() {
         const isCosmo = p.slug === 'cosmospace';
         const ctaHTML = isCosmo
             ? '<a href="tel:0892686882" class="btn btn-gold btn-block" style="margin-top:15px;"><i class="fas fa-phone-alt"></i> 08 92 68 68 82 (code 1211)</a><p style="font-size:0.8em;opacity:0.7;text-align:center;margin-top:5px;">0,80€/min + prix appel</p>'
-            : (p.isAffiliate ? '<a href="' + p.affiliateUrl + '" target="_blank" rel="noopener sponsored" class="btn btn-gold btn-block" style="margin-top:15px;"><i class="fas fa-external-link-alt"></i> Essayer ' + p.name + '</a>' : '<a href="/avis/' + p.slug + '/" class="btn btn-gold btn-block" style="margin-top:15px;">Voir l\'avis complet</a>');
+            : (p.isAffiliate ? '<a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(),\'_blank\');return false;" data-affiliate="default" class="btn btn-gold btn-block" style="margin-top:15px;"><i class="fas fa-external-link-alt"></i> Essayer ' + p.name + '</a>' : '<a href="/avis/' + p.slug + '/" class="btn btn-gold btn-block" style="margin-top:15px;">Voir l\'avis complet</a>');
         return `
             <div class="platform-detail-card" style="background:#fff;border-radius:12px;padding:25px;margin-bottom:25px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border-left:4px solid #D4AF37;">
                 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;margin-bottom:15px;">
