@@ -20,6 +20,9 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
 const SITE_URL = 'https://france-voyance-avenir.fr';
 
+// ─── HELPER: base64 encode (for link obfuscation) ──────────────────────────
+function b64(s) { return Buffer.from(s).toString("base64"); }
+
 // Sort articles by date (newest first)
 const sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -431,9 +434,9 @@ function getFooter() {
                 <div class="footer-col">
                     <h4>Informations</h4>
                     <ul class="footer-links">
-                        <li><a href="/legal/mentions-legales/">Mentions Légales</a></li>
-                        <li><a href="/legal/politique-confidentialite/">Politique de Confidentialité</a></li>
-                        <li><a href="/legal/cgu/">CGU</a></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/mentions-legales/')}" role="link" tabindex="0">Mentions Légales</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/politique-confidentialite/')}" role="link" tabindex="0">Politique de Confidentialité</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/cgu/')}" role="link" tabindex="0">CGU</span></li>
                         <li><a href="/contact/">Contact</a></li>
                         <li><a href="/plan-du-site/">Plan du site</a></li>
                     </ul>
@@ -457,6 +460,7 @@ function getFooter() {
             </div>
         </div>
     </footer>
+    <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/config.js"></script>
     <script src="/js/animations.js" defer></script>
     <script src="/js/main.js?v=2028" defer></script>

@@ -315,9 +315,9 @@
  <div class="footer-col">
  <h4>Informations</h4>
  <ul class="footer-links">
- <li><a href="/legal/mentions-legales/">Mentions Légales</a></li>
- <li><a href="/legal/politique-confidentialite/">Politique de Confidentialité</a></li>
- <li><a href="/legal/cgu/">CGU</a></li>
+ <li><span class="obf-link" data-o="L2xlZ2FsL21lbnRpb25zLWxlZ2FsZXMv" role="link" tabindex="0">Mentions Légales</span></li>
+ <li><span class="obf-link" data-o="L2xlZ2FsL3BvbGl0aXF1ZS1jb25maWRlbnRpYWxpdGUv" role="link" tabindex="0">Politique de Confidentialité</span></li>
+ <li><span class="obf-link" data-o="L2xlZ2FsL2NndS8=" role="link" tabindex="0">CGU</span></li>
  <li><a href="/contact/">Contact</a></li>
  <li><a href="/plan-du-site/">Plan du site</a></li>
  </ul>
@@ -347,6 +347,7 @@
  </footer>
  <script src="/js/animations.js" defer></script>
  <script src="/js/main.js?v=2028" defer></script>
-<script src="/js/logger.js" defer></script></body>
+<script src="/js/logger.js" defer></script><script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
+</body>
 
 </html>

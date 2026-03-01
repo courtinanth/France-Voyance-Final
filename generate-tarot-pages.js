@@ -20,6 +20,9 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
 const SITE_URL = 'https://france-voyance-avenir.fr';
 
+// ─── HELPER: base64 encode (for link obfuscation) ──────────────────────────
+function b64(s) { return Buffer.from(s).toString("base64"); }
+
 // ─── INLINE CSS ─────────────────────────────────────────────────────────────
 
 const TAROT_INLINE_CSS = `
@@ -445,10 +448,10 @@ function getFooter() {
                 <div class="footer-col">
                     <h4>Informations</h4>
                     <ul class="footer-links">
-                        <li><a href="/legal/mentions-legales/">Mentions Legales</a></li>
-                        <li><a href="/legal/politique-confidentialite/">Politique de Confidentialite</a></li>
-                        <li><a href="/legal/politique-cookies/">Politique des Cookies</a></li>
-                        <li><a href="/legal/cgu/">CGU</a></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/mentions-legales/')}" role="link" tabindex="0">Mentions Legales</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/politique-confidentialite/')}" role="link" tabindex="0">Politique de Confidentialite</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/politique-cookies/')}" role="link" tabindex="0">Politique des Cookies</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/cgu/')}" role="link" tabindex="0">CGU</span></li>
                         <li><a href="/contact/">Contact</a></li>
                         <li><a href="/plan-du-site/">Plan du site</a></li>
                     </ul>
@@ -483,6 +486,7 @@ function getFooter() {
         </a>
     </div>
 
+    <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
     <script src="/js/main.js?v=2026"></script>`;
 }

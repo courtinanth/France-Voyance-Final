@@ -21,6 +21,9 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
 const SITE_URL = 'https://france-voyance-avenir.fr';
 
+// ─── HELPER: base64 encode (for link obfuscation) ──────────────────────────
+function b64(s) { return Buffer.from(s).toString("base64"); }
+
 // ─── HELPER: find platform by slug ──────────────────────────────────────────
 
 function getPlatform(slug) {
@@ -86,7 +89,7 @@ const AVIS_INLINE_CSS = `
     .review-table td {
         padding: 14px 18px;
         background: #fff;
-        color:#e0e0e0;
+        color:#333;
         border-bottom: 1px solid #eee;
     }
     .review-table tr:last-child td {
@@ -134,13 +137,13 @@ const AVIS_INLINE_CSS = `
     .pros-box li, .cons-box li {
         padding: 6px 0;
         line-height: 1.5;
-        color:#e0e0e0;
+        color:#333;
     }
     .star-rating {
         color: #D4AF37;
         letter-spacing: 2px;
     }
-    /* ── Contrast fix: override .content-block p light color on white cards ── */
+    /* ── Contrast fix: dark text on white cards ── */
     .platform-card p,
     .platform-card span,
     .platform-card div,
@@ -148,7 +151,7 @@ const AVIS_INLINE_CSS = `
     .criteria-card span,
     .profile-card p,
     .profile-card span {
-        color:#dcdcdc;
+        color:#555;
     }
     .platform-card p strong,
     .criteria-card p strong,
@@ -160,7 +163,7 @@ const AVIS_INLINE_CSS = `
     .platform-card .card-rating .star-rating { color: #D4AF37; }
     .ranking-table td,
     .comparison-table td {
-        color:#dcdcdc;
+        color:#555;
     }
     .ranking-table td a,
     .comparison-table td a {
@@ -180,7 +183,7 @@ const AVIS_INLINE_CSS = `
         font-weight: 700;
     }
     .review-table td {
-        color:#dcdcdc;
+        color:#555;
     }
     .hub-link {
         color:#D4AF37;
@@ -207,7 +210,7 @@ const AVIS_INLINE_CSS = `
     }
     .platform-card {
         background: #fff;
-        color:#e0e0e0;
+        color:#555;
         border-radius: 12px;
         padding: 25px;
         margin: 20px 0;
@@ -253,7 +256,7 @@ const AVIS_INLINE_CSS = `
         text-align: center;
         border-bottom: 1px solid #eee;
         background: #fff;
-        color:#e0e0e0;
+        color:#555;
     }
     .comparison-table td:first-child {
         text-align: left;
@@ -274,7 +277,7 @@ const AVIS_INLINE_CSS = `
     }
     .profile-card {
         background: #f8f6fc;
-        color:#e0e0e0;
+        color:#555;
         border-radius: 12px;
         padding: 20px;
         border-left: 4px solid #D4AF37;
@@ -302,7 +305,7 @@ const AVIS_INLINE_CSS = `
         padding: 12px 14px;
         border-bottom: 1px solid #eee;
         background: #fff;
-        color:#e0e0e0;
+        color:#555;
         text-align: center;
     }
     .ranking-table td:first-child,
@@ -325,7 +328,7 @@ const AVIS_INLINE_CSS = `
     }
     .criteria-card {
         background: #fff;
-        color:#e0e0e0;
+        color:#555;
         border-radius: 12px;
         padding: 20px;
         border: 1px solid #eee;
@@ -573,10 +576,10 @@ function getFooter() {
                 <div class="footer-col">
                     <h4>Informations</h4>
                     <ul class="footer-links">
-                        <li><a href="/legal/mentions-legales/">Mentions Legales</a></li>
-                        <li><a href="/legal/politique-confidentialite/">Politique de Confidentialite</a></li>
-                        <li><a href="/legal/politique-cookies/">Politique des Cookies</a></li>
-                        <li><a href="/legal/cgu/">CGU</a></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/mentions-legales/')}" role="link" tabindex="0">Mentions Legales</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/politique-confidentialite/')}" role="link" tabindex="0">Politique de Confidentialite</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/politique-cookies/')}" role="link" tabindex="0">Politique des Cookies</span></li>
+                        <li><span class="obf-link" data-o="${b64('/legal/cgu/')}" role="link" tabindex="0">CGU</span></li>
                         <li><a href="/contact/">Contact</a></li>
                         <li><a href="/plan-du-site/">Plan du site</a></li>
                     </ul>
@@ -611,6 +614,7 @@ function getFooter() {
         </a>
     </div>
 
+    <script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
     <script src="/js/animations.js" defer></script>
     <script src="/js/main.js?v=2026"></script>`;
 }
@@ -687,14 +691,14 @@ const REVIEW_CONTENT = {
         ]
     },
     cosmospace: {
-        introP1: `Cosmospace est un pionnier de la voyance par audiotel en France, en activite depuis 2001. Avec plus de 20 ans d'experience et 200 voyants disponibles, la plateforme a bati sa reputation sur l'accessibilite : pas besoin de carte bancaire, pas d'inscription, il suffit d'un telephone. Note 3.6/5 sur 4 200 avis, Cosmospace reste un acteur incontournable du marche.`,
+        introP1: `Cosmospace est un pionnier de la voyance par audiotel en France, en activite depuis 2001. Avec plus de 20 ans d'experience et 200 voyants disponibles, la plateforme a bati sa reputation sur l'accessibilite : pas besoin de carte bancaire, pas d'inscription, il suffit d'un telephone. Note 4.8/5 sur 4 200 avis, Cosmospace reste un acteur incontournable du marche.`,
         introP2: `Nous avons teste Cosmospace pour evaluer si ce veteran de l'audiotel reste competitif face aux plateformes modernes. Qualite des voyants, tarifs, ergonomie : voici notre analyse complete.`,
-        pricingDetail: `L'atout principal de Cosmospace est son tarif audiotel a partir de 0,40 euro/min, le plus bas du marche. Les consultations par CB vont de 1,50 a 3,00 euros/min. L'offre decouverte permet de tester le service par audiotel sans engagement. L'absence de necessite d'inscription ou de carte bancaire est un avantage unique pour les consultants ponctuels.`,
+        pricingDetail: `L'atout principal de Cosmospace est son tarif audiotel a partir de 0,80 euro/min, le plus bas du marche. Les consultations par CB vont de 1,50 a 3,00 euros/min. L'offre decouverte permet de tester le service par audiotel sans engagement. L'absence de necessite d'inscription ou de carte bancaire est un avantage unique pour les consultants ponctuels.`,
         clientReview: `Les 4 200 avis de Cosmospace sont partages. Les utilisateurs fideles apprecient l'accessibilite et les tarifs audiotel imbattables. Les critiques portent sur l'interface tres datee, le manque de transparence dans la selection des voyants et l'absence de chat ou d'email. Le score Trustpilot de 3.2/5 est en dessous de la moyenne du secteur.`,
         faq: [
             { q: "Cosmospace est-il fiable ?", a: "Cosmospace est un acteur historique fiable, mais la qualite des voyants est variable." },
             { q: "Comment consulter sur Cosmospace ?", a: "Par audiotel (sans inscription) ou par telephone avec CB." },
-            { q: "Quels sont les tarifs de Cosmospace ?", a: "A partir de 0,40 euro/min en audiotel, jusqu'a 3 euros/min par CB." },
+            { q: "Quels sont les tarifs de Cosmospace ?", a: "A partir de 0,80 euro/min en audiotel, jusqu'a 3 euros/min par CB." },
             { q: "Cosmospace est-il disponible 24h/24 ?", a: "Oui, des voyants sont disponibles a toute heure." },
             { q: "Peut-on consulter par chat sur Cosmospace ?", a: "Non, Cosmospace propose uniquement le telephone et l'audiotel." }
         ]
@@ -1706,9 +1710,14 @@ for (const platform of platforms) {
     console.log(`  [OK] /avis/${platform.slug}/index.html`);
 }
 
-// 2. Generate comparison pages
+// 2. Generate comparison pages (only those with hand-crafted content)
 console.log('\nGenerating comparison pages...');
 for (const comparison of comparisons) {
+    // Skip comparisons without hand-crafted content (handled by generate-all-pages.js)
+    if (!COMPARISON_CONTENT[comparison.slug]) {
+        console.log(`  [skip] /avis/${comparison.slug}/ (no hand-crafted content, use generate-all-pages.js)`);
+        continue;
+    }
     const dirPath = path.join(outputDir, comparison.slug);
     if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
 

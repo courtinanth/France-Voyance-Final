@@ -341,7 +341,30 @@
  </a>
  </div>
 
- <footer class="site-footer">
+ 
+<!-- MAILLAGE INTERNE -->
+<section class="maillage-interne" style="max-width:1200px;margin:40px auto;padding:0 20px;">
+  <h2 style="color:#D4AF37;font-family:'Playfair Display',serif;text-align:center;margin-bottom:25px;font-size:1.6rem;">À découvrir aussi</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;">
+    <a href="/avis/spiriteo/" style="display:block;padding:18px;background:rgba(10,5,20,0.8);border:1px solid rgba(212,175,55,0.3);border-radius:10px;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(212,175,55,0.7)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 15px rgba(212,175,55,0.15)'" onmouseout="this.style.borderColor='rgba(212,175,55,0.3)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <strong style="color:#D4AF37;">Avis Spiriteo</strong><br>
+      <small style="color:#ccc;">Note 4/5 — 150+ voyants</small>
+    </a>
+    <a href="/avis/mydeclick/" style="display:block;padding:18px;background:rgba(10,5,20,0.8);border:1px solid rgba(212,175,55,0.3);border-radius:10px;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(212,175,55,0.7)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 15px rgba(212,175,55,0.15)'" onmouseout="this.style.borderColor='rgba(212,175,55,0.3)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <strong style="color:#D4AF37;">Avis MyDéclick</strong><br>
+      <small style="color:#ccc;">Note 3.9/5 — 90+ voyants</small>
+    </a>
+    <a href="/avis/jimini/" style="display:block;padding:18px;background:rgba(10,5,20,0.8);border:1px solid rgba(212,175,55,0.3);border-radius:10px;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(212,175,55,0.7)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 15px rgba(212,175,55,0.15)'" onmouseout="this.style.borderColor='rgba(212,175,55,0.3)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <strong style="color:#D4AF37;">Avis Jimini</strong><br>
+      <small style="color:#ccc;">Note 3.8/5 — 80+ voyants</small>
+    </a>
+    <a href="/comparatif/" style="display:block;padding:18px;background:rgba(10,5,20,0.8);border:1px solid rgba(212,175,55,0.3);border-radius:10px;color:#fff;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(212,175,55,0.7)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 15px rgba(212,175,55,0.15)'" onmouseout="this.style.borderColor='rgba(212,175,55,0.3)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <strong style="color:#D4AF37;">Comparatif Voyance 2025</strong><br>
+      <small style="color:#ccc;">Top 10 des meilleures plateformes</small>
+    </a>
+  </div>
+</section>
+<footer class="site-footer">
  <div class="container">
  <div class="footer-grid">
 
@@ -373,9 +396,9 @@
  <div class="footer-col">
  <h4>Informations</h4>
  <ul class="footer-links">
- <li><a href="/legal/mentions-legales/">Mentions Légales</a></li>
- <li><a href="/legal/politique-confidentialite/">Politique de Confidentialité</a></li>
- <li><a href="/legal/cgu/">CGU</a></li>
+ <li><span class="obf-link" data-o="L2xlZ2FsL21lbnRpb25zLWxlZ2FsZXMv" role="link" tabindex="0">Mentions Légales</span></li>
+ <li><span class="obf-link" data-o="L2xlZ2FsL3BvbGl0aXF1ZS1jb25maWRlbnRpYWxpdGUv" role="link" tabindex="0">Politique de Confidentialité</span></li>
+ <li><span class="obf-link" data-o="L2xlZ2FsL2NndS8=" role="link" tabindex="0">CGU</span></li>
  <li><a href="/contact/">Contact</a></li>
  <li><a href="/plan-du-site/">Plan du site</a></li>
  </ul>
@@ -411,6 +434,7 @@
  <script src="/js/animations.js" defer></script>
 
  <script src="/js/main.js?v=2028" defer></script>
-<script src="/js/logger.js" defer></script></body>
+<script src="/js/logger.js" defer></script><script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
+</body>
 
 </html>

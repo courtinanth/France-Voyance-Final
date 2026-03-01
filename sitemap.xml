@@ -2,30 +2,34 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-core.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-gratuit.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-avis.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://france-voyance-avenir.fr/sitemap-alternatives.xml</loc>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-tarot.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-numerologie.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-blog.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://france-voyance-avenir.fr/sitemap-villes.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-01</lastmod>
   </sitemap>
 </sitemapindex>

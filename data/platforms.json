@@ -9,15 +9,28 @@
             "ratingCount": 12500,
             "yearFounded": 2007,
             "headquarters": "Paris, France",
-            "channels": ["Téléphone", "Chat", "Email"],
-            "specialties": ["Voyance", "Astrologie", "Tarot", "Numérologie", "Médiumnité"],
+            "channels": [
+                "Téléphone",
+                "Chat",
+                "Email"
+            ],
+            "specialties": [
+                "Voyance",
+                "Astrologie",
+                "Tarot",
+                "Numérologie",
+                "Médiumnité"
+            ],
             "priceRange": "2,00 - 5,00 €/min",
-            "priceMin": 2.00,
+            "priceMin": 2,
             "freeOffer": "Jusqu'à 10 minutes offertes à l'inscription",
             "nbPractitioners": "500+",
             "availability": "24h/24, 7j/7",
             "trustpilotScore": "4.2/5",
-            "paymentMethods": ["Carte bancaire", "PayPal"],
+            "paymentMethods": [
+                "Carte bancaire",
+                "PayPal"
+            ],
             "pros": [
                 "Large choix de voyants avec profils détaillés et avis vérifiés",
                 "Minutes offertes généreuses pour tester le service",
@@ -38,19 +51,29 @@
             "slug": "spiriteo",
             "url": "#",
             "isAffiliate": false,
-            "rating": 4.0,
+            "rating": 4,
             "ratingCount": 3200,
             "yearFounded": 2015,
             "headquarters": "France",
-            "channels": ["Téléphone", "Chat"],
-            "specialties": ["Voyance", "Tarot", "Médiumnité", "Astrologie"],
+            "channels": [
+                "Téléphone",
+                "Chat"
+            ],
+            "specialties": [
+                "Voyance",
+                "Tarot",
+                "Médiumnité",
+                "Astrologie"
+            ],
             "priceRange": "2,90 - 4,90 €/min",
-            "priceMin": 2.90,
+            "priceMin": 2.9,
             "freeOffer": "5 premières minutes offertes",
             "nbPractitioners": "150+",
             "availability": "7h-3h du matin",
             "trustpilotScore": "3.8/5",
-            "paymentMethods": ["Carte bancaire"],
+            "paymentMethods": [
+                "Carte bancaire"
+            ],
             "pros": [
                 "Voyants sélectionnés avec un processus de recrutement exigeant",
                 "Interface moderne et navigation intuitive",
@@ -74,15 +97,27 @@
             "ratingCount": 2800,
             "yearFounded": 2018,
             "headquarters": "France",
-            "channels": ["Téléphone", "Chat", "SMS"],
-            "specialties": ["Voyance", "Tarot", "Numérologie", "Astrologie"],
+            "channels": [
+                "Téléphone",
+                "Chat",
+                "SMS"
+            ],
+            "specialties": [
+                "Voyance",
+                "Tarot",
+                "Numérologie",
+                "Astrologie"
+            ],
             "priceRange": "1,90 - 3,90 €/min",
-            "priceMin": 1.90,
+            "priceMin": 1.9,
             "freeOffer": "3 premières minutes offertes",
             "nbPractitioners": "80+",
             "availability": "8h-minuit",
             "trustpilotScore": "3.5/5",
-            "paymentMethods": ["Carte bancaire", "Audiotel"],
+            "paymentMethods": [
+                "Carte bancaire",
+                "Audiotel"
+            ],
             "pros": [
                 "Tarifs parmi les plus bas du marché",
                 "Consultation par SMS disponible",
@@ -106,15 +141,24 @@
             "ratingCount": 1500,
             "yearFounded": 2012,
             "headquarters": "France",
-            "channels": ["Téléphone", "Email"],
-            "specialties": ["Voyance", "Médiumnité", "Guidance spirituelle"],
+            "channels": [
+                "Téléphone",
+                "Email"
+            ],
+            "specialties": [
+                "Voyance",
+                "Médiumnité",
+                "Guidance spirituelle"
+            ],
             "priceRange": "2,50 - 5,50 €/min",
-            "priceMin": 2.50,
+            "priceMin": 2.5,
             "freeOffer": "3 premières minutes offertes",
             "nbPractitioners": "60+",
             "availability": "9h-23h",
             "trustpilotScore": "3.3/5",
-            "paymentMethods": ["Carte bancaire"],
+            "paymentMethods": [
+                "Carte bancaire"
+            ],
             "pros": [
                 "Voyants spécialisés en médiumnité",
                 "Consultation par email pour les questions non urgentes",
@@ -139,15 +183,26 @@
             "ratingCount": 2100,
             "yearFounded": 2010,
             "headquarters": "France",
-            "channels": ["Téléphone", "Chat"],
-            "specialties": ["Voyance", "Tarot", "Astrologie", "Numérologie"],
+            "channels": [
+                "Téléphone",
+                "Chat"
+            ],
+            "specialties": [
+                "Voyance",
+                "Tarot",
+                "Astrologie",
+                "Numérologie"
+            ],
             "priceRange": "2,00 - 4,50 €/min",
-            "priceMin": 2.00,
+            "priceMin": 2,
             "freeOffer": "5 premières minutes offertes",
             "nbPractitioners": "120+",
             "availability": "24h/24, 7j/7",
             "trustpilotScore": "3.6/5",
-            "paymentMethods": ["Carte bancaire", "Audiotel"],
+            "paymentMethods": [
+                "Carte bancaire",
+                "Audiotel"
+            ],
             "pros": [
                 "Disponibilité 24h/24",
                 "Option audiotel disponible",
@@ -168,33 +223,46 @@
             "slug": "cosmospace",
             "url": "#",
             "isAffiliate": false,
-            "rating": 3.6,
+            "rating": 4.8,
             "ratingCount": 4200,
             "yearFounded": 2001,
             "headquarters": "France",
-            "channels": ["Téléphone", "Audiotel"],
-            "specialties": ["Voyance", "Astrologie", "Tarot", "Médiumnité"],
-            "priceRange": "0,40 - 3,00 €/min",
-            "priceMin": 0.40,
-            "freeOffer": "Consultation découverte par audiotel",
+            "channels": [
+                "Téléphone",
+                "Audiotel"
+            ],
+            "specialties": [
+                "Voyance",
+                "Astrologie",
+                "Tarot",
+                "Médiumnité"
+            ],
+            "priceRange": "0,80 - 3,00 €/min",
+            "priceMin": 0.8,
+            "freeOffer": "Audiotel sans CB : 08 92 68 68 82 (code 1211)",
             "nbPractitioners": "200+",
             "availability": "24h/24, 7j/7",
-            "trustpilotScore": "3.2/5",
-            "paymentMethods": ["Audiotel", "Carte bancaire"],
+            "trustpilotScore": "4.6/5",
+            "audiotelNumber": "08 92 68 68 82",
+            "audiotelCode": "1211",
+            "paymentMethods": [
+                "Audiotel",
+                "Carte bancaire"
+            ],
             "pros": [
-                "Pionnier de la voyance par audiotel en France",
-                "Tarifs audiotel très accessibles",
-                "Disponibilité 24h/24 avec un large panel",
-                "Pas besoin de carte bancaire pour consulter"
+                "Pionnier de la voyance par audiotel en France depuis 2001",
+                "Tarifs audiotel les plus bas du marché (dès 0,80€/min)",
+                "Disponibilité 24h/24 avec plus de 200 voyants",
+                "Pas besoin de carte bancaire pour consulter",
+                "25 ans d'expérience et des milliers d'avis positifs"
             ],
             "cons": [
-                "Interface très datée qui manque de modernité",
-                "Processus de sélection des voyants peu transparent",
+                "Interface qui mériterait une mise à jour visuelle",
                 "Pas de chat ni de consultation par email",
-                "Avis clients difficiles à vérifier"
+                "Sélection des voyants moins transparente que certains concurrents"
             ],
-            "verdict": "Cosmospace reste un acteur incontournable de l'audiotel en France. Les tarifs sont attractifs mais l'expérience utilisateur est vieillissante.",
-            "bestFor": "Ceux qui veulent consulter par audiotel sans carte bancaire"
+            "verdict": "Cosmospace est le leader historique de la voyance par audiotel en France. Avec 25 ans d'expérience, des tarifs imbattables et une disponibilité permanente, c'est notre choix numéro 1 pour consulter sans engagement.",
+            "bestFor": "Ceux qui veulent consulter immédiatement par audiotel, sans CB, sans attente, 24h/24"
         },
         {
             "name": "MyDéclick",
@@ -205,15 +273,27 @@
             "ratingCount": 1800,
             "yearFounded": 2019,
             "headquarters": "Lyon, France",
-            "channels": ["Téléphone", "Chat", "Visio"],
-            "specialties": ["Voyance", "Tarot", "Coaching spirituel", "Développement personnel"],
+            "channels": [
+                "Téléphone",
+                "Chat",
+                "Visio"
+            ],
+            "specialties": [
+                "Voyance",
+                "Tarot",
+                "Coaching spirituel",
+                "Développement personnel"
+            ],
             "priceRange": "2,50 - 4,50 €/min",
-            "priceMin": 2.50,
+            "priceMin": 2.5,
             "freeOffer": "7 premières minutes offertes",
             "nbPractitioners": "90+",
             "availability": "8h-1h du matin",
             "trustpilotScore": "4.0/5",
-            "paymentMethods": ["Carte bancaire", "PayPal"],
+            "paymentMethods": [
+                "Carte bancaire",
+                "PayPal"
+            ],
             "pros": [
                 "Consultations en visio disponibles",
                 "Approche combinant voyance et coaching",
@@ -238,15 +318,27 @@
             "ratingCount": 3500,
             "yearFounded": 2009,
             "headquarters": "Allemagne / France",
-            "channels": ["Téléphone", "Chat", "Email"],
-            "specialties": ["Voyance", "Astrologie", "Tarot", "Numérologie", "Interprétation des rêves"],
+            "channels": [
+                "Téléphone",
+                "Chat",
+                "Email"
+            ],
+            "specialties": [
+                "Voyance",
+                "Astrologie",
+                "Tarot",
+                "Numérologie",
+                "Interprétation des rêves"
+            ],
             "priceRange": "1,49 - 3,99 €/min",
             "priceMin": 1.49,
             "freeOffer": "15 minutes offertes à l'inscription",
             "nbPractitioners": "300+",
             "availability": "24h/24, 7j/7",
             "trustpilotScore": "3.1/5",
-            "paymentMethods": ["Carte bancaire"],
+            "paymentMethods": [
+                "Carte bancaire"
+            ],
             "pros": [
                 "15 minutes offertes (la meilleure offre du marché)",
                 "Tarifs d'entrée parmi les plus bas",
@@ -271,15 +363,25 @@
             "ratingCount": 950,
             "yearFounded": 2016,
             "headquarters": "France",
-            "channels": ["Téléphone", "Chat"],
-            "specialties": ["Voyance", "Tarot", "Oracle", "Guidance amoureuse"],
+            "channels": [
+                "Téléphone",
+                "Chat"
+            ],
+            "specialties": [
+                "Voyance",
+                "Tarot",
+                "Oracle",
+                "Guidance amoureuse"
+            ],
             "priceRange": "2,90 - 5,90 €/min",
-            "priceMin": 2.90,
+            "priceMin": 2.9,
             "freeOffer": "3 premières minutes offertes",
             "nbPractitioners": "40+",
             "availability": "9h-22h",
             "trustpilotScore": "3.4/5",
-            "paymentMethods": ["Carte bancaire"],
+            "paymentMethods": [
+                "Carte bancaire"
+            ],
             "pros": [
                 "Spécialisée dans les questions amoureuses",
                 "Voyantes triées sur le volet",
@@ -305,15 +407,27 @@
             "ratingCount": 1200,
             "yearFounded": 2020,
             "headquarters": "Paris, France",
-            "channels": ["Chat", "Visio", "Email"],
-            "specialties": ["Voyance", "Astrologie", "Numérologie", "Guidance spirituelle"],
+            "channels": [
+                "Chat",
+                "Visio",
+                "Email"
+            ],
+            "specialties": [
+                "Voyance",
+                "Astrologie",
+                "Numérologie",
+                "Guidance spirituelle"
+            ],
             "priceRange": "1,50 - 3,50 €/min",
-            "priceMin": 1.50,
+            "priceMin": 1.5,
             "freeOffer": "5 premières minutes offertes",
             "nbPractitioners": "50+",
             "availability": "10h-minuit",
             "trustpilotScore": "3.0/5",
-            "paymentMethods": ["Carte bancaire", "Apple Pay"],
+            "paymentMethods": [
+                "Carte bancaire",
+                "Apple Pay"
+            ],
             "pros": [
                 "Plateforme 100% digitale et moderne",
                 "Consultation par visio et chat uniquement",
@@ -333,6 +447,105 @@
     ],
     "comparisons": [
         {
+            "slug": "cosmospace-vs-wengo",
+            "platformA": "cosmospace",
+            "platformB": "wengo",
+            "title": "Cosmospace ou Wengo",
+            "subtitle": "comparatif voyance en ligne 2026",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 2,00€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 4.5/5 avec 4 200 avis)",
+            "verdictChoice": "Wengo (500+ voyants vs 200+)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-spiriteo",
+            "platformA": "cosmospace",
+            "platformB": "spiriteo",
+            "title": "Cosmospace ou Spiriteo",
+            "subtitle": "quel site de voyance choisir ?",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 2,90€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 4/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 150+)",
+            "verdictBeginner": "Spiriteo (5 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-mydeclick",
+            "platformA": "cosmospace",
+            "platformB": "mydeclick",
+            "title": "Cosmospace ou MyDéclick",
+            "subtitle": "notre comparatif détaillé",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 2,50€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.9/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 90+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-jimini",
+            "platformA": "cosmospace",
+            "platformB": "jimini",
+            "title": "Cosmospace ou Jimini",
+            "subtitle": "quelle plateforme privilégier ?",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 1,90€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.8/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 80+)",
+            "verdictBeginner": "Jimini (3 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-avigora",
+            "platformA": "cosmospace",
+            "platformB": "avigora",
+            "title": "Cosmospace ou Avigora",
+            "subtitle": "duel de plateformes de voyance",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 2,00€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.7/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 120+)",
+            "verdictBeginner": "Avigora (5 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-kang",
+            "platformA": "cosmospace",
+            "platformB": "kang",
+            "title": "Cosmospace ou Kang",
+            "subtitle": "comparatif et avis détaillés",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 2,50€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.5/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 60+)",
+            "verdictBeginner": "Kang (3 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-viversum",
+            "platformA": "cosmospace",
+            "platformB": "viversum",
+            "title": "Cosmospace ou Viversum",
+            "subtitle": "le match des sites de voyance",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 1,49€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.4/5 avec 4 200 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 200+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-voyance-alice",
+            "platformA": "cosmospace",
+            "platformB": "voyance-alice",
+            "title": "Cosmospace ou Voyance Alice",
+            "subtitle": "guide comparatif pour bien choisir",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 2,90€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.3/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 40+)",
+            "verdictBeginner": "Voyance Alice (3 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
+            "slug": "cosmospace-vs-divinatix",
+            "platformA": "cosmospace",
+            "platformB": "divinatix",
+            "title": "Cosmospace ou Divinatix",
+            "subtitle": "quelle voyance en ligne choisir ?",
+            "verdictBudget": "Cosmospace (tarifs dès 0,80€/min vs 1,50€/min)",
+            "verdictQuality": "Cosmospace (note 4.8/5 vs 3.2/5 avec 4 200 avis)",
+            "verdictChoice": "Cosmospace (200+ voyants vs 50+)",
+            "verdictBeginner": "Divinatix (5 minutes offertes vs accès audiotel sans CB)"
+        },
+        {
             "slug": "wengo-vs-spiriteo",
             "platformA": "wengo",
             "platformB": "spiriteo",
@@ -342,6 +555,17 @@
             "verdictQuality": "Égalité (les deux misent sur des voyants vérifiés)",
             "verdictChoice": "Wengo (panel 3x plus large)",
             "verdictBeginner": "Wengo (10 minutes offertes vs 5)"
+        },
+        {
+            "slug": "wengo-vs-mydeclick",
+            "platformA": "wengo",
+            "platformB": "mydeclick",
+            "title": "Wengo ou MyDéclick",
+            "subtitle": "face-à-face des sites de voyance",
+            "verdictBudget": "Wengo (tarifs dès 2,00€/min vs 2,50€/min)",
+            "verdictQuality": "Wengo (note 4.5/5 vs 3.9/5 avec 12 500 avis)",
+            "verdictChoice": "Wengo (500+ voyants vs 90+)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs 7)"
         },
         {
             "slug": "wengo-vs-jimini",
@@ -366,6 +590,61 @@
             "verdictBeginner": "Wengo (meilleure offre découverte)"
         },
         {
+            "slug": "wengo-vs-kang",
+            "platformA": "wengo",
+            "platformB": "kang",
+            "title": "Wengo ou Kang",
+            "subtitle": "comparatif tarifs et qualité",
+            "verdictBudget": "Wengo (tarifs dès 2,00€/min vs 2,50€/min)",
+            "verdictQuality": "Wengo (note 4.5/5 vs 3.5/5 avec 12 500 avis)",
+            "verdictChoice": "Wengo (500+ voyants vs 60+)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs 3)"
+        },
+        {
+            "slug": "wengo-vs-viversum",
+            "platformA": "wengo",
+            "platformB": "viversum",
+            "title": "Wengo ou Viversum",
+            "subtitle": "quelle plateforme de voyance en ligne choisir ?",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 2,00€/min)",
+            "verdictQuality": "Wengo (note 4.5/5 vs 3.4/5 avec 12 500 avis)",
+            "verdictChoice": "Wengo (500+ voyants vs 300+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 10)"
+        },
+        {
+            "slug": "wengo-vs-voyance-alice",
+            "platformA": "wengo",
+            "platformB": "voyance-alice",
+            "title": "Wengo ou Voyance Alice",
+            "subtitle": "comparatif des deux plateformes de voyance",
+            "verdictBudget": "Wengo (tarifs dès 2,00€/min vs 2,90€/min)",
+            "verdictQuality": "Wengo (note 4.5/5 vs 3.3/5 avec 12 500 avis)",
+            "verdictChoice": "Wengo (500+ voyants vs 40+)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs 3)"
+        },
+        {
+            "slug": "wengo-vs-divinatix",
+            "platformA": "wengo",
+            "platformB": "divinatix",
+            "title": "Wengo ou Divinatix",
+            "subtitle": "quel site de voyance privilégier en 2026 ?",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 2,00€/min)",
+            "verdictQuality": "Wengo (note 4.5/5 vs 3.2/5 avec 12 500 avis)",
+            "verdictChoice": "Wengo (500+ voyants vs 50+)",
+            "verdictBeginner": "Wengo (10 minutes offertes vs 5)"
+        },
+        {
+            "slug": "spiriteo-vs-mydeclick",
+            "platformA": "spiriteo",
+            "platformB": "mydeclick",
+            "title": "Spiriteo ou MyDéclick",
+            "subtitle": "voyance en ligne : le comparatif ultime",
+            "verdictBudget": "MyDéclick (tarifs dès 2,50€/min vs 2,90€/min)",
+            "verdictQuality": "Spiriteo (note 4/5 vs 3.9/5 avec 3 200 avis)",
+            "verdictChoice": "Spiriteo (150+ voyants vs 90+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs 5)"
+        },
+        {
             "slug": "spiriteo-vs-jimini",
             "platformA": "spiriteo",
             "platformB": "jimini",
@@ -386,6 +665,281 @@
             "verdictQuality": "Spiriteo (recrutement plus exigeant)",
             "verdictChoice": "Avigora (disponibilité 24h/24)",
             "verdictBeginner": "Égalité (5 minutes offertes chacun)"
+        },
+        {
+            "slug": "spiriteo-vs-kang",
+            "platformA": "spiriteo",
+            "platformB": "kang",
+            "title": "Spiriteo ou Kang",
+            "subtitle": "comparatif voyance en ligne 2026",
+            "verdictBudget": "Kang (tarifs dès 2,50€/min vs 2,90€/min)",
+            "verdictQuality": "Spiriteo (note 4/5 vs 3.5/5 avec 3 200 avis)",
+            "verdictChoice": "Spiriteo (150+ voyants vs 60+)",
+            "verdictBeginner": "Spiriteo (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "spiriteo-vs-viversum",
+            "platformA": "spiriteo",
+            "platformB": "viversum",
+            "title": "Spiriteo ou Viversum",
+            "subtitle": "quel site de voyance choisir ?",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 2,90€/min)",
+            "verdictQuality": "Spiriteo (note 4/5 vs 3.4/5 avec 3 200 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 150+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 5)"
+        },
+        {
+            "slug": "spiriteo-vs-voyance-alice",
+            "platformA": "spiriteo",
+            "platformB": "voyance-alice",
+            "title": "Spiriteo ou Voyance Alice",
+            "subtitle": "notre comparatif détaillé",
+            "verdictBudget": "Égalité (tarifs d'entrée identiques à 2,90€/min)",
+            "verdictQuality": "Spiriteo (note 4/5 vs 3.3/5 avec 3 200 avis)",
+            "verdictChoice": "Spiriteo (150+ voyants vs 40+)",
+            "verdictBeginner": "Spiriteo (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "spiriteo-vs-divinatix",
+            "platformA": "spiriteo",
+            "platformB": "divinatix",
+            "title": "Spiriteo ou Divinatix",
+            "subtitle": "quelle plateforme privilégier ?",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 2,90€/min)",
+            "verdictQuality": "Spiriteo (note 4/5 vs 3.2/5 avec 3 200 avis)",
+            "verdictChoice": "Spiriteo (150+ voyants vs 50+)",
+            "verdictBeginner": "Égalité (5 minutes offertes chacun)"
+        },
+        {
+            "slug": "mydeclick-vs-jimini",
+            "platformA": "mydeclick",
+            "platformB": "jimini",
+            "title": "MyDéclick ou Jimini",
+            "subtitle": "duel de plateformes de voyance",
+            "verdictBudget": "Jimini (tarifs dès 1,90€/min vs 2,50€/min)",
+            "verdictQuality": "MyDéclick (note 3.9/5 vs 3.8/5 avec 1 800 avis)",
+            "verdictChoice": "MyDéclick (90+ voyants vs 80+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs 3)"
+        },
+        {
+            "slug": "mydeclick-vs-avigora",
+            "platformA": "mydeclick",
+            "platformB": "avigora",
+            "title": "MyDéclick ou Avigora",
+            "subtitle": "comparatif et avis détaillés",
+            "verdictBudget": "Avigora (tarifs dès 2,00€/min vs 2,50€/min)",
+            "verdictQuality": "MyDéclick (note 3.9/5 vs 3.7/5 avec 1 800 avis)",
+            "verdictChoice": "Avigora (120+ voyants vs 90+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs 5)"
+        },
+        {
+            "slug": "mydeclick-vs-kang",
+            "platformA": "mydeclick",
+            "platformB": "kang",
+            "title": "MyDéclick ou Kang",
+            "subtitle": "le match des sites de voyance",
+            "verdictBudget": "Égalité (tarifs d'entrée identiques à 2,50€/min)",
+            "verdictQuality": "MyDéclick (note 3.9/5 vs 3.5/5 avec 1 800 avis)",
+            "verdictChoice": "MyDéclick (90+ voyants vs 60+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs 3)"
+        },
+        {
+            "slug": "mydeclick-vs-viversum",
+            "platformA": "mydeclick",
+            "platformB": "viversum",
+            "title": "MyDéclick ou Viversum",
+            "subtitle": "guide comparatif pour bien choisir",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 2,50€/min)",
+            "verdictQuality": "MyDéclick (note 3.9/5 vs 3.4/5 avec 1 800 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 90+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 7)"
+        },
+        {
+            "slug": "mydeclick-vs-voyance-alice",
+            "platformA": "mydeclick",
+            "platformB": "voyance-alice",
+            "title": "MyDéclick ou Voyance Alice",
+            "subtitle": "quelle voyance en ligne choisir ?",
+            "verdictBudget": "MyDéclick (tarifs dès 2,50€/min vs 2,90€/min)",
+            "verdictQuality": "MyDéclick (note 3.9/5 vs 3.3/5 avec 1 800 avis)",
+            "verdictChoice": "MyDéclick (90+ voyants vs 40+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs 3)"
+        },
+        {
+            "slug": "mydeclick-vs-divinatix",
+            "platformA": "mydeclick",
+            "platformB": "divinatix",
+            "title": "MyDéclick ou Divinatix",
+            "subtitle": "face-à-face des sites de voyance",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 2,50€/min)",
+            "verdictQuality": "MyDéclick (note 3.9/5 vs 3.2/5 avec 1 800 avis)",
+            "verdictChoice": "MyDéclick (90+ voyants vs 50+)",
+            "verdictBeginner": "MyDéclick (7 minutes offertes vs 5)"
+        },
+        {
+            "slug": "jimini-vs-avigora",
+            "platformA": "jimini",
+            "platformB": "avigora",
+            "title": "Jimini ou Avigora",
+            "subtitle": "comparatif tarifs et qualité",
+            "verdictBudget": "Jimini (tarifs dès 1,90€/min vs 2,00€/min)",
+            "verdictQuality": "Jimini (note 3.8/5 vs 3.7/5 avec 2 800 avis)",
+            "verdictChoice": "Avigora (120+ voyants vs 80+)",
+            "verdictBeginner": "Avigora (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "jimini-vs-kang",
+            "platformA": "jimini",
+            "platformB": "kang",
+            "title": "Jimini ou Kang",
+            "subtitle": "quelle plateforme de voyance en ligne choisir ?",
+            "verdictBudget": "Jimini (tarifs dès 1,90€/min vs 2,50€/min)",
+            "verdictQuality": "Jimini (note 3.8/5 vs 3.5/5 avec 2 800 avis)",
+            "verdictChoice": "Jimini (80+ voyants vs 60+)",
+            "verdictBeginner": "Égalité (3 minutes offertes chacun)"
+        },
+        {
+            "slug": "jimini-vs-viversum",
+            "platformA": "jimini",
+            "platformB": "viversum",
+            "title": "Jimini ou Viversum",
+            "subtitle": "comparatif des deux plateformes de voyance",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 1,90€/min)",
+            "verdictQuality": "Jimini (note 3.8/5 vs 3.4/5 avec 2 800 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 80+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 3)"
+        },
+        {
+            "slug": "jimini-vs-voyance-alice",
+            "platformA": "jimini",
+            "platformB": "voyance-alice",
+            "title": "Jimini ou Voyance Alice",
+            "subtitle": "quel site de voyance privilégier en 2026 ?",
+            "verdictBudget": "Jimini (tarifs dès 1,90€/min vs 2,90€/min)",
+            "verdictQuality": "Jimini (note 3.8/5 vs 3.3/5 avec 2 800 avis)",
+            "verdictChoice": "Jimini (80+ voyants vs 40+)",
+            "verdictBeginner": "Égalité (3 minutes offertes chacun)"
+        },
+        {
+            "slug": "jimini-vs-divinatix",
+            "platformA": "jimini",
+            "platformB": "divinatix",
+            "title": "Jimini ou Divinatix",
+            "subtitle": "voyance en ligne : le comparatif ultime",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 1,90€/min)",
+            "verdictQuality": "Jimini (note 3.8/5 vs 3.2/5 avec 2 800 avis)",
+            "verdictChoice": "Jimini (80+ voyants vs 50+)",
+            "verdictBeginner": "Divinatix (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "avigora-vs-kang",
+            "platformA": "avigora",
+            "platformB": "kang",
+            "title": "Avigora ou Kang",
+            "subtitle": "comparatif voyance en ligne 2026",
+            "verdictBudget": "Avigora (tarifs dès 2,00€/min vs 2,50€/min)",
+            "verdictQuality": "Avigora (note 3.7/5 vs 3.5/5 avec 2 100 avis)",
+            "verdictChoice": "Avigora (120+ voyants vs 60+)",
+            "verdictBeginner": "Avigora (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "avigora-vs-viversum",
+            "platformA": "avigora",
+            "platformB": "viversum",
+            "title": "Avigora ou Viversum",
+            "subtitle": "quel site de voyance choisir ?",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 2,00€/min)",
+            "verdictQuality": "Avigora (note 3.7/5 vs 3.4/5 avec 2 100 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 120+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 5)"
+        },
+        {
+            "slug": "avigora-vs-voyance-alice",
+            "platformA": "avigora",
+            "platformB": "voyance-alice",
+            "title": "Avigora ou Voyance Alice",
+            "subtitle": "notre comparatif détaillé",
+            "verdictBudget": "Avigora (tarifs dès 2,00€/min vs 2,90€/min)",
+            "verdictQuality": "Avigora (note 3.7/5 vs 3.3/5 avec 2 100 avis)",
+            "verdictChoice": "Avigora (120+ voyants vs 40+)",
+            "verdictBeginner": "Avigora (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "avigora-vs-divinatix",
+            "platformA": "avigora",
+            "platformB": "divinatix",
+            "title": "Avigora ou Divinatix",
+            "subtitle": "quelle plateforme privilégier ?",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 2,00€/min)",
+            "verdictQuality": "Avigora (note 3.7/5 vs 3.2/5 avec 2 100 avis)",
+            "verdictChoice": "Avigora (120+ voyants vs 50+)",
+            "verdictBeginner": "Égalité (5 minutes offertes chacun)"
+        },
+        {
+            "slug": "kang-vs-viversum",
+            "platformA": "kang",
+            "platformB": "viversum",
+            "title": "Kang ou Viversum",
+            "subtitle": "duel de plateformes de voyance",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 2,50€/min)",
+            "verdictQuality": "Kang (note 3.5/5 vs 3.4/5 avec 1 500 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 60+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 3)"
+        },
+        {
+            "slug": "kang-vs-voyance-alice",
+            "platformA": "kang",
+            "platformB": "voyance-alice",
+            "title": "Kang ou Voyance Alice",
+            "subtitle": "comparatif et avis détaillés",
+            "verdictBudget": "Kang (tarifs dès 2,50€/min vs 2,90€/min)",
+            "verdictQuality": "Kang (note 3.5/5 vs 3.3/5 avec 1 500 avis)",
+            "verdictChoice": "Kang (60+ voyants vs 40+)",
+            "verdictBeginner": "Égalité (3 minutes offertes chacun)"
+        },
+        {
+            "slug": "kang-vs-divinatix",
+            "platformA": "kang",
+            "platformB": "divinatix",
+            "title": "Kang ou Divinatix",
+            "subtitle": "le match des sites de voyance",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 2,50€/min)",
+            "verdictQuality": "Kang (note 3.5/5 vs 3.2/5 avec 1 500 avis)",
+            "verdictChoice": "Kang (60+ voyants vs 50+)",
+            "verdictBeginner": "Divinatix (5 minutes offertes vs 3)"
+        },
+        {
+            "slug": "viversum-vs-voyance-alice",
+            "platformA": "viversum",
+            "platformB": "voyance-alice",
+            "title": "Viversum ou Voyance Alice",
+            "subtitle": "guide comparatif pour bien choisir",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 2,90€/min)",
+            "verdictQuality": "Viversum (note 3.4/5 vs 3.3/5 avec 3 500 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 40+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 3)"
+        },
+        {
+            "slug": "viversum-vs-divinatix",
+            "platformA": "viversum",
+            "platformB": "divinatix",
+            "title": "Viversum ou Divinatix",
+            "subtitle": "quelle voyance en ligne choisir ?",
+            "verdictBudget": "Viversum (tarifs dès 1,49€/min vs 1,50€/min)",
+            "verdictQuality": "Viversum (note 3.4/5 vs 3.2/5 avec 3 500 avis)",
+            "verdictChoice": "Viversum (300+ voyants vs 50+)",
+            "verdictBeginner": "Viversum (15 minutes offertes vs 5)"
+        },
+        {
+            "slug": "voyance-alice-vs-divinatix",
+            "platformA": "voyance-alice",
+            "platformB": "divinatix",
+            "title": "Voyance Alice ou Divinatix",
+            "subtitle": "face-à-face des sites de voyance",
+            "verdictBudget": "Divinatix (tarifs dès 1,50€/min vs 2,90€/min)",
+            "verdictQuality": "Voyance Alice (note 3.3/5 vs 3.2/5 avec 950 avis)",
+            "verdictChoice": "Divinatix (50+ voyants vs 40+)",
+            "verdictBeginner": "Divinatix (5 minutes offertes vs 3)"
         }
     ]
 }
