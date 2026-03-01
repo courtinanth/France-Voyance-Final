@@ -569,8 +569,8 @@ function generateAlternativesPage(platform) {
 
 function generateHubPage() {
     const canonicalPath = "/comparatif/";
-    const title = "Comparatif des sites de voyance en ligne : trouve la plateforme ideale";
-    const metaDesc = "Comparatif complet des 10 meilleurs sites de voyance en ligne en 2026. Tableau, avis, tarifs et 45 comparatifs.";
+    const title = "Classement des meilleures plateformes de voyance en 2026";
+    const metaDesc = "Classement complet des 10 meilleures plateformes de voyance en ligne en 2026. Tableau comparatif, avis, tarifs et 45 comparatifs detailles.";
     const sorted = [...platforms].sort((a, b) => b.rating - a.rating);
     const schema = { "@context": "https://schema.org", "@graph": [
         { "@type": "BreadcrumbList", "itemListElement": [
@@ -591,23 +591,53 @@ function generateHubPage() {
     }).join("\n");
 
     const avisLinks = platforms.map(p => '<li><a href="/avis/' + p.slug + '/">Avis ' + p.name + ' 2026</a></li>').join("\n");
-    const altLinks = platforms.map(p => '<li><a href="/alternatives/' + p.slug + '/">Alternatives a ' + p.name + '</a></li>').join("\n");
+
+    // Detailed platform cards
+    const platformCards = sorted.map((p, i) => {
+        const pros = p.pros ? p.pros.slice(0, 3).map(pro => '<li><i class="fas fa-check" style="color:#2ecc71;margin-right:8px;"></i>' + pro + '</li>').join('') : '';
+        const cons = p.cons ? p.cons.slice(0, 2).map(con => '<li><i class="fas fa-times" style="color:#e74c3c;margin-right:8px;"></i>' + con + '</li>').join('') : '';
+        const isCosmo = p.slug === 'cosmospace';
+        const ctaHTML = isCosmo
+            ? '<a href="tel:0892686882" class="btn btn-gold btn-block" style="margin-top:15px;"><i class="fas fa-phone-alt"></i> 08 92 68 68 82 (code 1211)</a><p style="font-size:0.8em;opacity:0.7;text-align:center;margin-top:5px;">0,80€/min + prix appel</p>'
+            : (p.isAffiliate ? '<a href="' + p.affiliateUrl + '" target="_blank" rel="noopener sponsored" class="btn btn-gold btn-block" style="margin-top:15px;"><i class="fas fa-external-link-alt"></i> Essayer ' + p.name + '</a>' : '<a href="/avis/' + p.slug + '/" class="btn btn-gold btn-block" style="margin-top:15px;">Voir l\'avis complet</a>');
+        return `
+            <div class="platform-detail-card" style="background:#fff;border-radius:12px;padding:25px;margin-bottom:25px;box-shadow:0 4px 15px rgba(0,0,0,0.08);border-left:4px solid #D4AF37;">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;margin-bottom:15px;">
+                    <h3 style="color:#4A1A6B;margin:0;font-size:1.3em;">#${i+1} ${p.name}</h3>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <span style="font-size:1.1em;font-weight:700;color:#D4AF37;">${starsHTML(p.rating)} ${p.rating}/5</span>
+                    </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px;">
+                    <div><strong style="color:#4A1A6B;"><i class="fas fa-euro-sign" style="margin-right:5px;"></i>Tarifs :</strong> <span style="color:#555;">${p.priceRange}</span></div>
+                    <div><strong style="color:#4A1A6B;"><i class="fas fa-users" style="margin-right:5px;"></i>Voyants :</strong> <span style="color:#555;">${p.nbPractitioners}</span></div>
+                    <div><strong style="color:#4A1A6B;"><i class="fas fa-gift" style="margin-right:5px;"></i>Offre :</strong> <span style="color:#555;">${p.freeOffer}</span></div>
+                    <div><strong style="color:#4A1A6B;"><i class="fas fa-clock" style="margin-right:5px;"></i>Disponibilite :</strong> <span style="color:#555;">${p.availability || '24h/24'}</span></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+                    <div><h4 style="color:#2ecc71;font-size:0.95em;margin-bottom:8px;"><i class="fas fa-plus-circle"></i> Points forts</h4><ul style="list-style:none;padding:0;margin:0;font-size:0.9em;color:#555;">${pros}</ul></div>
+                    <div><h4 style="color:#e74c3c;font-size:0.95em;margin-bottom:8px;"><i class="fas fa-minus-circle"></i> Points faibles</h4><ul style="list-style:none;padding:0;margin:0;font-size:0.9em;color:#555;">${cons}</ul></div>
+                </div>
+                ${ctaHTML}
+            </div>`;
+    }).join("\n");
 
     const html = getHead(title, metaDesc, canonicalPath, schema) + `
 <body>
     ${getHeader()}
     <main>
         <nav class="breadcrumbs" aria-label="Fil d'Ariane"><div class="container"><a href="/">Accueil</a> <span class="separator">&rsaquo;</span> <span class="current">Comparatifs</span></div></nav>
-        <section class="local-hero"><div class="container"><h1 class="fade-in-up">Comparatif des sites de voyance en ligne</h1><p class="hero-subtitle fade-in-up stagger-1">Tableau, avis, tarifs et 45 comparatifs detailles</p></div></section>
+        <section class="local-hero"><div class="container"><h1 class="fade-in-up">Classement des meilleures plateformes de voyance en 2026</h1><p class="hero-subtitle fade-in-up stagger-1">Tableau comparatif, avis detailles, tarifs et 45 comparatifs face-a-face</p></div></section>
         <section class="content-section"><div class="container"><div class="content-grid">
             <article class="main-content">
                 <div class="review-tldr fade-in-up"><h3><i class="fas fa-bolt"></i> Top 3 plateformes</h3><p><strong>#1 ${sorted[0].name}</strong> - ${sorted[0].rating}/5 - ${sorted[0].freeOffer}</p><p><strong>#2 ${sorted[1].name}</strong> - ${sorted[1].rating}/5 - ${sorted[1].freeOffer}</p><p><strong>#3 ${sorted[2].name}</strong> - ${sorted[2].rating}/5 - ${sorted[2].freeOffer}</p></div>
                 ${ctaCosmospace()}
                 <section class="content-block fade-in-up"><h2>Classement general des 10 plateformes</h2><div class="table-responsive"><table class="ranking-table"><thead><tr><th>#</th><th>Plateforme</th><th>Note</th><th>Tarifs</th><th>Voyants</th><th>Offre</th></tr></thead><tbody>${tableRows}</tbody></table></div></section>
+                <section class="content-block fade-in-up"><h2>Classement detaille : avis sur chaque plateforme</h2><p>Retrouve ci-dessous le detail de chaque plateforme avec ses points forts, ses tarifs et son offre decouverte.</p>${platformCards}</section>
+                ${ctaCosmospace()}
                 <section class="content-block fade-in-up"><h2>Tous les comparatifs par plateforme</h2><p>45 comparatifs detailles pour comparer chaque paire de plateformes.</p>${compSections}</section>
                 ${ctaCosmospace()}
                 <section class="content-block fade-in-up"><h2>Avis individuels</h2><ul>${avisLinks}</ul></section>
-                <section class="content-block fade-in-up"><h2>Pages alternatives</h2><ul>${altLinks}</ul></section>
                 ${ctaCosmospace()}
             </article>
             <aside class="sidebar"><div class="sidebar-sticky"><div class="cta-box fade-in-right"><h3><i class="fas fa-star icon-pulse"></i> Notre #1</h3><p><strong>${sorted[0].name}</strong> ${sorted[0].rating}/5</p><p style="font-size:0.9em;">${sorted[0].freeOffer}</p><a href="tel:0892686882" class="btn btn-gold btn-block"><i class="fas fa-phone-alt"></i> Consulter</a></div></div></aside>

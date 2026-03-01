@@ -111,7 +111,7 @@ const avisSections = [
         icon: "fa-balance-scale",
         links: [
             { text: "Tous les comparatifs", url: "/comparatif/" },
-            ...platformsData.comparisons.slice(0, 15).map(c => ({
+            ...platformsData.comparisons.map(c => ({
                 text: `${platformsData.platforms.find(p=>p.slug===c.platformA)?.name || c.platformA} vs ${platformsData.platforms.find(p=>p.slug===c.platformB)?.name || c.platformB}`,
                 url: `/avis/${c.slug}/`
             }))

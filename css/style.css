@@ -875,3 +875,165 @@ h1 {
     height: 130px !important;
   }
 }
+
+/* =====================================================
+   CONSULTER PAGES - MOBILE UX/UI CONVERSION OPTIMIZATION
+   ===================================================== */
+
+/* Sidebar: disable sticky on mobile, full width */
+@media (max-width: 992px) {
+  .sidebar .sidebar-sticky,
+  .sidebar [style*="position: sticky"],
+  .sidebar [style*="position:sticky"] {
+    position: relative !important;
+    top: auto !important;
+  }
+}
+
+/* Hero button: mobile-friendly size */
+@media (max-width: 768px) {
+  .hero a.btn[style*="padding: 20px"],
+  .hero a.btn[style*="padding:20px"],
+  .local-hero a.btn[style*="padding: 20px"],
+  .local-hero a.btn[style*="padding:20px"],
+  a.btn[style*="font-size: 1.5rem"],
+  a.btn[style*="font-size:1.5rem"] {
+    padding: 14px 24px !important;
+    font-size: 1.1rem !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer 4-col grid: stack on mobile */
+  .footer-grid[style*="grid-template-columns:repeat(4"],
+  .footer-grid[style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Platform detail cards: stack grid on mobile */
+  .platform-detail-card [style*="grid-template-columns:1fr 1fr"],
+  .platform-detail-card [style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero subtitle: smaller on mobile */
+  .hero-subtitle,
+  p[style*="font-size: 1.3rem"],
+  p[style*="font-size:1.3rem"] {
+    font-size: 1rem !important;
+  }
+
+  /* Consulter hero section: reduce padding */
+  section.hero,
+  section.local-hero {
+    min-height: auto !important;
+    padding: 40px 0 30px !important;
+  }
+
+  /* Reduce large section margins */
+  section[style*="margin: 40px"],
+  section[style*="margin:40px"],
+  div[style*="margin: 40px"],
+  div[style*="margin:40px"] {
+    margin: 20px 0 !important;
+  }
+
+  /* Table cells: tighter on mobile */
+  table td, table th {
+    padding: 8px 6px !important;
+    font-size: 0.85em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Footer: single column on very small screens */
+  .footer-grid[style*="grid-template-columns:repeat(4"],
+  .footer-grid[style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero CTA: full width, easy to tap */
+  .hero a.btn,
+  .local-hero a.btn,
+  section.hero a.btn {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 16px 20px !important;
+    font-size: 1.05rem !important;
+    text-align: center !important;
+    border-radius: 12px !important;
+  }
+
+  /* Consulter feature cards: full width */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Crystal ball: smaller */
+  div[style*="width: 280px"][style*="height: 280px"],
+  div[style*="width:280px"][style*="height:280px"],
+  img[style*="width: 280px"],
+  img[width="280"] {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+  }
+
+  /* Reduce section padding on small screens */
+  .content-block,
+  section[style*="padding: 25px"],
+  section[style*="padding:25px"],
+  div[style*="padding: 30px"],
+  div[style*="padding:30px"] {
+    padding: 15px !important;
+  }
+
+  /* Platform detail cards: compact */
+  .platform-detail-card {
+    padding: 15px !important;
+  }
+  .platform-detail-card h3 {
+    font-size: 1.1em !important;
+  }
+
+  /* Maillage links: single column */
+  div[style*="minmax(250px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 375px) {
+  /* iPhone SE / Galaxy A: ultra compact */
+  .hero a.btn,
+  .local-hero a.btn {
+    padding: 14px 16px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Tighter margins everywhere */
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* FAQ items: compact */
+  details summary {
+    padding: 10px 12px !important;
+    font-size: 0.9em !important;
+  }
+
+  /* Table: horizontal scroll always */
+  .table-responsive,
+  div[style*="overflow-x"] {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .table-responsive table,
+  .ranking-table {
+    min-width: 500px !important;
+  }
+}
