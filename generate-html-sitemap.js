@@ -89,49 +89,70 @@ const coreSections = [
     }
 ];
 
-// Get Local Pages and Group by Letter
+// === Load platforms data for Avis/Comparatifs sections ===
+const platformsDataPath = path.join(__dirname, 'data', 'platforms.json');
+const platformsData = JSON.parse(fs.readFileSync(platformsDataPath, 'utf8'));
+
+// Build Avis & Comparatifs sections
+const avisSections = [
+    {
+        title: "Avis Plateformes",
+        icon: "fa-star-half-alt",
+        links: [
+            { text: "Tous les avis", url: "/avis/" },
+            ...platformsData.platforms.map(p => ({
+                text: `Avis ${p.name}`,
+                url: `/avis/${p.slug}/`
+            }))
+        ]
+    },
+    {
+        title: "Comparatifs",
+        icon: "fa-balance-scale",
+        links: [
+            { text: "Tous les comparatifs", url: "/comparatif/" },
+            ...platformsData.comparisons.slice(0, 15).map(c => ({
+                text: `${platformsData.platforms.find(p=>p.slug===c.platformA)?.name || c.platformA} vs ${platformsData.platforms.find(p=>p.slug===c.platformB)?.name || c.platformB}`,
+                url: `/avis/${c.slug}/`
+            }))
+        ]
+    },
+    {
+        title: "Alternatives",
+        icon: "fa-exchange-alt",
+        links: platformsData.platforms.map(p => ({
+            text: `Alternatives à ${p.name}`,
+            url: `/alternatives/${p.slug}/`
+        }))
+    }
+];
+
+// === Get Local Pages and Group by Letter (FIX: scan directories, not .html files) ===
 console.log("Scanning local pages...");
-const localFiles = fs.readdirSync(villesDir).filter(f => f.endsWith('.html'));
-const localPages = [];
+const localDirs = fs.readdirSync(villesDir).filter(f => {
+    const fullPath = path.join(villesDir, f);
+    return fs.statSync(fullPath).isDirectory() && fs.existsSync(path.join(fullPath, 'index.html'));
+});
 
-// Helper to extract city name from filename (e.g., "tarot-amour-paris.html" -> "Paris")
-// We need to fetch the actual city name. 
-// A robust way matches the slug parts, but since we have "cities.json", let's use that for perfect mapping if we want specific grouping. 
-// For now, parsing the filename is faster and sufficient if consistent.
-// Filename format: {service-slug}-{city-slug}.html
-// We actually want to group by City Name.
-
-// Let's load cities.json to get nice names matches
 const citiesDataPath = path.join(__dirname, 'data', 'cities.json');
 const { cities, services } = JSON.parse(fs.readFileSync(citiesDataPath, 'utf8'));
 
-// Map city slugs to city names/regions for better display
 const cityMap = new Map();
-cities.forEach(city => {
-    cityMap.set(city.slug, city);
-});
+cities.forEach(city => { cityMap.set(city.slug, city); });
 
 const serviceMap = new Map();
-services.forEach(service => {
-    serviceMap.set(service.slug, service);
-});
+services.forEach(service => { serviceMap.set(service.slug, service); });
 
-// Build the list of links
 const cityGroups = {};
 
-localFiles.forEach(file => {
-    // Parse filename: service-slug-city-slug.html
-    // This is tricky because slugs can contain hyphens.
-    // Strategy: iterate services to find prefix match.
-
+localDirs.forEach(dirName => {
     let matchedService = null;
     let citySlug = '';
 
     for (const service of services) {
-        if (file.startsWith(service.slug + '-')) {
+        if (dirName.startsWith(service.slug + '-')) {
             matchedService = service;
-            // Extract city slug: remove service slug + hyphen, remove .html
-            citySlug = file.substring(service.slug.length + 1).replace('.html', '');
+            citySlug = dirName.substring(service.slug.length + 1);
             break;
         }
     }
@@ -146,8 +167,8 @@ localFiles.forEach(file => {
 
             cityGroups[letter].push({
                 text: `${matchedService.name} à ${cityData.name}`,
-                url: `/villes/${file}`,
-                city: cityData.name // For sorting
+                url: `/villes/${dirName}/`,
+                city: cityData.name
             });
         }
     }
@@ -205,12 +226,52 @@ htmlContent += `
     </section>
 `;
 
-// 2. Local Pages Section (Accordion by Letter)
+// 2. Avis, Comparatifs & Alternatives Section
 htmlContent += `
     <section class="section-padding" style="background: rgba(255, 255, 255, 0.02);">
         <div class="container">
-            <h2 class="text-center mb-5 fade-in-up">Voyance par Ville</h2>
-            <p class="text-center mb-5 fade-in-up stagger-1" style="max-width: 700px; margin: 0 auto 50px auto;">
+            <h2 class="text-center mb-5 fade-in-up">Avis, Comparatifs & Alternatives</h2>
+            <div class="sitemap-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+`;
+
+avisSections.forEach((section, index) => {
+    htmlContent += `
+                <div class="sitemap-col fade-in-up stagger-${index % 3}">
+                    <h3 style="color: var(--color-secondary); border-bottom: 2px solid var(--color-secondary); padding-bottom: 10px; margin-bottom: 20px;">
+                        <i class="fa-solid ${section.icon}" style="margin-right: 10px;"></i>${section.title}
+                    </h3>
+                    <ul class="sitemap-list" style="list-style: none; padding-left: 0;">
+    `;
+
+    section.links.forEach(link => {
+        htmlContent += `
+                        <li style="margin-bottom: 10px;">
+                            <a href="${link.url}" style="color: var(--color-text-main); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;">
+                                <i class="fa-solid fa-chevron-right" style="margin-right: 10px; color: var(--color-secondary); font-size: 0.8em;"></i>
+                                <span class="hover-underline">${link.text}</span>
+                            </a>
+                        </li>
+        `;
+    });
+
+    htmlContent += `
+                    </ul>
+                </div>
+    `;
+});
+
+htmlContent += `
+            </div>
+        </div>
+    </section>
+`;
+
+// 3. Local Pages Section (Accordion by Letter)
+htmlContent += `
+    <section class="section-padding" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2 class="text-center mb-5">Voyance par Ville</h2>
+            <p class="text-center mb-5" style="max-width: 700px; margin: 0 auto 50px auto;">
                 Retrouvez nos services de voyance, tarologie, médiumnité et astrologie dans plus de 300 villes en France.
             </p>
             
@@ -222,7 +283,7 @@ sortedLetters.forEach((letter, index) => {
     const delay = index % 5;
 
     htmlContent += `
-        <div class="city-group fade-in-up stagger-${delay}">
+        <div class="city-group">
             <h3 class="city-letter" style="color: var(--color-secondary); font-size: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; padding-bottom: 5px;">${letter}</h3>
             <ul style="list-style: none; padding: 0;">
     `;

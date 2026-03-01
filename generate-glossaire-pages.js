@@ -183,7 +183,7 @@ const GLOSSAIRE_CSS = `
     .term-short {
         font-size: 1.05em;
         line-height: 1.7;
-        color:#dcdcdc;
+        color:#555;
         margin-bottom: 15px;
     }
     .term-details summary {
@@ -207,7 +207,7 @@ const GLOSSAIRE_CSS = `
     }
     .term-long p {
         line-height: 1.8;
-        color:#e0e0e0;
+        color:#555;
         margin-bottom: 15px;
     }
     .related-tags {
@@ -670,7 +670,7 @@ function generateGlossairePage() {
                         <summary style="padding:16px 20px; cursor:pointer; font-weight:600; color:#D4AF37; background:#f8f6fc; font-size:1em;">
                             Qu'est-ce que ${article} ?
                         </summary>
-                        <div style="padding:16px 20px; line-height:1.7; color:#dcdcdc;">
+                        <div style="padding:16px 20px; line-height:1.7; color:#555;">
                             ${esc(t.shortDef)}
                             <br><br>
                             <a href="#${t.slug}" style="color:#D4AF37; font-weight:600; text-decoration:none;">
