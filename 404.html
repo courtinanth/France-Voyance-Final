@@ -22,6 +22,7 @@
     <meta name="twitter:description" content="La page que vous cherchez n'existe pas ou a été déplacée. Retrouvez nos consultations de voyance, tarot et numérologie.">
 
     <link rel="stylesheet" href="/css/style.css?v=2029">
+ <link rel="stylesheet" href="/css/animations.css?v=2029">
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
 
     <style>
@@ -196,7 +197,7 @@
 
         <div class="error-actions">
             <a href="/" class="error-btn error-btn-secondary">Retour à l'accueil</a>
-            <a href="#" class="error-btn error-btn-primary" id="cta-consultation" onclick="window.location.href=getAffiliateUrl();return false;">Consultation Immédiate</a>
+            <a href="javascript:void(0)" class="error-btn error-btn-primary" id="cta-consultation" onclick="window.open(getAffiliateUrl(), '_blank');return false;">Consultation Immédiate</a>
         </div>
 
         <div class="error-suggestions">
@@ -215,5 +216,6 @@
     <script src="/js/animations.js"></script>
     <script src="/js/main.js?v=2029"></script>
     <script src="/js/logger.js"></script>
+<script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
 </body>
 </html>

@@ -8,6 +8,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Hors Connexion - France Voyance Avenir</title>
  <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="/css/animations.css?v=2029">
  <style>
  .offline-container {
  display: flex;
@@ -72,6 +73,7 @@
  <p>Vous pouvez toujours consulter les pages que vous avez déjà visitées.</p>
  <a href="/" class="btn btn-gold mt-4">Retour à l'accueil</a>
  </div>
-<script src="/js/logger.js"></script></body>
+<script src="/js/logger.js"></script><script>document.addEventListener('click',function(e){if(e.target.classList.contains('obf-link')||e.target.closest('.obf-link')){var el=e.target.classList.contains('obf-link')?e.target:e.target.closest('.obf-link');window.location.href=atob(el.getAttribute('data-o'));}});</script>
+</body>
 
 </html>

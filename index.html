@@ -41,6 +41,7 @@
  <link rel="preload" as="image" href="/images/hero-bg.jpg" fetchpriority="high">
  <!-- Custom CSS -->
  <link rel="stylesheet" href="/css/style.css?v=2029">
+ <link rel="stylesheet" href="/css/animations.css?v=2029">
  <script src="/js/config.js" defer></script>
 
     <script type="application/ld+json">
@@ -163,27 +164,26 @@
  <li><a href="/consulter/voyance-sms/">Voyance SMS</a></li>
  <li><a href="/consulter/voyance-chat/">Voyance Chat</a></li>
  <li><a href="/consulter/voyance-audiotel/">Voyance Audiotel</a></li>
-                <li><a href="/consulter/voyance-sans-attente-sans-cb/">Voyance Sans Attente</a></li>
-
+ <li><a href="/consulter/voyance-sans-attente-sans-cb/">Voyance Sans Attente</a></li>
  </ul>
  </li>
 
  <li class="nav-item">
-                    <a href="/avis/" class="nav-link">Plateformes <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/avis/wengo/">Wengo</a></li>
-                        <li><a href="/avis/spiriteo/">Spiriteo</a></li>
-                        <li><a href="/avis/jimini/">Jimini</a></li>
-                        <li><a href="/avis/kang/">Kang</a></li>
-                        <li><a href="/avis/avigora/">Avigora</a></li>
-                        <li><a href="/avis/cosmospace/">Cosmospace</a></li>
-                        <li><a href="/avis/mydeclick/">MyDéclick</a></li>
-                        <li><a href="/avis/viversum/">Viversum</a></li>
-                        <li><a href="/avis/voyance-alice/">Voyance Alice</a></li>
-                        <li><a href="/avis/divinatix/">Divinatix</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="/comparatif/" class="nav-link">Comparatifs</a></li>
+ <a href="/avis/" class="nav-link">Plateformes <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+ <ul class="dropdown-menu">
+ <li><a href="/avis/wengo/">Wengo</a></li>
+ <li><a href="/avis/spiriteo/">Spiriteo</a></li>
+ <li><a href="/avis/jimini/">Jimini</a></li>
+ <li><a href="/avis/kang/">Kang</a></li>
+ <li><a href="/avis/avigora/">Avigora</a></li>
+ <li><a href="/avis/cosmospace/">Cosmospace</a></li>
+ <li><a href="/avis/mydeclick/">MyDéclick</a></li>
+ <li><a href="/avis/viversum/">Viversum</a></li>
+ <li><a href="/avis/voyance-alice/">Voyance Alice</a></li>
+ <li><a href="/avis/divinatix/">Divinatix</a></li>
+ </ul>
+ </li>
+ <li class="nav-item"><a href="/comparatif/" class="nav-link">Comparatifs</a></li>
  </ul>
 
  <div class="header-cta text-center mt-3 mt-lg-0 ml-lg-4">
@@ -695,6 +695,16 @@
  </div>
  </div>
  </footer>
+
+ <!-- Sticky CTA -->
+ <div class="sticky-cta">
+     <div class="sticky-cta-pulse"></div>
+     <a href="javascript:void(0)" onclick="window.open(getAffiliateUrl(), '_blank'); return false;" data-affiliate="telephone" class="btn btn-gold">
+         <span class="sticky-cta-icon"><i class="fas fa-phone-alt"></i></span>
+         <span>Consulter</span>
+     </a>
+ </div>
+
  <script src="/js/animations.js" defer></script>
  <script src="/js/main.js?v=2029" defer></script>
  <script src="/js/logger.js" defer></script>
